@@ -25,6 +25,7 @@
     <QtInstall>5.15.2_msvc2019_64</QtInstall>
     <QtModules>quick</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
+    <QtQMLDebugEnable>true</QtQMLDebugEnable>
   </PropertyGroup>
   <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
     <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
@@ -56,6 +57,7 @@
     <ClCompile Include="MIT.original\MIT\MIT.c" />
     <ClCompile Include="MIT.original\MIT\stopMIT.c" />
     <None Include="MIT.original\MIT.qml" />
+    <None Include="MIT.original\MIT\essai.qml" />
     <None Include="MuseScoreRessources\CMakeSettings_for_VS2022\CMakeSettings.json" />
     <None Include="MuseScoreRessources\CMake\cmake-3.25.1-windows-i386.msi" />
     <None Include="MuseScoreRessources\CMake\cmake-3.25.1-windows-x86_64.msi" />
@@ -91,6 +93,9 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="MuseScoreRessources\ExplorerSolution.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="MIT.original\MIT\MainWindow.ui" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

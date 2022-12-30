@@ -32,6 +32,12 @@
     <None Include="main.qml">
       <Filter>Source Files</Filter>
     </None>
+    <ClCompile Include="MIT.original\MIT\MIT.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MIT.original\MIT\stopMIT.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
@@ -39,5 +45,84 @@
       <Filter>Source Files</Filter>
     </None>
     <None Include="MuseScoreRessources\readme.md" />
+    <None Include="MuseScoreRessources\CMakeSettings_for_VS2022\CMakeSettings.json" />
+    <None Include="MuseScoreRessources\CMake\cmake-3.25.1-windows-i386.msi" />
+    <None Include="MuseScoreRessources\CMake\cmake-3.25.1-windows-x86_64.msi" />
+    <None Include="MuseScoreRessources\dependencies.7z" />
+    <None Include="MuseScoreRessources\DependenciesContent\dependencies\.DS_Store" />
+    <None Include="MuseScoreRessources\DependenciesContent\dependencies\include\lame\lame.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="MuseScoreRessources\Jack\jackaudio.github.com-1.9.10_6-jack2.zip" />
+    <None Include="MuseScoreRessources\Jack\Jack_v1.9.10_64_setup.exe" />
+    <None Include="MIT.original\MIT\essai.qml">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\lame\lame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\ogg\ogg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\ogg\os_types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\portaudio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\sndfile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\vorbis\codec.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\vorbis\vorbisenc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\vorbis\vorbisfile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\winsparkle\winsparkle-version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\winsparkle\winsparkle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\zlib\crypt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\zlib\ioapi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\zlib\iowin32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\zlib\mztools.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\zlib\unzip.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\zlib\zconf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\zlib\zip.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\zlib\zlib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="MuseScoreRessources\ExplorerSolution.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="MIT.original\MIT\MainWindow.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
 </Project>
