@@ -53,11 +53,44 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MIT.original\MIT\MIT.c" />
+    <ClCompile Include="MIT.original\MIT\stopMIT.c" />
     <None Include="MIT.original\MIT.qml" />
+    <None Include="MuseScoreRessources\CMakeSettings_for_VS2022\CMakeSettings.json" />
+    <None Include="MuseScoreRessources\CMake\cmake-3.25.1-windows-i386.msi" />
+    <None Include="MuseScoreRessources\CMake\cmake-3.25.1-windows-x86_64.msi" />
+    <None Include="MuseScoreRessources\dependencies.7z" />
+    <None Include="MuseScoreRessources\DependenciesContent\dependencies\.DS_Store" />
+    <None Include="MuseScoreRessources\DependenciesContent\dependencies\include\lame\lame.def" />
+    <None Include="MuseScoreRessources\Jack\jackaudio.github.com-1.9.10_6-jack2.zip" />
+    <None Include="MuseScoreRessources\Jack\Jack_v1.9.10_64_setup.exe" />
     <None Include="MuseScoreRessources\readme.md" />
     <QtRcc Include="qml.qrc" />
     <None Include=".gitignore" />
     <None Include="main.qml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\lame\lame.h" />
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\ogg\ogg.h" />
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\ogg\os_types.h" />
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\portaudio.h" />
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\sndfile.h" />
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\vorbis\codec.h" />
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\vorbis\vorbisenc.h" />
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\vorbis\vorbisfile.h" />
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\winsparkle\winsparkle-version.h" />
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\winsparkle\winsparkle.h" />
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\zlib\crypt.h" />
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\zlib\ioapi.h" />
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\zlib\iowin32.h" />
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\zlib\mztools.h" />
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\zlib\unzip.h" />
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\zlib\zconf.h" />
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\zlib\zip.h" />
+    <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\zlib\zlib.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="MuseScoreRessources\ExplorerSolution.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
