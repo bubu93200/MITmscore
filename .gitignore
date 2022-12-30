@@ -1,5 +1,6 @@
 # .gitignore file to put in root folder repository
 # ignore unusable files from languages C, C++ and created by Visual Studio
+# Copyright (C) Bruno Donati
 
 
 # Cpp ignored files
