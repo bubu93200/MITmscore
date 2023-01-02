@@ -29,7 +29,7 @@ MuseScore { // Démarrage d'un plgin Musescore
     property string pluginsPath: "C:/Users/Bubu/Documents/MuseScore3/Plugins"
     property string midiPath: "C:/Users/Bubu/Documents/MuseScore3/Partitions"
     property string defaultInstrument: "Your instrument"
-    property string green : "#708000"
+    property string green : "#008000"
 
     menuPath:   "Plugins.MidiInstrumentTraining"
     version:  "1.0"
@@ -73,6 +73,10 @@ MuseScore { // Démarrage d'un plgin Musescore
             text: "Affichage de la piste: "; // + cursor.track(1); ne fonctionne pas
         }
 
+        //***********************************
+        // Colorer les notes sélectionnées
+        // Fonctionne mais il faut revenir sur la partition pour voir la modification
+        //***********************************
         Button { // Affichage d'un bouton
             id: start
             anchors.horizontalCenter: parent.horizontalCenter
@@ -139,7 +143,6 @@ MuseScore { // Démarrage d'un plgin Musescore
             text: "10"
         }
     }   
-}
 
 function applyToNotesInSelection(func) {
         var cursor = curScore.newCursor();
@@ -182,3 +185,5 @@ function applyToNotesInSelection(func) {
     function colorNote(note) {
         note.color = green;
     }
+
+}
