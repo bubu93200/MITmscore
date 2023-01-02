@@ -58,6 +58,9 @@
     <None Include="MIT.original\MIT\essai.qml">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="Tests.qml">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\lame\lame.h">

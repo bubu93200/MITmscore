@@ -67,6 +67,7 @@
     <None Include="MuseScoreRessources\Jack\jackaudio.github.com-1.9.10_6-jack2.zip" />
     <None Include="MuseScoreRessources\Jack\Jack_v1.9.10_64_setup.exe" />
     <None Include="MuseScoreRessources\readme.md" />
+    <None Include="Tests.qml" />
     <QtRcc Include="qml.qrc" />
     <None Include=".gitignore" />
     <None Include="main.qml" />
