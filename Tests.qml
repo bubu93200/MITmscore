@@ -23,6 +23,7 @@ import QtQuick.Controls.Styles 1.3 // Pour ?
 import QtQuick.Layouts 1.1 // Pour ?
 import QtQuick.Dialogs 1.1 // Pour ?
 import MuseScore 3.0
+import FileIO 3.0
 
 MuseScore { // Démarrage d'un plgin Musescore
     property string pluginsPath: "C:/Users/Bubu/Documents/MuseScore3/Plugins"
@@ -36,13 +37,24 @@ MuseScore { // Démarrage d'un plgin Musescore
     pluginType: "dialog"
     width: 200
     height: 600
-            
-    
-    
+
+
+    FileIO { // lecture ou écriture d'un fichier
+        id: exampleFile
+        source: "/tmp/example.txt"
+        // cette api est définie par les fichiers C++ suivants : 
+        // mscore/plugin/api/util.h
+        // mscore/plugin/api/util.cpp
+
+    }
     onRun: {
+        var test = exampleFile.read();
+        console.log(test); // will print the file content
         console.info("*********** DEBUT *********"); // Message d'information
         proc1.start(pluginsPath+"/MIT/qsynthconnect.sh "+instrumentName.text);
         // console.info("*********** FIN *********"); // Message d'information
+        var cursor = curScore.newCursor();
+        
     }
      
     
@@ -52,12 +64,12 @@ MuseScore { // Démarrage d'un plgin Musescore
 
         Text { // Affichage d'un texte
             anchors.horizontalCenter: parent.horizontalCenter
-            text: "Debugging/nCopyright (c) Bruno Donati/n"
+            text: "Debugging\nCopyright (c) Bruno Donati\n"
         }
 
         Text {
             anchors.horizontalCenter: parent.horizontalCenter
-            text: "Affichage de vavirables"
+            text: "Affichage de la piste: "; // + cursor.track(1); ne fonctionne pas
         }
         
         TextField { // Zone d'insertion d'un texte avec éventuellement un texte par défaut (input)
@@ -111,5 +123,5 @@ MuseScore { // Démarrage d'un plgin Musescore
             width: 40
             text: "10"
         }
-
+    }   
 }

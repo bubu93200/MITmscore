@@ -58,7 +58,7 @@
     <None Include="MIT.original\MIT\essai.qml">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="Tests.qml">
+    <None Include="tests.qml">
       <Filter>Source Files</Filter>
     </None>
     <None Include="MIT.original\mit001.qml">
