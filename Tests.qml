@@ -29,6 +29,7 @@ MuseScore { // Démarrage d'un plgin Musescore
     property string pluginsPath: "C:/Users/Bubu/Documents/MuseScore3/Plugins"
     property string midiPath: "C:/Users/Bubu/Documents/MuseScore3/Partitions"
     property string defaultInstrument: "Your instrument"
+    property string green : "#708000"
 
     menuPath:   "Plugins.MidiInstrumentTraining"
     version:  "1.0"
@@ -70,6 +71,20 @@ MuseScore { // Démarrage d'un plgin Musescore
         Text {
             anchors.horizontalCenter: parent.horizontalCenter
             text: "Affichage de la piste: "; // + cursor.track(1); ne fonctionne pas
+        }
+
+        Button { // Affichage d'un bouton
+            id: start
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: "START" // Colore la selection
+            
+            //style: ButtonStyle {} Quelle librairie ?
+            
+            onClicked: {
+                console.info("Click start Button"); // Message d'information
+                console.info(curScore.scoreName); // Message d'information
+                applyToNotesInSelection(colorNote);
+            }
         }
         
         TextField { // Zone d'insertion d'un texte avec éventuellement un texte par défaut (input)
@@ -125,3 +140,45 @@ MuseScore { // Démarrage d'un plgin Musescore
         }
     }   
 }
+
+function applyToNotesInSelection(func) {
+        var cursor = curScore.newCursor();
+        cursor.rewind(1);
+        var startStaff  = cursor.staffIdx;
+        cursor.rewind(2);
+        var endStaff   = cursor.staffIdx;
+        var endTick    = cursor.tick // if no selection, end of score
+        var fullScore = false;
+        if (!cursor.segment) { // no selection
+            fullScore = true;
+            startStaff = 0; // start with 1st staff
+            endStaff = curScore.nstaves - 1; // and end with last
+        }
+        console.log(startStaff + " - " + endStaff + " - " + endTick)
+        for (var staff = startStaff; staff <= endStaff; staff++) {
+            for (var voice = 0; voice < 4; voice++) {
+                cursor.rewind(1); // sets voice to 0
+                cursor.voice = voice; //voice has to be set after goTo
+                cursor.staffIdx = staff;
+
+                if (fullScore)
+                cursor.rewind(0) // if no selection, beginning of score
+
+                while (cursor.segment && (fullScore || cursor.tick < endTick)) {
+                    if (cursor.element && cursor.element.type == Element.CHORD) {
+                        var notes = cursor.element.notes;
+                        for (var i = 0; i < notes.length; i++) {
+                            var note = notes[i];
+                            func(note);
+                        }
+                    }
+                    cursor.next();
+                }
+            }
+        }
+    }
+ 
+  
+    function colorNote(note) {
+        note.color = green;
+    }
