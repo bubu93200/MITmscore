@@ -57,6 +57,7 @@
     <ClCompile Include="MIT.original\MIT\MIT.c" />
     <ClCompile Include="MIT.original\MIT\stopMIT.c" />
     <None Include="MIT.original\MIT.qml" />
+    <None Include="MIT.original\mit001.qml" />
     <None Include="MIT.original\MIT\essai.qml" />
     <None Include="MuseScoreRessources\CMakeSettings_for_VS2022\CMakeSettings.json" />
     <None Include="MuseScoreRessources\CMake\cmake-3.25.1-windows-i386.msi" />

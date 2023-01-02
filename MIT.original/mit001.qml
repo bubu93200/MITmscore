@@ -14,19 +14,19 @@
 // Copyright (C) 2022 Bruno Donati
 //=============================================================================
 
-// Pour fonctionnement C++
+// Pour fonctionnement avec C++
 //#include <QtGui/qapplication.h>
 //#include <QtGui/qpushButton.h>
 
 import QtQuick 2.2
-//import QtQuick.Controls 2.0
+// import QtQuick.Controls 2.0
 import QtQuick.Controls 1.1 // avant il s'agissait de la version 2.0. Vérifier que cela fonctionne toujours.
 import QtQuick.Controls.Styles 1.3 // Pour ?
 import QtQuick.Layouts 1.1 // Pour ?
 import QtQuick.Dialogs 1.1 // Pour ?
 import MuseScore 3.0
 
-MuseScore { // Démarrage d'un plgin Musescore
+MuseScore {
     property string pluginsPath: "C:/Users/Bubu/Documents/MuseScore3/Plugins"
     property string midiPath: "C:/Users/Bubu/Documents/MuseScore3/Partitions"
     property string defaultInstrument: "Your instrument"
@@ -37,7 +37,7 @@ MuseScore { // Démarrage d'un plgin Musescore
 
     pluginType: "dialog"
     width: 200
-    height: 550
+    height: 600
 
     // console.warn("warn completed")
     //    console.log("log completed")
@@ -56,11 +56,16 @@ MuseScore { // Démarrage d'un plgin Musescore
     QProcess { id: proc1 }
     QProcess { id: proc2 }  
     
-    Column { //mise en colonne des éléments
+    Column {
         spacing: 0 //units.gu(2) espacement entre items
         anchors.centerIn: parent
-        
-        Button { // Affichage d'un bouton
+
+        Text {
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: "Midi Instrument Training/nCopyright (c) Bruno Donati/n"
+        }
+
+        Button {
             id: start
             anchors.horizontalCenter: parent.horizontalCenter
             text: "START"
@@ -100,12 +105,12 @@ MuseScore { // Démarrage d'un plgin Musescore
             }
         }
         
-        Text { // Affichage d'un texte
+        Text {
             anchors.horizontalCenter: parent.horizontalCenter
             text: "Score channel:"
         }
         
-        TextField { // Zone d'insertion d'un texte avec éventuellement un texte par défaut (input)
+        TextField {
             id: scoreChannel
             anchors.horizontalCenter: parent.horizontalCenter
             width: 40
