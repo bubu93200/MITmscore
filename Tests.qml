@@ -100,7 +100,7 @@ MuseScore { // Démarrage d'un plgin Musescore
         
         Text {
             anchors.horizontalCenter: parent.horizontalCenter
-            text: "MIDI Instrument name:"
+            text: "MIDI Instrument name:" + text.arg(curScore.nstaves);
         }
         
         TextField {
