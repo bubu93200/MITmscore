@@ -38,7 +38,7 @@ MuseScore { // Démarrage d'un plgin Musescore
     pluginType: "dialog"
     width: 200
     height: 550
-
+    
     // console.warn("warn completed")
     //    console.log("log completed")
      //       console.error("error completed")
