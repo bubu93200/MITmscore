@@ -56,6 +56,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MIT.original\MIT\MIT.c" />
     <ClCompile Include="MIT.original\MIT\stopMIT.c" />
+    <None Include=".gitattributes" />
     <None Include="MIT.original\MIT.qml" />
     <None Include="MIT.original\mit001.qml" />
     <None Include="MIT.original\MIT\essai.qml" />
@@ -98,6 +99,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="MIT.original\MIT\MainWindow.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="LICENSE.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

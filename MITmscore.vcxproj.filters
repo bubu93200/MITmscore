@@ -64,6 +64,7 @@
     <None Include="MIT.original\mit001.qml">
       <Filter>Source Files</Filter>
     </None>
+    <None Include=".gitattributes" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\lame\lame.h">
@@ -130,5 +131,8 @@
     <QtUic Include="MIT.original\MIT\MainWindow.ui">
       <Filter>Form Files</Filter>
     </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="LICENSE.txt" />
   </ItemGroup>
 </Project>
