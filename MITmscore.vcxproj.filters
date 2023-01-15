@@ -38,6 +38,9 @@
     <ClCompile Include="MIT.original\MIT\stopMIT.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GNUC\test-skeleton.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
@@ -66,6 +69,22 @@
     </None>
     <None Include=".gitattributes" />
     <None Include="readme.md" />
+    <None Include="GNUC\INSTALL" />
+    <None Include="GNUC\libc-abis" />
+    <None Include="GNUC\libof-iterator.mk" />
+    <None Include="GNUC\LICENSES" />
+    <None Include="GNUC\MAINTAINERS" />
+    <None Include="GNUC\Makeconfig" />
+    <None Include="GNUC\Makefile" />
+    <None Include="GNUC\Makefile.help" />
+    <None Include="GNUC\Makefile.in" />
+    <None Include="GNUC\Makerules" />
+    <None Include="GNUC\NEWS" />
+    <None Include="GNUC\o-iterator.mk" />
+    <None Include="GNUC\README" />
+    <None Include="GNUC\Rules" />
+    <None Include="GNUC\SHARED-FILES" />
+    <None Include="GNUC\shlib-versions" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\lame\lame.h">
@@ -120,6 +139,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\zlib\zlib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GNUC\version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GNUC\bits\unistd_ext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GNUC\posix\unistd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

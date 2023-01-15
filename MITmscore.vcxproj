@@ -38,7 +38,13 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PublicIncludeDirectories>$(ProjectDir)src;$(ProjectDir)inc;$(PublicIncludeDirectories)</PublicIncludeDirectories>
   </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\bubu\source\repos\MITmscore\GNUC\conform;C:\Users\bubu\source\repos\MITmscore\GNUC\benchtests;C:\Users\bubu\source\repos\MITmscore\GNUC\catgets;C:\Users\bubu\source\repos\MITmscore\GNUC\bits;C:\Users\bubu\source\repos\MITmscore\GNUC\assert;C:\Users\bubu\source\repos\MITmscore\GNUC\argp;$(ProjectDir)inc;$(ProjectDir)src;C:\Users\bubu\source\repos\MITmscore\GNUC\locale\bits\types;C:\Users\bubu\source\repos\MITmscore\GNUC\locale\bits;C:\Users\bubu\source\repos\MITmscore\GNUC\locale;C:\Users\bubu\source\repos\MITmscore\GNUC\include;C:\Users\bubu\source\repos\MITmscore\GNUC\posix;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ClCompile>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
@@ -53,10 +59,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GNUC\test-skeleton.c" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MIT.original\MIT\MIT.c" />
     <ClCompile Include="MIT.original\MIT\stopMIT.c" />
     <None Include=".gitattributes" />
+    <None Include="GNUC\INSTALL" />
+    <None Include="GNUC\libc-abis" />
+    <None Include="GNUC\libof-iterator.mk" />
+    <None Include="GNUC\LICENSES" />
+    <None Include="GNUC\MAINTAINERS" />
+    <None Include="GNUC\Makeconfig" />
+    <None Include="GNUC\Makefile" />
+    <None Include="GNUC\Makefile.help" />
+    <None Include="GNUC\Makefile.in" />
+    <None Include="GNUC\Makerules" />
+    <None Include="GNUC\NEWS" />
+    <None Include="GNUC\o-iterator.mk" />
+    <None Include="GNUC\README" />
+    <None Include="GNUC\Rules" />
+    <None Include="GNUC\SHARED-FILES" />
+    <None Include="GNUC\shlib-versions" />
     <None Include="MIT.original\MIT.qml" />
     <None Include="MIT.original\mit001.qml" />
     <None Include="MIT.original\MIT\essai.qml" />
@@ -76,6 +99,9 @@
     <None Include="main.qml" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GNUC\bits\unistd_ext.h" />
+    <ClInclude Include="GNUC\posix\unistd.h" />
+    <ClInclude Include="GNUC\version.h" />
     <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\lame\lame.h" />
     <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\ogg\ogg.h" />
     <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\ogg\os_types.h" />
