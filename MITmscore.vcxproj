@@ -63,6 +63,9 @@
     <ClCompile Include="MIT.original\MIT\MIT.c" />
     <ClCompile Include="MIT.original\MIT\stopMIT.c" />
     <None Include=".gitattributes" />
+    <None Include="midi_batch\batch_convert.qml" />
+    <None Include="midi_batch\NiceRadioButton.qml" />
+    <None Include="midi_batch\SmallCheckBox.qml" />
     <None Include="MIT.original\MIT.qml" />
     <None Include="MIT.original\mit001.qml" />
     <None Include="MIT.original\MIT\essai.qml" />

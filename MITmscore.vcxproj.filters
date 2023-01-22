@@ -66,6 +66,15 @@
     </None>
     <None Include=".gitattributes" />
     <None Include="readme.md" />
+    <None Include="midi_batch\batch_convert.qml">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="midi_batch\NiceRadioButton.qml">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="midi_batch\SmallCheckBox.qml">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\lame\lame.h">
