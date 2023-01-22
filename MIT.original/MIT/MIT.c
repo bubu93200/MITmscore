@@ -12,8 +12,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 //#include <unistd.h>
-//#include <time.h>
-//#include <alsa/asoundlib.h>
+#include <time.h>
+#include <alsa/asoundlib.h>
 //#include "lo/lo.h"
 
 #define MAX_LENGTH 50 // Max number of notes played simultaneously
