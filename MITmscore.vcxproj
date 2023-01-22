@@ -82,6 +82,7 @@
     <None Include="main.qml" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="glibc-master\posix\bits\unistd.h" />
     <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\lame\lame.h" />
     <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\ogg\ogg.h" />
     <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\ogg\os_types.h" />

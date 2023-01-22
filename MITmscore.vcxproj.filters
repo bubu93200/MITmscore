@@ -122,6 +122,9 @@
     <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\zlib\zlib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="glibc-master\posix\bits\unistd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="MuseScoreRessources\ExplorerSolution.png">
