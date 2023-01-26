@@ -23,6 +23,7 @@ All is to do
 At this moment, I just collected libraries which can be used on this project 
   - inital MIT working with score 2.0 and GNU linux
   - GNU  
+  - alsa : Advanced Linux Sound Architecture (ALSA) project  
   - Score 3.6.2 and process to compile it in debug mode with visual studio (doesnt work with visual code)  
   
 TODO : Transpose to windows  
