@@ -1,7 +1,9 @@
 # Python Midi  
 It's a program in python to learn piano.
 Program is very simple.  
-Developped by 
+Developped by Wilson Chao
+His youtube link is : 
+https://www.youtube.com/@satellitemusic6616  
 # Video youtube  
 You can find youtube vie on :  
 https://www.youtube.com/watch?v=w732EXqmfZU
