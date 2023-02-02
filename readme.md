@@ -47,7 +47,9 @@ Avantages to use python:
   - colorize in red or green notes attached to L or R symbols (colors can be modified)  
 ## Qt sheet or panel to interface to program   
   - button to select pourcentage of velocity (to play slowly for training)  
-  - button
+  - checkbox to select Left and/or Right fingering to play
+  - button to play score  
+  - 
 
 # Releases  
 0.00 Nothing at this point  
