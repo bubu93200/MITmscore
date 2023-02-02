@@ -43,9 +43,9 @@ File of settings which is read at each launch. If not exist, create a setting fi
 On musescore sheet :  
   - create L and R symbols (and other if necessary) which ca nbe attached on each note  
   - colorize in red or green notes attached to L or R symbols (colors can be modified)
-Qt sheet or panel to interface to program
-  button to select pourcentage of velocity (to play slowly for training)
-  button
+Qt sheet or panel to interface to program   
+  - button to select pourcentage of velocity (to play slowly for training)
+  - button
 
 # Releases
 0.00 Nothing at this point  
