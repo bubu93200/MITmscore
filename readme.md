@@ -30,21 +30,21 @@ TODO : Transpose to windows
 TODO : All  
 
 # Way to progress
-Musescore are written in Qt so I propose to write musescore interface in Qt.
-Qt can send programs so I propose to lmaunch programs in python
-Avantages to use python:
-- code simplier  
-- a lot of libraries (and usable MIDI libraries)    
-- python works on windows, linux, macos so program in python is usable on these 3 systems without modifications
-- C or C++ code can be embedded in python script if necessary to accelerate code execution
+Musescore are written in Qt so I propose to write musescore interface in Qt.  
+Qt can send programs so I propose to lmaunch programs in python  
+Avantages to use python:  
+- code simplier   
+- a lot of libraries (and usable MIDI libraries)     
+- python works on windows, linux, macos so program in python is usable on these 3 systems without modifications  
+- C or C++ code can be embedded in python script if necessary to accelerate code execution  
 
 # Program architecture
 File of settings which is read at each launch. If not exist, create a setting file with default options
 On musescore sheet :  
-  - create L and R symbols (and other if necessary) which ca nbe attached on each note  
-  - colorize in red or green notes attached to L or R symbols (colors can be modified)
+  - create L and R symbols (and other if necessary) which ca nbe attached on each note   
+  - colorize in red or green notes attached to L or R symbols (colors can be modified)  
 Qt sheet or panel to interface to program   
-  - button to select pourcentage of velocity (to play slowly for training)
+  - button to select pourcentage of velocity (to play slowly for training)  
   - button
 
 # Releases
