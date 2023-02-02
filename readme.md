@@ -36,6 +36,7 @@ Avantages to use python:
 - code simplier  
 - a lot of libraries (and usable MIDI libraries)    
 - python works on windows, linux, macos so program in python is usable on these 3 systems without modifications
+- C or C++ code can be embedded in python script if necessary to accelerate code execution
 
 
 # Releases
