@@ -39,7 +39,7 @@ Avantages to use python:
 - C or C++ code can be embedded in python script if necessary to accelerate code execution  
 
 # Program architecture  
-## File of settings  
+## Setting File    
 - file is read at each launch. 
 - If not exist, create a setting file with default options   
 ## On musescore sheet :  
