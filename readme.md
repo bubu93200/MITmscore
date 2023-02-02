@@ -39,7 +39,9 @@ Avantages to use python:
 - C or C++ code can be embedded in python script if necessary to accelerate code execution  
 
 # Program architecture  
-## File of settings which is read at each launch. If not exist, create a setting file with default options   
+## File of settings  
+- file is read at each launch. 
+- If not exist, create a setting file with default options   
 ## On musescore sheet :  
   - create L and R symbols (and other if necessary) which ca nbe attached on each note   
   - colorize in red or green notes attached to L or R symbols (colors can be modified)  
