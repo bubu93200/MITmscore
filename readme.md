@@ -29,6 +29,14 @@ At this moment, I just collected libraries which can be used on this project
 TODO : Transpose to windows  
 TODO : All  
 
+# Way to progress
+Musescore are written in Qt so I propose to write musescore interface in Qt.
+Qt can send programs so I propose to lmaunch programs in python
+Avantages to use python:
+- code simplier  
+- a lot of libraries (and usable MIDI libraries)    
+- python works on windows, linux, macos so program in python is usable on these 3 systems without modifications
+
 
 # Releases
 0.00 Nothing at this point  
