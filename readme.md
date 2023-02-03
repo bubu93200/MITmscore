@@ -36,20 +36,31 @@ Avantages to use python:
 - code simplier   
 - a lot of libraries (and usable MIDI libraries)     
 - python works on windows, linux, macos so program in python is usable on these 3 systems without modifications  
-- C or C++ code can be embedded in python script if necessary to accelerate code execution  
+- C or C++ code can be embedded in python script if necessary to accelerate code execution   
+- a lot of libraries. For this subject : mido.  
 
 # Program architecture  
 ## Setting File    
 - file is read at each launch. 
 - If not exist, create a setting file with default options   
-## On musescore sheet :  
+## On musescore sheet : (prigram written in Qt)  
   - create L and R symbols (and other if necessary) which ca nbe attached on each note   
   - colorize in red or green notes attached to L or R symbols (colors can be modified)  
-## Qt sheet or panel to interface to program   
+## Qt sheet or panel to interface to program (written in Qt)   
   - button to select pourcentage of velocity (to play slowly for training)  
   - checkbox to select Left and/or Right fingering to play
-  - button to play score  
-  - 
+  - button to begin training   
+
+## On button "begin training" (program written in python) 
+- create midi file of the score
+- create a Midi input to hear Midi keyboard
+- on each note in midi file :
+   - read midi file of piano input
+   - make a comparison between reference Midi file and input from instrument.  
+   - on scoresheet colorize note from green to red to evaluate if note if 
+Layed good or false
+   - on scoresheet advance cursor to next note  
+
 
 # Releases  
 0.00 Nothing at this point  
