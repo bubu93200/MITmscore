@@ -34,16 +34,15 @@ Musescore are written in Qt so I propose to write musescore interface in Qt.
 Qt can send programs so I propose to lmaunch programs in python  
 Avantages to use python:  
 - code simplier   
-- a lot of libraries (and usable MIDI libraries)     
+- a lot of libraries (and usable MIDI libraries) : mido      
 - python works on windows, linux, macos so program in python is usable on these 3 systems without modifications  
 - C or C++ code can be embedded in python script if necessary to accelerate code execution   
-- a lot of libraries. For this subject : mido.  
 
 # Program architecture  
 ## Setting File    
 - file is read at each launch. 
 - If not exist, create a setting file with default options   
-## On musescore sheet : (prigram written in Qt)  
+## On musescore sheet : (written in Qt)  
   - create L and R symbols (and other if necessary) which ca nbe attached on each note   
   - colorize in red or green notes attached to L or R symbols (colors can be modified)  
 ## Qt sheet or panel to interface to program (written in Qt)   
@@ -51,7 +50,7 @@ Avantages to use python:
   - checkbox to select Left and/or Right fingering to play
   - button to begin training   
 
-## On button "begin training" (program written in python) 
+## On button "begin training" (written in python) 
 - create midi file of the score
 - create a Midi input to hear Midi keyboard
 - on each note in midi file :
