@@ -38,7 +38,10 @@ Avantages to use python:
 - python works on windows, linux, macos so program in python is usable on these 3 systems without modifications  
 - C or C++ code can be embedded in python script if necessary to accelerate code execution   
 
-# Program architecture  
+# Program architecture 
+This program can be use for all midi instrument be I will test it on a piano. 
+The "instrument" term is used for piano or keyboard  
+ 
 ## Setting File    
 - file is read at each launch. 
 - If not exist, create a setting file with default options   
@@ -52,9 +55,9 @@ Avantages to use python:
 
 ## On button "begin training" (written in python) 
 - create midi file of the score (perhaps it can be created before)  
-- create a Midi input to hear Midi keyboard
+- create a Midi input to hear Midi instrument. 
 - on each note in midi file :
-   - read midi file of piano input
+   - read midi file of instrument input
    - make a comparison between reference Midi file and input from instrument.  
    - on scoresheet colorize note from green to red to evaluate if note if 
 Layed good or false
