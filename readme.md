@@ -51,7 +51,7 @@ Avantages to use python:
   - button to begin training   
 
 ## On button "begin training" (written in python) 
-- create midi file of the score
+- create midi file of the score (perhaps it can be created before)  
 - create a Midi input to hear Midi keyboard
 - on each note in midi file :
    - read midi file of piano input
