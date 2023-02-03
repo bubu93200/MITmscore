@@ -54,14 +54,13 @@ The "instrument" term is used for piano or keyboard
   - button to begin training   
 
 ## On button "begin training" (written in python) 
-- create midi file of the score (perhaps it can be created before)  
-- create a Midi input to hear Midi instrument. 
-- on each note in midi file :
-   - read midi file of instrument input
-   - make a comparison between reference Midi file and input from instrument.  
-   - on scoresheet colorize note from green to red to evaluate if note if 
-played good or false
-   - on scoresheet advance cursor to next note  
+  - create midi file of the score (perhaps it can be created before)  
+  - create a Midi input to hear Midi instrument. 
+  - on each note in midi file :
+    - read midi file of instrument input
+    - make a comparison between reference Midi file and input from instrument.  
+    - on scoresheet colorize note from green to red to evaluate if note if played good or false  
+    - on scoresheet advance cursor to next note  
 
 
 # Releases  
