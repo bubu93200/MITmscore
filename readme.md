@@ -60,7 +60,7 @@ The "instrument" term is used for piano or keyboard
    - read midi file of instrument input
    - make a comparison between reference Midi file and input from instrument.  
    - on scoresheet colorize note from green to red to evaluate if note if 
-Layed good or false
+played good or false
    - on scoresheet advance cursor to next note  
 
 
