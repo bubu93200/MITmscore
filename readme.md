@@ -51,7 +51,10 @@ The "instrument" term is used for piano or keyboard
 ## Qt sheet or panel to interface to program (written in Qt)   
   - button to select pourcentage of velocity (to play slowly for training)  
   - checkbox to select Left and/or Right fingering to play
-  - button to begin training   
+  - input "Midi instrument name"  
+  - input "Midi instrument channel"  
+  - button to begin training    
+  - weigthing for colorize: evaluate note played   
 
 ## On button "begin training" (written in python) 
   - create midi file of the score (perhaps it can be created before)  
