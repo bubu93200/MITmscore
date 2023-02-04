@@ -16,3 +16,55 @@ Some settings can be changed in the plugin interface (you can also permanently c
 
 
 Install GNU Library to have posix libraries.
+
+
+# Progress 
+All is to do   
+At this moment, I just collected libraries which can be used on this project 
+  - inital MIT working with score 2.0 and GNU linux
+  - GNU  
+  - alsa : Advanced Linux Sound Architecture (ALSA) project  
+  - Score 3.6.2 and process to compile it in debug mode with visual studio (doesnt work with visual code)  
+  
+TODO : Transpose to windows  
+TODO : All  
+
+# Way to progress   
+Musescore are written in Qt so I propose to write musescore interface in Qt.  
+Qt can send programs so I propose to lmaunch programs in python  
+Avantages to use python:  
+- code simplier   
+- a lot of libraries (and usable MIDI libraries) : mido      
+- python works on windows, linux, macos so program in python is usable on these 3 systems without modifications  
+- C or C++ code can be embedded in python script if necessary to accelerate code execution   
+
+# Program architecture 
+This program can be use for all midi instrument be I will test it on a piano. 
+The "instrument" term is used for piano or keyboard  
+ 
+## Setting File    
+- file is read at each launch. 
+- If not exist, create a setting file with default options   
+## On musescore sheet : (written in Qt)  
+  - create L and R symbols (and other if necessary) which ca nbe attached on each note   
+  - colorize in red or green notes attached to L or R symbols (colors can be modified)  
+## Qt sheet or panel to interface to program (written in Qt)   
+  - button to select pourcentage of velocity (to play slowly for training)  
+  - checkbox to select Left and/or Right fingering to play
+  - input "Midi instrument name"  
+  - input "Midi instrument channel"  
+  - button to begin training    
+  - weigthing for colorize: evaluate note played   
+
+## On button "begin training" (written in python) 
+  - create midi file of the score (perhaps it can be created before)  
+  - create a Midi input to hear Midi instrument. 
+  - on each note in midi file :
+    - read midi file of instrument input
+    - make a comparison between reference Midi file and input from instrument.  
+    - on scoresheet colorize note from green to red to evaluate if note is played good or false  
+    - on scoresheet advance cursor to next note  
+
+
+# Releases  
+0.00 Nothing at this point  
