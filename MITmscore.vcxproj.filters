@@ -75,6 +75,22 @@
     <None Include="midi_batch\SmallCheckBox.qml">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="batch_export-master\batch_convert\batch_convert.qml">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="batch_export-master\batch_convert\NiceRadioButton.qml">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="batch_export-master\batch_convert\SmallCheckBox.qml">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="batch_export-master\batch_convert\translations\locale_de.qm" />
+    <None Include="batch_export-master\batch_convert\translations\locale_es.qm" />
+    <None Include="batch_export-master\batch_convert\translations\locale_fr.qm" />
+    <None Include="batch_export-master\batch_convert\translations\locale_it.qm" />
+    <None Include="batch_export-master\batch_convert\translations\lrelease.cmd" />
+    <None Include="batch_export-master\batch_convert\translations\lupdate.cmd" />
+    <None Include="batch_export-master\batch_convert\translations\translation_utility.sh" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\lame\lame.h">
@@ -139,6 +155,9 @@
     <Image Include="MuseScoreRessources\ExplorerSolution.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="batch_export-master\batch_convert\batch_convert_thumbnail.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="MIT.original\MIT\MainWindow.ui">
@@ -147,5 +166,19 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="LICENSE.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtTranslation Include="batch_export-master\batch_convert\translations\locale_de.ts">
+      <Filter>Translation Files</Filter>
+    </QtTranslation>
+    <QtTranslation Include="batch_export-master\batch_convert\translations\locale_es.ts">
+      <Filter>Translation Files</Filter>
+    </QtTranslation>
+    <QtTranslation Include="batch_export-master\batch_convert\translations\locale_fr.ts">
+      <Filter>Translation Files</Filter>
+    </QtTranslation>
+    <QtTranslation Include="batch_export-master\batch_convert\translations\locale_it.ts">
+      <Filter>Translation Files</Filter>
+    </QtTranslation>
   </ItemGroup>
 </Project>

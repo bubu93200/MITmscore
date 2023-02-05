@@ -63,6 +63,16 @@
     <ClCompile Include="MIT.original\MIT\MIT.c" />
     <ClCompile Include="MIT.original\MIT\stopMIT.c" />
     <None Include=".gitattributes" />
+    <None Include="batch_export-master\batch_convert\batch_convert.qml" />
+    <None Include="batch_export-master\batch_convert\NiceRadioButton.qml" />
+    <None Include="batch_export-master\batch_convert\SmallCheckBox.qml" />
+    <None Include="batch_export-master\batch_convert\translations\locale_de.qm" />
+    <None Include="batch_export-master\batch_convert\translations\locale_es.qm" />
+    <None Include="batch_export-master\batch_convert\translations\locale_fr.qm" />
+    <None Include="batch_export-master\batch_convert\translations\locale_it.qm" />
+    <None Include="batch_export-master\batch_convert\translations\lrelease.cmd" />
+    <None Include="batch_export-master\batch_convert\translations\lupdate.cmd" />
+    <None Include="batch_export-master\batch_convert\translations\translation_utility.sh" />
     <None Include="midi_batch\batch_convert.qml" />
     <None Include="midi_batch\NiceRadioButton.qml" />
     <None Include="midi_batch\SmallCheckBox.qml" />
@@ -106,6 +116,7 @@
     <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\zlib\zlib.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="batch_export-master\batch_convert\batch_convert_thumbnail.png" />
     <Image Include="MuseScoreRessources\ExplorerSolution.png" />
   </ItemGroup>
   <ItemGroup>
@@ -113,6 +124,12 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="LICENSE.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtTranslation Include="batch_export-master\batch_convert\translations\locale_de.ts" />
+    <QtTranslation Include="batch_export-master\batch_convert\translations\locale_es.ts" />
+    <QtTranslation Include="batch_export-master\batch_convert\translations\locale_fr.ts" />
+    <QtTranslation Include="batch_export-master\batch_convert\translations\locale_it.ts" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
