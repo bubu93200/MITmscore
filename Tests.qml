@@ -36,13 +36,13 @@ MuseScore { // Démarrage d'un plgin Musescore
     description: "This plugin do tests on Musescore features"
 
     pluginType: "dialog"
-    width: 200
-    height: 600
+    width: 300
+    height: 800
 
 
     Timer {
 			interval: 1000;
-			running:  true;
+			running:  false; //true; pour démarrer
 			repeat:   true;
 			onTriggered: {
                                   console.info(curScore.scoreName);
@@ -99,7 +99,22 @@ MuseScore { // Démarrage d'un plgin Musescore
             anchors.horizontalCenter: parent.horizontalCenter
             text: "Debugging\nCopyright (c) Bruno Donati\n"
         }
-
+        
+        Text { // Affichage d'un texte
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: "--title: "+curScore.title+"\n--lyricist: "+curScore.lyricist+"\n--composer: "+curScore.composer+"\n";                          
+        }
+        
+        Text { // Affichage d'un texte
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: "--arranger: "+curScore.metaTag("arranger")+"\n--workNumber: "+curScore.metaTag("workNumber")+"\n--movementNumber: "+curScore.metaTag("movementNumber")+"\n";                          
+        }
+        
+        Text { // Affichage d'un texte
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: "--movementTitle: "+curScore.metaTag("movementTitle")+"\n--creation year: "+Qt.formatDate(new Date(curScore.metaTag("creationDate")),"yyyy")+"\n";                          
+        }
+                
         Text {
             anchors.horizontalCenter: parent.horizontalCenter
             text: "Affichage de la piste: "; // + cursor.track(1); ne fonctionne pas
