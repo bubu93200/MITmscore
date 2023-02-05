@@ -100,6 +100,7 @@ MuseScore { // Démarrage d'un plgin Musescore
             text: "Debugging\nCopyright (c) Bruno Donati\n"
         }
         
+        // META INFO
         Text { // Affichage d'un texte
             anchors.horizontalCenter: parent.horizontalCenter
             text: "--title: "+curScore.title+"\n--lyricist: "+curScore.lyricist+"\n--composer: "+curScore.composer+"\n";                          
@@ -234,19 +235,3 @@ function applyToNotesInSelection(func) {
     }
 
 }
-
-
-/*
-Tests supplémentaires
-thisScore=score;
-isCurScore=true;
-// DEBUG META INFO
-                console.log("--title: "+thisScore.title);
-                console.log("--lyricist: "+thisScore.lyricist);
-                console.log("--composer: "+thisScore.composer);
-                console.log("--arranger: "+thisScore.metaTag("arranger"));
-                console.log("--workNumber: "+thisScore.metaTag("workNumber"));
-                console.log("--movementNumber: "+thisScore.metaTag("movementNumber"));
-                console.log("--movementTitle: "+thisScore.metaTag("movementTitle"));
-                console.log("--creation year: "+Qt.formatDate(new Date(thisScore.metaTag("creationDate")),"yyyy"));
-*/
