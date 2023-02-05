@@ -94,8 +94,29 @@
     <None Include="TestCurScore.qml">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="test.py" />
+    <None Include="Tests\test.py" />
     <None Include="TestExportMidi.qml">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Tests\AppelFonction.qml">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Tests\AppelFonctionPythonDansFichierQml.qml">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Tests\AppelFonctionPythonDansAutreFichier.qml">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Tests\AppelFonctionPythonDansAutreFichier2.qml">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Tests\AppelFonctionPythonDansAutreFichier3.qml">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Tests\AppelFonctionPythonDansAutreFichierExportMidi.qml">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Tests\PlusieursProgrammesTestADispatcher.qml">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>

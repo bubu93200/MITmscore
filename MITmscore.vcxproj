@@ -89,7 +89,14 @@
     <None Include="MuseScoreRessources\Jack\Jack_v1.9.10_64_setup.exe" />
     <None Include="MuseScoreRessources\readme.md" />
     <None Include="readme.md" />
-    <None Include="test.py" />
+    <None Include="Tests\AppelFonction.qml" />
+    <None Include="Tests\AppelFonctionPythonDansAutreFichier.qml" />
+    <None Include="Tests\AppelFonctionPythonDansAutreFichier2.qml" />
+    <None Include="Tests\AppelFonctionPythonDansAutreFichier3.qml" />
+    <None Include="Tests\AppelFonctionPythonDansAutreFichierExportMidi.qml" />
+    <None Include="Tests\AppelFonctionPythonDansFichierQml.qml" />
+    <None Include="Tests\PlusieursProgrammesTestADispatcher.qml" />
+    <None Include="Tests\test.py" />
     <None Include="TestCurScore.qml" />
     <None Include="TestExportMidi.qml" />
     <None Include="tests.qml" />
