@@ -91,6 +91,9 @@
     <None Include="batch_export-master\batch_convert\translations\lrelease.cmd" />
     <None Include="batch_export-master\batch_convert\translations\lupdate.cmd" />
     <None Include="batch_export-master\batch_convert\translations\translation_utility.sh" />
+    <None Include="TestCurScore.qml">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\lame\lame.h">

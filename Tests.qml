@@ -1,4 +1,4 @@
-﻿//=============================================================================
+//=============================================================================
 //  Midi Instrument Training plugin for MuseScore
 //  Copyright (C) 2014 Jean-Baptiste Delisle
 //  Based on colornotes plugin :
@@ -40,6 +40,38 @@ MuseScore { // Démarrage d'un plgin Musescore
     height: 600
 
 
+    Timer {
+			interval: 1000;
+			running:  true;
+			repeat:   true;
+			onTriggered: {
+                                  console.info(curScore.scoreName);
+				       console.info(curScore.path);
+
+
+                                    //thisScore=curScore;
+                                    //isCurScore=true;
+                                    // DEBUG META INFO
+                                    //console.log("--title: "+thisScore.title);
+                                    console.info("--title: "+curScore.title);
+                                    console.info("--lyricist: "+curScore.lyricist);
+                                    console.info("--composer: "+curScore.composer);
+                                    console.info("--arranger: "+curScore.metaTag("arranger"));
+                                    console.info("--workNumber: "+curScore.metaTag("workNumber"));
+                                    console.info("--movementNumber: "+curScore.metaTag("movementNumber"));
+                                    console.info("--movementTitle: "+curScore.metaTag("movementTitle"));
+                                    console.info("--creation year: "+Qt.formatDate(new Date(curScore.metaTag("creationDate")),"yyyy"));
+                
+                                 /*
+                                 if (oldScore != curScore) {
+					console.log("oldScore: " + oldScore);
+					console.log("curScore: " + curScore);
+					oldScore = curScore;
+                                 }
+				       */
+			}    
+    }
+    
     FileIO { // lecture ou écriture d'un fichier
         id: exampleFile
         source: "/tmp/example.txt"
@@ -187,3 +219,19 @@ function applyToNotesInSelection(func) {
     }
 
 }
+
+
+/*
+Tests supplémentaires
+thisScore=score;
+isCurScore=true;
+// DEBUG META INFO
+                console.log("--title: "+thisScore.title);
+                console.log("--lyricist: "+thisScore.lyricist);
+                console.log("--composer: "+thisScore.composer);
+                console.log("--arranger: "+thisScore.metaTag("arranger"));
+                console.log("--workNumber: "+thisScore.metaTag("workNumber"));
+                console.log("--movementNumber: "+thisScore.metaTag("movementNumber"));
+                console.log("--movementTitle: "+thisScore.metaTag("movementTitle"));
+                console.log("--creation year: "+Qt.formatDate(new Date(thisScore.metaTag("creationDate")),"yyyy"));
+*/

@@ -89,6 +89,7 @@
     <None Include="MuseScoreRessources\Jack\Jack_v1.9.10_64_setup.exe" />
     <None Include="MuseScoreRessources\readme.md" />
     <None Include="readme.md" />
+    <None Include="TestCurScore.qml" />
     <None Include="tests.qml" />
     <QtRcc Include="qml.qrc" />
     <None Include=".gitignore" />
