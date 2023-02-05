@@ -94,6 +94,10 @@
     <None Include="TestCurScore.qml">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="test.py" />
+    <None Include="TestExportMidi.qml">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\lame\lame.h">
