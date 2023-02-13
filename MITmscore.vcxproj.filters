@@ -38,6 +38,513 @@
     <ClCompile Include="MIT.original\MIT\stopMIT.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="libmscore\stafftypelist.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\accidental.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\ambitus.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\arpeggio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\articulation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\audio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\bagpembell.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\barline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\beam.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\bend.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\box.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\bracket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\bracketItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\breath.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\bsp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\bsymbol.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\changeMap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\check.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\chord.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\chordline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\chordlist.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\chordrest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\clef.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\cleflist.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\cmd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\connector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\drumset.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\dsp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\duration.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\durationtype.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\dynamic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\dynamichairpingroup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\easeInOut.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\edit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\element.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\elementgroup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\elementmap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\excerpt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\fermata.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\fifo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\figuredbass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\fingering.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\fret.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\glissando.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\groups.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\hairpin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\harmony.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\hook.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\icon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\imageStore.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\iname.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\instrchange.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\instrtemplate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\instrument.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\interval.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\joinMeasure.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\jump.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\key.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\keyfinder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\keylist.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\keysig.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\lasso.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\layout.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\layoutbreak.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\layoutlinear.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\ledgerline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\letring.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\line.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\location.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\lyrics.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\lyricsline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\marker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\mcursor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\measure.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\measurebase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\measurenumber.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\measurenumberbase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\midimapping.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\mmrestrange.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\mscore.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\mscoreview.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\navigate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\note.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\notedot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\noteentry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\noteevent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\noteline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\ossia.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\ottava.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\page.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\palmmute.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\part.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\paste.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\pedal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\pitch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\pitchspelling.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\pos.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\property.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\range.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\read114.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\read206.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\read302.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\realizedharmony.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\rehearsalmark.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\rendermidi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\repeat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\repeatlist.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\rest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\revisions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\score.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\scorediff.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\scoreElement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\scorefile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\scoreOrder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\segment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\segmentlist.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\select.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\shadownote.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\shape.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\sig.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\skyline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\slur.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\slurtie.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\spacer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\spanner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\spannermap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\splitMeasure.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\staff.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\stafflines.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\staffstate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\stafftext.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\stafftextbase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\stafftype.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\stafftypechange.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\stem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\stemslash.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\sticking.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\stringdata.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\style.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\sym.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\symbol.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\synthesizerstate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\system.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\systemdivider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\systemtext.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\tempo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\tempotext.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\text.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\textbase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\textedit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\textframe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\textline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\textlinebase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\tie.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\timesig.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\transpose.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\tremolo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\tremolobar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\trill.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\tuplet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\undo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\unrollrepeats.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\vibrato.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\volta.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\xmlreader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\xmlwriter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
@@ -119,6 +626,10 @@
     <None Include="Tests\PlusieursProgrammesTestADispatcher.qml">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="QML_import_plugin_install\exemple_import_libmscore.qml">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="libmscore\.gitignore" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\lame\lame.h">
@@ -178,6 +689,459 @@
     <ClInclude Include="glibc-master\posix\bits\unistd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="libmscore\accidental.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\ambitus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\arpeggio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\articulation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\audio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\bagpembell.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\barline.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\bend.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\box.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\bracket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\bracketItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\breath.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\bsp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\bsymbol.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\changeMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\chord.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\chordline.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\chordlist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\chordrest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\clef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\cleflist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\connector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\drumset.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\dsp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\duration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\durationtype.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\dynamichairpingroup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\easeInOut.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\element.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\elementgroup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\elementmap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\excerpt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\fermata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\fifo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\figuredbass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\fingering.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\fraction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\fret.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\glissando.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\groups.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\hairpin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\harmony.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\hook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\icon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\imageStore.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\iname.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\instrchange.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\instrtemplate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\instrument.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\interval.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\jump.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\key.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\keyfinder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\keylist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\keysig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\lasso.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\layout.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\ledgerline.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\letring.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\line.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\location.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\marker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\mcursor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\measure.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\measurebase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\measurenumber.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\measurenumberbase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\mmrestrange.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\mscoreview.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\musescoreCore.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\navigate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\notedot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\noteevent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\noteline.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\notifier.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\ossia.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\ottava.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\page.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\palmmute.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\part.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\pedal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\pitch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\pitchspelling.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\pitchvalue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\pos.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\property.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\range.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\read206.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\realizedharmony.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\rehearsalmark.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\rendermidi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\repeat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\repeatlist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\rest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\revisions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\scorediff.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\scoreElement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\scoreOrder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\segment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\segmentlist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\select.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\sequencer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\shadownote.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\shape.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\sig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\skyline.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\slur.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\slurtie.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\spacer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\spannermap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\spatium.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\staff.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\stafflines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\staffstate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\stafftext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\stafftextbase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\stafftype.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\stafftypechange.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\stafftypelist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\stem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\stemslash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\sticking.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\stringdata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\symbol.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\synthesizerstate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\system.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\systemdivider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\systemtext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\tempo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\tempotext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\text.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\textbase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\textedit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\textframe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\textline.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\textlinebase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\tie.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\tiemap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\timesig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\tremolo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\tremolobar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\trill.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\tuplet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\tupletmap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\undo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\vibrato.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\volta.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\xml.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="MuseScoreRessources\ExplorerSolution.png">
@@ -194,6 +1158,8 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="LICENSE.txt" />
+    <Text Include="QML_import_plugin_install\cmakefiles.txt" />
+    <Text Include="libmscore\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <QtTranslation Include="batch_export-master\batch_convert\translations\locale_de.ts">
@@ -208,5 +1174,43 @@
     <QtTranslation Include="batch_export-master\batch_convert\translations\locale_it.ts">
       <Filter>Translation Files</Filter>
     </QtTranslation>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="QML_import_plugin_install\libmscore_plugin_QML.cpp">
+      <Filter>Source Files</Filter>
+    </QtMoc>
+    <QtMoc Include="libmscore\beam.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="libmscore\dynamic.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="libmscore\layoutbreak.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="libmscore\lyrics.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="libmscore\mscore.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="libmscore\note.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="libmscore\score.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="libmscore\spanner.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="libmscore\style.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="libmscore\sym.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="libmscore\types.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
 </Project>
