@@ -470,6 +470,7 @@
     <QtUic Include="MIT.original\MIT\MainWindow.ui" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="libmscore\cmakefiles.txt" />
     <Text Include="libmscore\CMakeLists.txt" />
     <Text Include="LICENSE.txt" />
     <Text Include="QML_import_plugin_install\cmakefiles.txt" />
