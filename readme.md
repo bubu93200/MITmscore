@@ -17,6 +17,12 @@ Some settings can be changed in the plugin interface (you can also permanently c
 
 Install GNU Library to have posix libraries.
 
+# API Musescore 
+Handbook : https://musescore.org/en/handbook/developers-handbook  
+Doc API 3.0 : https://musescore.org/en/handbook/developers-handbook/plugins-3x   
+API Documentation Doxygen : https://musescore.github.io/MuseScore_PluginAPI_Docs/plugins/html/index.html   
+Doc API 4.0 : https://musescore.org/en/node/337468   
+
 
 # Progress 
 All is to do   
