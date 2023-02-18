@@ -11,6 +11,7 @@ https://www.youtube.com/watch?v=w732EXqmfZU
 # Script Python 
 Script is so simple.  
 
+```python
 """
  Python MIDI Graphic Running Program
  By Wilson Chao, May 2021.
@@ -52,3 +53,4 @@ while done == False:
         note_list_off[i][1] += 1   
     clock.tick(200)
 pygame.quit ()
+```
