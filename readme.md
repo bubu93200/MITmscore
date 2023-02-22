@@ -20,7 +20,7 @@ Install GNU Library to have posix libraries.
 # API Musescore 
 Handbook : https://musescore.org/en/handbook/developers-handbook  
 Doc API 3.0 : https://musescore.org/en/handbook/developers-handbook/plugins-3x   
-API Documentation Doxygen : https://musescore.github.io/MuseScore_PluginAPI_Docs/plugins/html/index.html   
+API 3.5 Documentation Doxygen : https://musescore.github.io/MuseScore_PluginAPI_Docs/plugins/html/index.html   
 Doc API 4.0 : https://musescore.org/en/node/337468   
 
 
