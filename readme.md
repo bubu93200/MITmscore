@@ -32,17 +32,18 @@ At this moment, I just collected libraries which can be used on this project
   - GNU  
   - alsa : Advanced Linux Sound Architecture (ALSA) project  
   - Score 3.6.2 and process to compile it in debug mode with visual studio (doesnt work with visual code)  
+  - Jack  
   
 - [ ] TODO : Transpose to windows  
 - [ ] TODO : All  
 
 # Way to progress   
 Musescore are written in Qt so I propose to write musescore interface in Qt.  
-Qt can send programs so I propose to lmaunch programs in python  
+Qt can send programs so I propose to write launched programs in python  
 Avantages to use python:  
 - code simplier   
 - a lot of libraries (and usable MIDI libraries) : mido      
-- python works on windows, linux, macos so program in python is usable on these 3 systems without modifications  
+- python works on windows, linux, MacOS so program in python is usable on these 3 systems without modifications  
 - C or C++ code can be embedded in python script if necessary to accelerate code execution   
 
 # Program architecture 
