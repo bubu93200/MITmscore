@@ -59,6 +59,7 @@ The "instrument" term is used for piano or keyboard
 ## Setting File    
 - file is read at each launch. 
 - If not exist, create a setting file with default options   
+- at each end of program, overwrite this setting file with current settings  
 ## On musescore sheet : (written in Qt)  
   - create L and R symbols (and other if necessary) which ca nbe attached on each note   
   - colorize in red or green notes attached to L or R symbols (colors can be modified)  
