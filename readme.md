@@ -55,6 +55,19 @@ Avantages to use python:
 # Program architecture 
 This program can be use for all midi instrument be I will test it on a piano. 
 The "instrument" term is used for piano or keyboard  
+
+## Plugin Panel
+I explain here fonctionnalities / buttons / checkboxes / text / entries to add on panel   
+It's organized in 3 tabs : training, setting and help. 
+
+### training tab  
+- Title : "MIT" meaning Musescore Instrument Training   
+- button "Start" => start training. Waiting for playing midi instrument  
+
+### Setting tab   
+- checkbox : metronome or not  
+- entry : number => number of mesures with metronome before score playing  
+### Help tab  
  
 ## Setting File    
 - file is read at each launch. 
@@ -62,7 +75,7 @@ The "instrument" term is used for piano or keyboard
 - at each end of program, overwrite this setting file with current settings  
 ## On musescore sheet : (written in Qt)  
   - create L and R symbols (and other if necessary) which ca nbe attached on each note   
-  - colorize in red or green notes attached to L or R symbols (colors can be modified)  
+  - colorize in purple or cyan notes attached to L or R symbols (colors can be modified)  
 ## Qt sheet or panel to interface to program (written in Qt)   
   - button to select pourcentage of velocity (to play slowly for training)  
   - checkbox to select Left and/or Right fingering to play
