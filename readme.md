@@ -1,4 +1,10 @@
-# Original Plugin running on Musescore2.0 with linux 
+# Target
+The aim of this github is to write a plugin for Musecore 3 and 4.  
+This plugin have to help person for learning or training piano.  
+So we have to play a score and plugin shows mistakes in playing and can analyse playing meaning.   
+
+
+# Original Plugin running on Musescore 2.0 with linux 
 This (probably linux-only) plugin (for MuseScore 2.0) takes input from a MIDI instrument and colors notes while you play from blue (note and rhythm are perfect) to red (bad note or bad rhythm).
 The score must have been exported in MIDI format before.
 The plugin needs aplaymidi and aconnect (alsa-utils package in ubuntu), as well as qsynth (fluid synth) in order to ear the instrument.
