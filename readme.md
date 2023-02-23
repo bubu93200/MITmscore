@@ -1,3 +1,4 @@
+# Original Plugin running on Musescore2.0 with linux 
 This (probably linux-only) plugin (for MuseScore 2.0) takes input from a MIDI instrument and colors notes while you play from blue (note and rhythm are perfect) to red (bad note or bad rhythm).
 The score must have been exported in MIDI format before.
 The plugin needs aplaymidi and aconnect (alsa-utils package in ubuntu), as well as qsynth (fluid synth) in order to ear the instrument.
