@@ -1,0 +1,80 @@
+bruno.donati@hotmail.fr
+qml working with import
+
+QML (Qt Meta-Object Language) is a declarative language used for creating user interface elements in Qt, a popular cross-platform application development framework. "Import" is a key element in QML which allows you to access and use modules, or libraries, provided by Qt or third-party developers.
+
+Here's how you can use an import in QML:
+
+php
+
+import <Module> <Version>
+
+    Module is the name of the module you want to import. For example, QtQuick or QtGraphicalEffects.
+    Version is the version of the module you want to use. For example, 2.0.
+
+For example, to import the QtQuick module version 2.0 in your QML file, you would write:
+
+python
+
+import QtQuick 2.0
+
+Once you have imported a module, you can use its components and features in your QML code.
+bruno.donati@hotmail.fr
+modify qml import path
+
+To modify the import path in QML, you can use the QQmlEngine class provided by the Qt framework. The QQmlEngine class allows you to specify additional directories to search for QML modules by adding them to the import path using the addImportPath method.
+
+Here's an example of how you can modify the import path in a C++ application using Qt:
+
+c
+
+#include <QGuiApplication>
+#include <QQmlEngine>
+#include <QQmlApplicationEngine>
+
+int main(int argc, char *argv[])
+{
+    QGuiApplication app(argc, argv);
+
+    QQmlEngine engine;
+    engine.addImportPath("<path/to/custom/imports>");
+
+    QQmlApplicationEngine qmlEngine;
+    qmlEngine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+
+    return app.exec();
+}
+
+In the above example, the import path is modified by calling addImportPath and passing in the desired path. The load method of the QQmlApplicationEngine class is then used to load the main QML file, which can now access modules from the added import path.
+
+Note that multiple import paths can be added using multiple calls to addImportPath. The paths are searched in the order in which they were added.
+bruno.donati@hotmail.fr
+in QML modify import paths
+
+In QML, you can modify the import paths by using the QQmlEngine class, which is the engine responsible for running QML code. You can use the addImportPath method of the QQmlEngine class to add additional directories to the import path.
+
+Here's an example of how you can modify the import paths in a C++ application using Qt:
+
+c
+
+#include <QGuiApplication>
+#include <QQmlEngine>
+#include <QQmlApplicationEngine>
+
+int main(int argc, char *argv[])
+{
+    QGuiApplication app(argc, argv);
+
+    QQmlEngine engine;
+    engine.addImportPath("<path/to/custom/imports>");
+
+    QQmlApplicationEngine qmlEngine;
+    qmlEngine.setEngine(&engine);
+    qmlEngine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+
+    return app.exec();
+}
+
+In the above example, the QQmlEngine object is created and its import path is modified by calling addImportPath and passing in the desired path. The modified engine is then set on the QQmlApplicationEngine object using the setEngine method. Finally, the main QML file is loaded using the load method, which now has access to modules from the added import path.
+
+Note that multiple import paths can be added using multiple calls to addImportPath. The paths are searched in the order in which they were added.
