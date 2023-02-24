@@ -545,6 +545,9 @@
     <ClCompile Include="libmscore\xmlwriter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CMakeExamples\CMakeExample01\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
@@ -1161,6 +1164,8 @@
     <Text Include="QML_import_plugin_install\cmakefiles.txt" />
     <Text Include="libmscore\CMakeLists.txt" />
     <Text Include="libmscore\cmakefiles.txt" />
+    <Text Include="CMakeExamples\CMakeExample01\CmakeLists.txt" />
+    <Text Include="CMakeExamples\CMakeExample01\src\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <QtTranslation Include="batch_export-master\batch_convert\translations\locale_de.ts">

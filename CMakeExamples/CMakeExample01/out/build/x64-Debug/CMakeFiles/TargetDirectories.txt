@@ -1,0 +1,11 @@
+C:/Users/bubu/source/repos/MITmscore/CMakeExamples/CMakeExample01/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/bubu/source/repos/MITmscore/CMakeExamples/CMakeExample01/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
+C:/Users/bubu/source/repos/MITmscore/CMakeExamples/CMakeExample01/out/build/x64-Debug/CMakeFiles/list_install_components.dir
+C:/Users/bubu/source/repos/MITmscore/CMakeExamples/CMakeExample01/out/build/x64-Debug/CMakeFiles/install.dir
+C:/Users/bubu/source/repos/MITmscore/CMakeExamples/CMakeExample01/out/build/x64-Debug/CMakeFiles/install/local.dir
+C:/Users/bubu/source/repos/MITmscore/CMakeExamples/CMakeExample01/out/build/x64-Debug/src/CMakeFiles/mainDemo.dir
+C:/Users/bubu/source/repos/MITmscore/CMakeExamples/CMakeExample01/out/build/x64-Debug/src/CMakeFiles/edit_cache.dir
+C:/Users/bubu/source/repos/MITmscore/CMakeExamples/CMakeExample01/out/build/x64-Debug/src/CMakeFiles/rebuild_cache.dir
+C:/Users/bubu/source/repos/MITmscore/CMakeExamples/CMakeExample01/out/build/x64-Debug/src/CMakeFiles/list_install_components.dir
+C:/Users/bubu/source/repos/MITmscore/CMakeExamples/CMakeExample01/out/build/x64-Debug/src/CMakeFiles/install.dir
+C:/Users/bubu/source/repos/MITmscore/CMakeExamples/CMakeExample01/out/build/x64-Debug/src/CMakeFiles/install/local.dir

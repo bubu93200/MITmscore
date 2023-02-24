@@ -59,6 +59,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CMakeExamples\CMakeExample01\src\main.cpp" />
     <ClCompile Include="libmscore\accidental.cpp" />
     <ClCompile Include="libmscore\ambitus.cpp" />
     <ClCompile Include="libmscore\arpeggio.cpp" />
@@ -470,6 +471,8 @@
     <QtUic Include="MIT.original\MIT\MainWindow.ui" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="CMakeExamples\CMakeExample01\CmakeLists.txt" />
+    <Text Include="CMakeExamples\CMakeExample01\src\CMakeLists.txt" />
     <Text Include="libmscore\cmakefiles.txt" />
     <Text Include="libmscore\CMakeLists.txt" />
     <Text Include="LICENSE.txt" />
