@@ -1,0 +1,621 @@
+write code of cmakefiles to create a qt library 5.15.2 wioth the file below : #=======
+#  MuseScore
+#  Music Composition & Notation
+#========
+
+# MSVC does not depend on copying all.h to the binary directory
+if (NOT MSVC)
+   add_custom_command(
+      OUTPUT ${PROJECT_BINARY_DIR}/all.h
+      COMMAND ${CMAKE_COMMAND}
+      ARGS -E copy ${PROJECT_SOURCE_DIR}/all.h ${PROJECT_BINARY_DIR}/all.h
+      DEPENDS ${PROJECT_SOURCE_DIR}/all.h
+      WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
+      )
+endif (NOT MSVC)
+
+if (APPLE)
+        file(GLOB_RECURSE INCS "*.h")
+else (APPLE)
+        set(INCS "")
+endif (APPLE)
+
+if (NOT MSVC)
+   set(_all_h_file "${PROJECT_BINARY_DIR}/all.h")
+else (NOT MSVC)
+   set(_all_h_file "${PROJECT_SOURCE_DIR}/all.h")
+endif (NOT MSVC)
+
+include_directories(
+      ${PROJECT_SOURCE_DIR}/thirdparty/dtl
+      ${PROJECT_SOURCE_DIR}/global
+      )
+
+add_library (
+      libmscore STATIC
+      ${_all_h_file}
+      ${INCS}
+
+      types.h accidental.h ambitus.h arpeggio.h
+
+      segmentlist.cpp fingering.cpp accidental.cpp arpeggio.cpp
+      )
+
+if (AVSOMR)
+    target_link_libraries(libmscore avsomr)
+endif (AVSOMR)
+
+##
+## Code coverage. Only affects DEBUG builds.
+##
+
+set(COVERAGE_OPTIONS "")
+if (NOT APPLE AND NOT MINGW AND NOT MSVC AND CMAKE_BUILD_TYPE MATCHES "DEBUG")
+   if (COVERAGE)
+      set(COVERAGE_OPTIONS "-O0 --coverage")
+      set(CMAKE_CXX_OUTPUT_EXTENSION_REPLACE 1)
+      target_link_libraries(libmscore gcov)
+   endif (COVERAGE)
+endif (NOT APPLE AND NOT MINGW AND NOT MSVC AND CMAKE_BUILD_TYPE MATCHES "DEBUG")
+
+
+
+if (NOT MSVC)
+   set_target_properties (
+      libmscore
+      PROPERTIES
+         COMPILE_FLAGS "-g ${PCH_INCLUDE} -Wall -Wextra -Winvalid-pch -Woverloaded-virtual ${COVERAGE_OPTIONS}"
+      )
+else (NOT MSVC)
+   set_target_properties (
+      libmscore
+      PROPERTIES
+         COMPILE_FLAGS "${PCH_INCLUDE}"
+      )
+endif (NOT MSVC)
+
+xcode_pch(libmscore all)
+
+# Use MSVC pre-compiled headers
+vstudio_pch( libmscore )
+
+# MSVC does not depend on mops1 & mops2 for PCH
+if (NOT MSVC)
+   ADD_DEPENDENCIES(libmscore mops1)
+   ADD_DEPENDENCIES(libmscore mops2)
+endif (NOT MSVC)
+
+This is a CMakeLists.txt file for creating a static library "libmscore" for the MuseScore project. The code is written to handle different build environments such as MSVC, Apple, Mingw, and Linux.
+
+Here is an updated version of the code to build a Qt library using version 5.15.2:
+
+bash
+
+#  MuseScore
+#  Music Composition & Notation
+#========
+
+# Use Qt 5.15.2
+find_package(Qt5 COMPONENTS Core REQUIRED)
+
+# MSVC does not depend on copying all.h to the binary directory
+if (NOT MSVC)
+   add_custom_command(
+      OUTPUT ${PROJECT_BINARY_DIR}/all.h
+      COMMAND ${CMAKE_COMMAND}
+      ARGS -E copy ${PROJECT_SOURCE_DIR}/all.h ${PROJECT_BINARY_DIR}/all.h
+      DEPENDS ${PROJECT_SOURCE_DIR}/all.h
+      WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
+      )
+endif (NOT MSVC)
+
+if (APPLE)
+        file(GLOB_RECURSE INCS "*.h")
+else (APPLE)
+        set(INCS "")
+endif (APPLE)
+
+if (NOT MSVC)
+   set(_all_h_file "${PROJECT_BINARY_DIR}/all.h")
+else (NOT MSVC)
+   set(_all_h_file "${PROJECT_SOURCE_DIR}/all.h")
+endif (NOT MSVC)
+
+include_directories(
+      ${PROJECT_SOURCE_DIR}/thirdparty/dtl
+      ${PROJECT_SOURCE_DIR}/global
+      )
+
+add_library (
+      libmscore STATIC
+      ${_all_h_file}
+      ${INCS}
+
+      types.h accidental.h ambitus.h arpeggio.h
+
+      segmentlist.cpp fingering.cpp accidental.cpp arpeggio.cpp
+      )
+
+# Link to Qt5 libraries
+target_link_libraries(libmscore Qt5::Core)
+
+if (AVSOMR)
+    target_link_libraries(libmscore avsomr)
+endif (AVSOMR)
+
+##
+## Code coverage. Only affects DEBUG builds.
+##
+
+set(COVERAGE_OPTIONS "")
+if (NOT APPLE AND NOT MINGW AND NOT MSVC AND CMAKE_BUILD_TYPE MATCHES "DEBUG")
+   if (COVERAGE)
+      set(COVERAGE_OPTIONS "-O0 --coverage")
+      set(CMAKE_CXX_OUTPUT_EXTENSION_REPLACE 1)
+      target_link_libraries(libmscore gcov)
+   endif (COVERAGE)
+endif (NOT APPLE AND NOT MINGW AND NOT MSVC AND CMAKE_BUILD_TYPE MATCHES "DEBUG")
+
+
+
+if (NOT MSVC)
+   set_target_properties (
+      libmscore
+      PROPERTIES
+         COMPILE_FLAGS "-g ${PCH_INCLUDE} -Wall -Wextra -Winvalid-pch -Woverloaded-virtual ${
+
+bruno.donati@hotmail.fr
+terminate this code
+
+This code is a CMake file for building a static library "libmscore" using the Qt library. To terminate this code, simply add the following line at the end:
+
+python
+
+# Terminate the code
+return()
+
+bruno.donati@hotmail.fr
+finish cmakefiles above
+
+The code you posted is a CMake script that builds a static library "libmscore". To complete this script, you may want to add the following items:
+
+    Specifying the minimum required version of CMake:
+
+scss
+
+cmake_minimum_required(VERSION 3.10)
+
+    Setting up the project name:
+
+scss
+
+project(MuseScore)
+
+    Adding the Qt library as a dependency:
+
+scss
+
+find_package(Qt5 REQUIRED COMPONENTS Core)
+target_link_libraries(libmscore Qt5::Core)
+
+    Adding the
+
+bruno.donati@hotmail.fr
+finish the code below : #  MuseScore
+#  Music Composition & Notation
+#========
+
+# Use Qt 5.15.2
+find_package(Qt5 COMPONENTS Core REQUIRED)
+
+# MSVC does not depend on copying all.h to the binary directory
+if (NOT MSVC)
+   add_custom_command(
+      OUTPUT ${PROJECT_BINARY_DIR}/all.h
+      COMMAND ${CMAKE_COMMAND}
+      ARGS -E copy ${PROJECT_SOURCE_DIR}/all.h ${PROJECT_BINARY_DIR}/all.h
+      DEPENDS ${PROJECT_SOURCE_DIR}/all.h
+      WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
+      )
+endif (NOT MSVC)
+
+if (APPLE)
+        file(GLOB_RECURSE INCS "*.h")
+else (APPLE)
+        set(INCS "")
+endif (APPLE)
+
+if (NOT MSVC)
+   set(_all_h_file "${PROJECT_BINARY_DIR}/all.h")
+else (NOT MSVC)
+   set(_all_h_file "${PROJECT_SOURCE_DIR}/all.h")
+endif (NOT MSVC)
+
+include_directories(
+      ${PROJECT_SOURCE_DIR}/thirdparty/dtl
+      ${PROJECT_SOURCE_DIR}/global
+      )
+
+add_library (
+      libmscore STATIC
+      ${_all_h_file}
+      ${INCS}
+
+      types.h accidental.h ambitus.h arpeggio.h
+
+      segmentlist.cpp fingering.cpp accidental.cpp arpeggio.cpp
+      )
+
+# Link to Qt5 libraries
+target_link_libraries(libmscore Qt5::Core)
+
+if (AVSOMR)
+    target_link_libraries(libmscore avsomr)
+endif (AVSOMR)
+
+##
+## Code coverage. Only affects DEBUG builds.
+##
+
+set(COVERAGE_OPTIONS "")
+if (NOT APPLE AND NOT MINGW AND NOT MSVC AND CMAKE_BUILD_TYPE MATCHES "DEBUG")
+   if (COVERAGE)
+      set(COVERAGE_OPTIONS "-O0 --coverage")
+      set(CMAKE_CXX_OUTPUT_EXTENSION_REPLACE 1)
+      target_link_libraries(libmscore gcov)
+   endif (COVERAGE)
+endif (NOT APPLE AND NOT MINGW AND NOT MSVC AND CMAKE_BUILD_TYPE MATCHES "DEBUG")
+
+
+
+if (NOT MSVC)
+   set_target_properties (
+      libmscore
+      PROPERTIES
+         COMPILE_FLAGS "-g ${PCH_INCLUDE} -Wall -Wextra -Winvalid-pch -Woverloaded-virtual ${
+
+The code you posted is a CMake file for building the libmscore library for the MuseScore project. This code does the following tasks:
+
+    Finds the required Qt5 component (Core)
+    Copies all.h to the binary directory (only for non-MSVC systems)
+    Includes necessary directories in the include path
+    Adds the library (libmscore) as a static library, compiled from the files listed
+    Links the library to the Qt5 Core component
+    Adds code coverage support (only for DEBUG builds and non-Apple, non-Mingw, non-MSVC systems)
+    Sets some target properties for the libmscore library.
+
+It appears that this code is a part of a larger project and should be used in conjunction with other CMake files for the complete build process.
+bruno.donati@hotmail.fr
+write code of cmakefiles to create a qt library 5.15.2 with the file below. use only MSCV : #=======
+#  MuseScore
+#  Music Composition & Notation
+#========
+
+# MSVC does not depend on copying all.h to the binary directory
+if (NOT MSVC)
+   add_custom_command(
+      OUTPUT ${PROJECT_BINARY_DIR}/all.h
+      COMMAND ${CMAKE_COMMAND}
+      ARGS -E copy ${PROJECT_SOURCE_DIR}/all.h ${PROJECT_BINARY_DIR}/all.h
+      DEPENDS ${PROJECT_SOURCE_DIR}/all.h
+      WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
+      )
+endif (NOT MSVC)
+
+if (APPLE)
+        file(GLOB_RECURSE INCS "*.h")
+else (APPLE)
+        set(INCS "")
+endif (APPLE)
+
+if (NOT MSVC)
+   set(_all_h_file "${PROJECT_BINARY_DIR}/all.h")
+else (NOT MSVC)
+   set(_all_h_file "${PROJECT_SOURCE_DIR}/all.h")
+endif (NOT MSVC)
+
+include_directories(
+      ${PROJECT_SOURCE_DIR}/thirdparty/dtl
+      ${PROJECT_SOURCE_DIR}/global
+      )
+
+add_library (
+      libmscore STATIC
+      ${_all_h_file}
+      ${INCS}
+
+      types.h accidental.h ambitus.h arpeggio.h
+
+      segmentlist.cpp fingering.cpp accidental.cpp arpeggio.cpp
+      )
+
+if (AVSOMR)
+    target_link_libraries(libmscore avsomr)
+endif (AVSOMR)
+
+##
+## Code coverage. Only affects DEBUG builds.
+##
+
+set(COVERAGE_OPTIONS "")
+if (NOT APPLE AND NOT MINGW AND NOT MSVC AND CMAKE_BUILD_TYPE MATCHES "DEBUG")
+   if (COVERAGE)
+      set(COVERAGE_OPTIONS "-O0 --coverage")
+      set(CMAKE_CXX_OUTPUT_EXTENSION_REPLACE 1)
+      target_link_libraries(libmscore gcov)
+   endif (COVERAGE)
+endif (NOT APPLE AND NOT MINGW AND NOT MSVC AND CMAKE_BUILD_TYPE MATCHES "DEBUG")
+
+
+
+if (NOT MSVC)
+   set_target_properties (
+      libmscore
+      PROPERTIES
+         COMPILE_FLAGS "-g ${PCH_INCLUDE} -Wall -Wextra -Winvalid-pch -Woverloaded-virtual ${COVERAGE_OPTIONS}"
+      )
+else (NOT MSVC)
+   set_target_properties (
+      libmscore
+      PROPERTIES
+         COMPILE_FLAGS "${PCH_INCLUDE}"
+      )
+endif (NOT MSVC)
+
+xcode_pch(libmscore all)
+
+# Use MSVC pre-compiled headers
+vstudio_pch( libmscore )
+
+# MSVC does not depend on mops1 & mops2 for PCH
+if (NOT MSVC)
+   ADD_DEPENDENCIES(libmscore mops1)
+   ADD_DEPENDENCIES(libmscore mops2)
+endif (NOT MSVC)
+
+Here is the CMakeLists.txt file for creating the Qt library 5.15.2 using MSVC:
+
+bash
+
+cmake_minimum_required(VERSION 3.16)
+
+# Set the project name and version
+project(MuseScore VERSION 5.15.2)
+
+# Check if MSVC is used
+if (MSVC)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP")
+endif (MSVC)
+
+# Include directories
+include_directories(
+      ${PROJECT_SOURCE_DIR}/thirdparty/dtl
+      ${PROJECT_SOURCE_DIR}/global
+      )
+
+# Add the library
+add_library (
+      libmscore STATIC
+
+      types.h accidental.h ambitus.h arpeggio.h
+
+      segmentlist.cpp fingering.cpp accidental.cpp arpeggio.cpp
+      )
+
+if (AVSOMR)
+    target_link_libraries(libmscore avsomr)
+endif (AVSOMR)
+
+# Set the target properties for MSVC
+set_target_properties (
+      libmscore
+      PROPERTIES
+         COMPILE_FLAGS "${PCH_INCLUDE}"
+      )
+
+bruno.donati@hotmail.fr
+explain which library and on with repertory is created library with cmakefiles below: #=============================================================================
+#  MuseScore
+#  Music Composition & Notation
+#
+#  Copyright (C) 2016 Werner Schweer
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License version 2
+#  as published by the Free Software Foundation and appearing in
+#  the file LICENSE.GPL
+#=============================================================================
+
+# MSVC does not depend on copying all.h to the binary directory
+if (NOT MSVC)
+   add_custom_command(
+      OUTPUT ${PROJECT_BINARY_DIR}/all.h
+      COMMAND ${CMAKE_COMMAND}
+      ARGS -E copy ${PROJECT_SOURCE_DIR}/all.h ${PROJECT_BINARY_DIR}/all.h
+      DEPENDS ${PROJECT_SOURCE_DIR}/all.h
+      WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
+      )
+endif (NOT MSVC)
+
+if (APPLE)
+        file(GLOB_RECURSE INCS "*.h")
+else (APPLE)
+        set(INCS "")
+endif (APPLE)
+
+if (NOT MSVC)
+   set(_all_h_file "${PROJECT_BINARY_DIR}/all.h")
+else (NOT MSVC)
+   set(_all_h_file "${PROJECT_SOURCE_DIR}/all.h")
+endif (NOT MSVC)
+
+include_directories(
+      ${PROJECT_SOURCE_DIR}/thirdparty/dtl
+      ${PROJECT_SOURCE_DIR}/global
+      )
+
+add_library (
+      libmscore STATIC
+      ${_all_h_file}
+      ${INCS}
+
+      types.h accidental.h ambitus.h arpeggio.h articulation.h audio.h bagpembell.h barline.h beam.h bend.h
+      box.h bracket.h bracketItem.h breath.h bsp.h bsymbol.h changeMap.h chord.h chordline.h chordlist.h chordrest.h clef.h
+      cleflist.h connector.h drumset.h dsp.h duration.h durationtype.h dynamic.h easeInOut.h element.h
+      elementmap.h excerpt.h fermata.h fifo.h figuredbass.h fingering.h fraction.h fret.h glissando.h groups.h hairpin.h
+      harmony.h hook.h icon.h image.h imageStore.h iname.h input.h instrchange.h instrtemplate.h instrument.h interval.h
+      jump.h key.h keylist.h keysig.h lasso.h layout.h layoutbreak.h ledgerline.h letring.h line.h location.h
+      lyrics.h marker.h mcursor.h measure.h measurebase.h mscore.h mscoreview.h musescoreCore.h navigate.h note.h notedot.h
+      noteevent.h noteline.h ossia.h ottava.h page.h palmmute.h part.h pedal.h pitch.h pitchspelling.h pitchvalue.h
+      pos.h property.h range.h read206.h realizedharmony.h rehearsalmark.h repeat.h repeatlist.h rest.h revisions.h score.h scoreOrder.h scoreElement.h segment.h
+      segmentlist.h select.h sequencer.h shadownote.h shape.h sig.h slur.h slurtie.h spacer.h spanner.h spannermap.h spatium.h
+      staff.h stafflines.h staffstate.h stafftext.h stafftextbase.h stafftype.h stafftypechange.h stafftypelist.h stem.h
+      stemslash.h stringdata.h style.h sym.h symbol.h synthesizerstate.h system.h systemdivider.h systemtext.h tempo.h
+      tempotext.h text.h mmrestrange.h measurenumberbase.h measurenumber.h textbase.h textedit.h textframe.h textline.h textlinebase.h tie.h tiemap.h timesig.h
+      tremolo.h tremolobar.h trill.h tuplet.h tupletmap.h types.h undo.h utils.h vibrato.h volta.h xml.h
+
+      segmentlist.cpp fingering.cpp accidental.cpp arpeggio.cpp
+      fermata.cpp articulation.cpp barline.cpp beam.cpp bend.cpp box.cpp
+      bracket.cpp breath.cpp bsp.cpp changeMap.cpp chord.cpp chordline.cpp
+      chordlist.cpp chordrest.cpp clef.cpp cleflist.cpp
+      drumset.cpp durationtype.cpp dynamic.cpp dynamichairpingroup.cpp edit.cpp noteentry.cpp
+      easeInOut.cpp element.cpp elementgroup.cpp excerpt.cpp
+      fifo.cpp fret.cpp glissando.cpp hairpin.cpp
+      harmony.cpp hook.cpp image.cpp iname.cpp instrchange.cpp
+      instrtemplate.cpp instrument.cpp interval.cpp
+      key.cpp keysig.cpp lasso.cpp
+      layoutbreak.cpp layout.cpp line.cpp lyrics.cpp measurebase.cpp
+      measure.cpp navigate.cpp note.cpp noteevent.cpp ottava.cpp
+      page.cpp part.cpp pedal.cpp letring.cpp vibrato.cpp palmmute.cpp pitch.cpp pitchspelling.cpp
+      rendermidi.cpp repeat.cpp repeatlist.cpp rest.cpp
+      score.cpp segment.cpp select.cpp shadownote.cpp slur.cpp tie.cpp slurtie.cpp
+      spacer.cpp spanner.cpp staff.cpp staffstate.cpp
+      stafftextbase.cpp stafftext.cpp systemtext.cpp stafftype.cpp stem.cpp style.cpp symbol.cpp
+      sym.cpp system.cpp stringdata.cpp tempotext.cpp text.cpp
+      mmrestrange.cpp measurenumber.cpp measurenumberbase.cpp textbase.cpp textedit.cpp
+      textframe.cpp textline.cpp textlinebase.cpp timesig.cpp
+      tremolobar.cpp tremolo.cpp trill.cpp tuplet.cpp
+      utils.cpp volta.cpp xmlreader.cpp xmlwriter.cpp mscore.cpp
+      undo.cpp cmd.cpp scorefile.cpp revisions.cpp
+      check.cpp input.cpp icon.cpp ossia.cpp
+      tempo.cpp sig.cpp pos.cpp duration.cpp
+      figuredbass.cpp rehearsalmark.cpp transpose.cpp
+      property.cpp range.cpp elementmap.cpp notedot.cpp imageStore.cpp
+      audio.cpp splitMeasure.cpp joinMeasure.cpp
+      paste.cpp
+      bsymbol.cpp marker.cpp jump.cpp stemslash.cpp ledgerline.cpp
+      synthesizerstate.cpp mcursor.cpp groups.cpp mscoreview.cpp
+      noteline.cpp spannermap.cpp
+      bagpembell.cpp ambitus.cpp keylist.cpp scoreElement.cpp scoreOrder.cpp
+      shape.cpp systemdivider.cpp midimapping.cpp stafflines.cpp
+      sticking.cpp
+      read114.cpp
+      read206.cpp
+      read302.cpp realizedharmony.cpp stafftypelist.cpp stafftypechange.cpp
+      bracketItem.cpp
+      lyricsline.cpp
+      layoutlinear.cpp
+      connector.cpp location.cpp skyline.cpp
+      scorediff.cpp
+      unrollrepeats.cpp
+      )
+
+if (AVSOMR)
+    target_link_libraries(libmscore avsomr)
+endif (AVSOMR)
+
+##
+## Code coverage. Only affects DEBUG builds.
+##
+
+set(COVERAGE_OPTIONS "")
+if (NOT APPLE AND NOT MINGW AND NOT MSVC AND CMAKE_BUILD_TYPE MATCHES "DEBUG")
+   if (COVERAGE)
+      set(COVERAGE_OPTIONS "-O0 --coverage")
+      set(CMAKE_CXX_OUTPUT_EXTENSION_REPLACE 1)
+      target_link_libraries(libmscore gcov)
+   endif (COVERAGE)
+endif (NOT APPLE AND NOT MINGW AND NOT MSVC AND CMAKE_BUILD_TYPE MATCHES "DEBUG")
+
+
+
+if (NOT MSVC)
+   set_target_properties (
+      libmscore
+      PROPERTIES
+         COMPILE_FLAGS "-g ${PCH_INCLUDE} -Wall -Wextra -Winvalid-pch -Woverloaded-virtual ${COVERAGE_OPTIONS}"
+      )
+else (NOT MSVC)
+   set_target_properties (
+      libmscore
+      PROPERTIES
+         COMPILE_FLAGS "${PCH_INCLUDE}"
+      )
+endif (NOT MSVC)
+
+xcode_pch(libmscore all)
+
+# Use MSVC pre-compiled headers
+vstudio_pch( libmscore )
+
+# MSVC does not depend on mops1 & mops2 for PCH
+if (NOT MSVC)
+   ADD_DEPENDENCIES(libmscore mops1)
+   ADD_DEPENDENCIES(libmscore mops2)
+endif (NOT MSVC)
+
+This code is part of a CMakeLists.txt file for a library named "MuseScore". It's a music composition and notation software.
+
+The library is built using the "add_library" CMake function and is named "libmscore". The library is a static library, meaning that its compiled object code is combined with the final executable binary at link time.
+
+The library includes header files as well as C++ source code files, as specified in the lists of file names after the "libmscore STATIC" argument. The header files are either specified as individual files or in a list of all header files in the current directory if the platform is Apple.
+
+The "include_directories" command specifies two directories to be added to the include path. This allows the code in the library to access headers from those directories.
+
+A custom command is added for copying the file "all.h" from the source directory to the binary directory. However, this command is only executed if the platform is not Microsoft Visual C++ (MSVC).
+
+The variable "_all_h_file" is set to either the path of the file in the binary directory or the source directory, depending on whether the platform is MSVC.
+bruno.donati@hotmail.fr
+how to use this library libmscore with qml
+
+To use the libmscore library with QML, you first need to make sure that the library is built and installed in a location that can be accessed by your QML application.
+
+Once you have the library installed, you can access its functionality from QML by declaring it as a plugin. To do this, you'll need to create a .cpp file that implements the Q_PLUGIN_METADATA macro and includes the relevant headers from the libmscore library.
+
+Here's an example of what this .cpp file might look like:
+
+c
+
+#include <QtQml>
+#include "types.h"
+#include "score.h"
+
+class MscoreQmlPlugin : public QQmlExtensionPlugin
+{
+    Q_OBJECT
+    Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QQmlExtensionInterface")
+
+public:
+    void registerTypes(const char *uri)
+    {
+        Q_ASSERT(uri == QLatin1String("Mscore"));
+        qmlRegisterType<MScore>(uri, 1, 0, "MScore");
+    }
+};
+
+This file declares a new plugin named MscoreQmlPlugin and includes the types.h and score.h headers from the libmscore library. It then uses the qmlRegisterType function to make the MScore class from the libmscore library available to QML.
+
+Once you have created this .cpp file, you need to add it to your CMake build system so that it gets built and linked into your QML application. Finally, in your QML application, you can import the plugin and use the MScore class like this:
+
+python
+
+import Mscore 1.0
+
+...
+
+MScore {
+    id: score
+    ...
+}
+
+This will create an instance of the MScore class from the libmscore library that can be used in your QML application. You can then use the properties and methods of this class to interact with the library and access its functionality.
