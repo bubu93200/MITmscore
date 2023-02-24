@@ -1,0 +1,63 @@
+bruno.donati@hotmail.fr
+ecrit un programme en qml utilisant un import c++ .h .cpp
+
+Voici un exemple de code pour utiliser un import C++ dans un programme QML :
+
+Fichier C++ : example.h
+
+cpp
+
+#ifndef EXAMPLE_H
+#define EXAMPLE_H
+
+#include <QObject>
+
+class Example : public QObject
+{
+    Q_OBJECT
+
+public:
+    explicit Example(QObject *parent = nullptr);
+    Q_INVOKABLE int addNumbers(int a, int b);
+};
+
+#endif // EXAMPLE_H
+
+Fichier C++ : example.cpp
+
+c
+
+#include "example.h"
+
+Example::Example(QObject *parent) : QObject(parent)
+{
+}
+
+int Example::addNumbers(int a, int b)
+{
+    return a + b;
+}
+
+Fichier QML : main.qml
+
+css
+
+import QtQuick 2.0
+import Example 1.0
+
+Rectangle {
+    width: 200
+    height: 200
+
+    Text {
+        id: result
+        anchors.centerIn: parent
+    }
+
+    Component.onCompleted: {
+        var example = Example.createObject(null);
+        result.text = example.addNumbers(2, 3);
+    }
+}
+
+Vous devez également ajouter le fichier C++ à votre projet pour qu'il puisse être compilé et utilisé par votre application QML.
