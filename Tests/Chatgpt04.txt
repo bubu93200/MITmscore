@@ -1,0 +1,59 @@
+bruno.donati@hotmail.fr
+Ecrire à la façon d'un développeur un code en python qui utilise la classe musescore 3 pour écouter une entrée MIDI et enregistrer les données dans un fichier :
+
+python
+
+import sys
+from musescore import MuseScore
+
+# Instance de la classe MuseScore
+msc = MuseScore()
+
+# Connexion à l'entrée MIDI
+msc.connect_midi_in()
+
+# Enregistrement des données MIDI
+data = []
+
+# Écoute de l'entrée MIDI
+for event in msc.listen_midi():
+    data.append(event)
+
+# Écriture des données enregistrées dans un fichier
+with open("midi_data.txt", "w") as f:
+    for item in data:
+        f.write("%s\n" % item)
+
+bruno.donati@hotmail.fr
+Ecrire à la façon d'un développeur un code en langage c qui utilise la classe musescore 3 pour écouter une entrée MIDI et enregistrer les données dans un fichier :
+
+c
+
+#include <stdio.h>
+#include <musescore.h>
+
+int main(int argc, char *argv[]) {
+    // Instance de la classe MuseScore
+    MuseScore msc;
+
+    // Connexion à l'entrée MIDI
+    msc.connect_midi_in();
+
+    // Structure pour stocker les données MIDI
+    midi_event_t data[100];
+    int index = 0;
+
+    // Écoute de l'entrée MIDI
+    while (msc.listen_midi(&data[index])) {
+        index++;
+    }
+
+    // Écriture des données enregistrées dans un fichier
+    FILE *file = fopen("midi_data.txt", "w");
+    for (int i = 0; i < index; i++) {
+        fprintf(file, "%d %d %d\n", data[i].status, data[i].data1, data[i].data2);
+    }
+    fclose(file);
+
+    return 0;
+}
