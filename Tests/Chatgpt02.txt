@@ -1,0 +1,50 @@
+bruno.donati@hotmail.fr
+en utilisant la classe MuseScore 3 midiinput ecrire un programme en python pour écouter une entrée midi et l'enregistrer dans un fichier
+
+Voici un exemple de programme en Python qui utilise la classe MidiInput de MuseScore 3 pour écouter une entrée MIDI et l'enregistrer dans un fichier :
+
+python
+
+import os
+import time
+import mido
+from mido import MidiFile, MidiTrack
+
+class MidiRecorder:
+    def __init__(self, filename):
+        self.filename = filename
+        self.midi_file = MidiFile(type=1)
+        self.track = MidiTrack()
+        self.midi_file.tracks.append(self.track)
+        self.start_time = time.time()
+
+    def handle_message(self, message):
+        timestamp = time.time() - self.start_time
+        self.track.append(mido.Message.from_bytes(message.bytes(), time=timestamp))
+
+    def start_recording(self):
+        with mido.open_input() as port:
+            print("Recording started, press Ctrl-C to stop...")
+            for message in port:
+                self.handle_message(message)
+                
+    def save_midi_file(self):
+        with open(self.filename, 'wb') as file:
+            self.midi_file.save(file)
+        print(f"Recording saved as {self.filename}")
+
+if __name__ == "__main__":
+    filename = "output.mid"
+    recorder = MidiRecorder(filename)
+    try:
+        recorder.start_recording()
+    except KeyboardInterrupt:
+        recorder.save_midi_file()
+
+Ce programme crée une classe MidiRecorder qui initialise un objet MidiFile vide lors de sa création. La méthode handle_message() est appelée chaque fois qu'un message MIDI est reçu, et ajoute un message MIDI à la piste enregistrée dans le fichier MIDI en cours.
+
+La méthode start_recording() ouvre la première entrée MIDI disponible et boucle sur chaque message reçu, en appelant la méthode handle_message() pour chaque message.
+
+Enfin, lorsque l'utilisateur appuie sur Ctrl-C, la méthode save_midi_file() est appelée pour sauvegarder le fichier MIDI enregistré.
+
+Le fichier est enregistré dans le même répertoire que le script Python et est nommé "output.mid" par défaut. Vous pouvez modifier cela en modifiant la variable filename dans le bloc if __name__ == "__main__": en haut du script.
