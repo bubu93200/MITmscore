@@ -232,6 +232,8 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MIT.original\MIT\MIT.c" />
     <ClCompile Include="MIT.original\MIT\stopMIT.c" />
+    <ClCompile Include="Tests\JouePartitionInstrumentMidi.cpp" />
+    <ClCompile Include="Tests\main.cpp" />
     <QtMoc Include="QML_import_plugin_install\libmscore_plugin_QML.cpp">
       <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">input</DynamicSource>
       <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Filename).moc</QtMocFileName>
@@ -271,6 +273,9 @@
     <None Include="Tests\AppelFonctionPythonDansAutreFichier3.qml" />
     <None Include="Tests\AppelFonctionPythonDansAutreFichierExportMidi.qml" />
     <None Include="Tests\AppelFonctionPythonDansFichierQml.qml" />
+    <None Include="Tests\exportMidi.qml" />
+    <None Include="Tests\ExportMidi2.qml" />
+    <None Include="Tests\JouePianoMIDIColorieNoteRougeVert.qml" />
     <None Include="Tests\PlusieursProgrammesTestADispatcher.qml" />
     <None Include="Tests\test.py" />
     <None Include="TestCurScore.qml" />
@@ -477,6 +482,28 @@
     <Text Include="libmscore\CMakeLists.txt" />
     <Text Include="LICENSE.txt" />
     <Text Include="QML_import_plugin_install\cmakefiles.txt" />
+    <Text Include="Tests\Chatgpt00.txt" />
+    <Text Include="Tests\Chatgpt01.txt" />
+    <Text Include="Tests\Chatgpt02.txt" />
+    <Text Include="Tests\Chatgpt03.txt" />
+    <Text Include="Tests\Chatgpt04.txt" />
+    <Text Include="Tests\Chatgpt05.txt" />
+    <Text Include="Tests\Chatgpt06.txt" />
+    <Text Include="Tests\Chatgpt07.txt" />
+    <Text Include="Tests\Chatgpt08.txt" />
+    <Text Include="Tests\Chatgpt09.txt" />
+    <Text Include="Tests\Chatgpt10.txt" />
+    <Text Include="Tests\Chatgpt11.txt" />
+    <Text Include="Tests\Chatgpt12.txt" />
+    <Text Include="Tests\Chatgpt13.txt" />
+    <Text Include="Tests\Chatgpt14.txt" />
+    <Text Include="Tests\Chatgpt15.txt" />
+    <Text Include="Tests\Chatgpt16.txt" />
+    <Text Include="Tests\Chatgpt17.txt" />
+    <Text Include="Tests\Chatgpt18.txt" />
+    <Text Include="Tests\Chatgpt19.txt" />
+    <Text Include="Tests\Chatgpt20.txt" />
+    <Text Include="Tests\Chatgpt21.txt" />
   </ItemGroup>
   <ItemGroup>
     <QtTranslation Include="batch_export-master\batch_convert\translations\locale_de.ts" />
