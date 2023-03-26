@@ -651,6 +651,15 @@
     <None Include="Tests\BingMuseScore4Panneau.qml">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="Tests\BingEcoutePianoColorieNotes.qml">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Tests\BingEcoutePianoColorieNotes2.qml">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Tests\exportMidiBing.qml">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\lame\lame.h">
