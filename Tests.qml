@@ -128,14 +128,40 @@ MuseScore { // Démarrage d'un plgin Musescore
         Button { // Affichage d'un bouton
             id: start
             anchors.horizontalCenter: parent.horizontalCenter
-            text: "START" // Colore la selection
+            text: "START all selected green" // Colore la selection
             
             //style: ButtonStyle {} Quelle librairie ?
             
             onClicked: {
-                console.info("Click start Button"); // Message d'information
+                console.info("Click START all selected green Button"); // Message d'information
                 console.info(curScore.scoreName); // Message d'information
                 applyToNotesInSelection(colorNote);
+            }
+        }
+
+        Button { // Affichage d'un bouton
+            id: start2
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: "START first note orange" // Colore la selection
+            
+            //style: ButtonStyle {} Quelle librairie ?
+            
+            onClicked: {
+                console.info("Click START first note orange Button"); // Message d'information
+                console.info(curScore.scoreName); // Message d'information
+                
+                var score = MuseScore.curScore;
+                var part = score.parts[0];
+                var noteList = part.notes;
+                var noteToHighlight = noteList[0]; // on choisit la première note de la partition pour l'exemple
+
+                // colorie la première note en orange
+                var cursor = curScore.newCursor();
+                cursor.rewind(0);
+                var notes = cursor.element.notes;
+                var note = notes[0]; // première note
+                note.color = orange;
+                
             }
         }
         
@@ -228,8 +254,24 @@ function applyToNotesInSelection(func) {
             }
         }
     }
- 
-  
+
+    // Colore la note courante selon la couleur :
+    // "red", "green", "blue", "orange", "yellow", "purple", "pink", "gray", "black" ou un code hexadexcimal
+    function highlightNoteWithColor(note, color) {
+        var cursor = MuseScore.curScore.cursor;
+        cursor.reset();
+        cursor.tick = note.tick;
+        cursor.rewind(1);
+        cursor.next();
+        cursor.color = color;
+    }
+    // exemple d'appel à la fonction pour la première note de la partition courante
+    // var score = MuseScore.curScore;
+    // var part = score.parts[0];
+    // var noteList = part.notes;
+    // var noteToHighlight = noteList[0]; // on choisit la première note de la partition pour l'exemple
+    //highlightIncorrectNoteWithColor(noteToHighlight, "orange");
+
     function colorNote(note) {
         note.color = green;
     }
