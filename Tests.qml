@@ -32,8 +32,8 @@ MuseScore { // Démarrage d'un plgin Musescore
     property string green : "#008000"
 
     menuPath:   "Plugins.MidiInstrumentTraining"
-    version:  "1.0"
-    description: "This plugin do tests on Musescore features"
+    version:  "1.01"
+    description: "Midi Instrument training - Test release - This plugin do tests on Musescore features"
 
     pluginType: "dialog"
     width: 300
