@@ -1,4 +1,3 @@
-
 bruno.donati@hotmail.fr
 tu es un expert en programmation qml et c++. Tu es expert de l'api musescore 3.0
 
