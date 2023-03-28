@@ -29,10 +29,15 @@ MuseScore { // Démarrage d'un plgin Musescore
     property string pluginsPath: "C:/Users/Bubu/Documents/MuseScore3/Plugins"
     property string midiPath: "C:/Users/Bubu/Documents/MuseScore3/Partitions"
     property string defaultInstrument: "Your instrument"
-    property string green : "#008000"
+    property string green   : "#008000"
+    property string orange  : "#FFA500"
+    property string red     : "#FF0000"
+    property string blue    : "#0000FF"
+    property string cyan    : "#00FFFF"
+    property string magenta : "#FF00FF"
 
     menuPath:   "Plugins.MidiInstrumentTraining"
-    version:  "1.01"
+    version:  "0.03"
     description: "Midi Instrument training - Test release - This plugin do tests on Musescore features"
 
     pluginType: "dialog"
@@ -149,18 +154,15 @@ MuseScore { // Démarrage d'un plgin Musescore
             onClicked: {
                 console.info("Click START first note orange Button"); // Message d'information
                 console.info(curScore.scoreName); // Message d'information
-                
-                var score = MuseScore.curScore;
-                var part = score.parts[0];
-                var noteList = part.notes;
-                var noteToHighlight = noteList[0]; // on choisit la première note de la partition pour l'exemple
 
-                // colorie la première note en orange
+                // colorie la première note en orange ---> ne marche pas
                 var cursor = curScore.newCursor();
                 cursor.rewind(0);
-                var notes = cursor.element.notes;
-                var note = notes[0]; // première note
+                var notes = cursor.element.notes;               
+                var note = notes[0];
                 note.color = orange;
+                cursor.next();
+                  
                 
             }
         }
@@ -246,7 +248,8 @@ function applyToNotesInSelection(func) {
                         var notes = cursor.element.notes;
                         for (var i = 0; i < notes.length; i++) {
                             var note = notes[i];
-                            func(note);
+                            note.color=green;
+                            //func(note);
                         }
                     }
                     cursor.next();
