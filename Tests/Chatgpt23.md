@@ -11,7 +11,7 @@ Pour interagir avec l'API MuseScore 3.0 et utiliser les fonctions MIDI en QML, v
 
 Voici un exemple de code QML pour utiliser la classe "Ms::MidiOut" :
 
-qml
+```qml
 
 import QtQuick 2.0
 import MuseScore 3.0
@@ -29,6 +29,7 @@ Item {
         }
     }
 }
+```
 
 Dans cet exemple, la classe "Ms::MidiOut" est enregistrée en tant que type QML avec l'instruction "import MuseScore 3.0". Une instance de cette classe est créée avec l'ID "midiOut", et la fonction "sendNoteOn" est appelée lorsqu'on clique sur le bouton "Play Note".
 
