@@ -660,6 +660,7 @@
     <None Include="Tests\exportMidiBing.qml">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="Tests\Chatgpt23.md" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\lame\lame.h">

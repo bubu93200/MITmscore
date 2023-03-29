@@ -276,6 +276,7 @@
     <None Include="Tests\BingEcoutePianoColorieNotes.qml" />
     <None Include="Tests\BingEcoutePianoColorieNotes2.qml" />
     <None Include="Tests\BingMuseScore4Panneau.qml" />
+    <None Include="Tests\Chatgpt23.md" />
     <None Include="Tests\exportMidi.qml" />
     <None Include="Tests\ExportMidi2.qml" />
     <None Include="Tests\exportMidiBing.qml" />
