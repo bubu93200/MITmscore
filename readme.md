@@ -95,4 +95,4 @@ It's organized in 3 tabs : training, setting and help.
 
 
 # Releases  
-0.00 Nothing at this point  
+0.00 Nothing at this point. Testing releases  
