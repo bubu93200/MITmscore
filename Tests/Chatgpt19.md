@@ -14,7 +14,7 @@ As an AI language model, I cannot directly code a plugin for MuseScore 3.5, but 
 
 Here is some sample code that demonstrates how to create a simple plugin that exports the current score to a MIDI file:
 
-python
+```python
 
 import os
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLineEdit, QPushButton
@@ -68,7 +68,7 @@ class ExportMIDIPlugin(QWidget):
         midi_path = os.path.join(repertory, midi_name)
         with open(midi_path, 'wb') as midi_file:
             midi_data.writestr(midi_file)
-
+```
 This is just a starting point for your plugin, and you may need to modify it to fit your specific requirements. You should also consult the MuseScore API documentation for more information on how to interact with the MuseScore application from your plugin.
 bruno.donati@hotmail.fr
 Code a qml plugin for MuseScore with a button start on a panel which export current score or selected score to a midi file. On a text zone, I can modify repertory of midi file. On another text zone, I can modify midi file name
@@ -87,7 +87,7 @@ As an AI language model, I can provide you with a general framework to create a 
 
 Here is some sample code that demonstrates how to create a simple QML plugin that exports the current score to a MIDI file:
 
-qml
+```qml
 
 import QtQuick 2.0
 import MuseScore 3.5
@@ -122,14 +122,14 @@ Panel {
         }
     }
 }
-
+```
 This is just a starting point for your plugin, and you may need to modify it to fit your specific requirements. You should also consult the MuseScore QML plugin documentation for more information on how to interact with the MuseScore application from your plugin.
 bruno.donati@hotmail.fr
 Rewrite code to only export selected notes from current score
 
 Sure! Here's an updated version of the code that exports only the selected notes from the current score:
 
-qml
+```qml
 
 import QtQuick 2.0
 import MuseScore 3.5
@@ -164,7 +164,7 @@ Panel {
         }
     }
 }
-
+```
 In this version of the code, we retrieve the selected notes from the current score using the MuseScore.curScore.selection.notes property. We then pass these notes to the Midi.MidiFile constructor to create the MIDI data for export. The remaining steps for getting the file name and writing the MIDI file to disk are the same as in the previous version of the code.
 
 Note that if there are no notes selected, this code will export an empty MIDI file. You may want to add some additional logic to check if there are any selected notes and display an error message if there are not.
