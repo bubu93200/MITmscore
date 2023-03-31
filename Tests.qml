@@ -90,7 +90,7 @@ MuseScore { // Démarrage d'un plgin Musescore
         var test = exampleFile.read();
         console.log(test); // will print the file content
         console.info("*********** DEBUT *********"); // Message d'information
-        proc1.start(pluginsPath+"/MIT/qsynthconnect.sh "+instrumentName.text);
+        //proc1.start(pluginsPath+"/MIT/qsynthconnect.sh "+instrumentName.text);
         // console.info("*********** FIN *********"); // Message d'information
         var cursor = curScore.newCursor();
         
@@ -180,7 +180,18 @@ MuseScore { // Démarrage d'un plgin Musescore
                 
 
                 // init object MuseScore
-                var museScore = MuseScore();
+                // var museScore =  MuseScore.curScore; FONCTIONNE
+                var museScore = MuseScore;
+
+                // initialize Midi Input
+                if (museScore !== null) {
+                    midiInput = museScore.midiSignal.createInput("MIDI input")
+
+                    if (midiInput !== null) {
+                        midiInput.onMessageReceived.connect(handleMidiEvent)
+                        console.log("MIDI input opened: " + midiInput.name)
+                    }
+                }
                 
                 // Abonnement aux signaux MIDI entrants
                 museScore.midiSignal.connect(onMidiSignalReceived)
@@ -317,5 +328,7 @@ function applyToNotesInSelection(func) {
             performanceFeedback.text = "Note incorrecte"
         }
     }
+
+
 
 }
