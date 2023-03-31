@@ -37,10 +37,13 @@ MuseScore { // Démarrage d'un plgin Musescore
     property string magenta : "#FF00FF"
 
     menuPath:   "Plugins.MidiInstrumentTraining"
-    version:  "0.03"
+    version:  "0.05"
     description: "Midi Instrument training - Test release - This plugin do tests on Musescore features"
+    requiresScore: false
 
-    pluginType: "dialog"
+    //pluginType: "dialog"
+    pluginType: "dock" //panel 
+    dockArea:   "left"
     width: 300
     height: 800
 
@@ -100,7 +103,7 @@ MuseScore { // Démarrage d'un plgin Musescore
 
         Text { // Affichage d'un texte
             anchors.horizontalCenter: parent.horizontalCenter
-            text: "Debugging\nCopyright (c) Bruno Donati\n"
+            text: "Debugging\nCopyright © Bruno Donati\n"
         }
         
         // META INFO
@@ -165,6 +168,26 @@ MuseScore { // Démarrage d'un plgin Musescore
             }
         }
         
+        Button { // Affichage d'un bouton
+            id: start3
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: "START hear instrument" // Colore la selection
+            
+            //style: ButtonStyle {} Quelle librairie ?
+            
+            onClicked: {
+                console.info("Click START hear instrument"); // Message d'information
+                
+
+                // init object MuseScore
+                var museScore = MuseScore();
+                
+                // Abonnement aux signaux MIDI entrants
+                museScore.midiSignal.connect(onMidiSignalReceived)
+                  
+            }
+        }
+
         TextField { // Zone d'insertion d'un texte avec éventuellement un texte par défaut (input)
             id: scoreChannel
             anchors.horizontalCenter: parent.horizontalCenter
@@ -275,6 +298,24 @@ function applyToNotesInSelection(func) {
 
     function colorNote(note) {
         note.color = green;
+    }
+
+    // Fonction appelée lorsqu'un signal MIDI est reçu
+    function onMidiSignalReceived(signal) {
+        // Traitement du signal MIDI
+        // Vérification que la note jouée correspond à la note de la partition courante
+        var currentNote = museScore.currentNote()
+        if (currentNote && signal.note == currentNote.pitch()) {
+            // La note jouée est correcte
+            // Mettre en surbrillance la note dans la partition
+            currentNote.highlight(true)
+            // Afficher un commentaire sur la performance de l'utilisateur
+            performanceFeedback.text = "Note correcte"
+        } else {
+            // La note jouée est incorrecte
+            // Afficher un commentaire sur la performance de l'utilisateur
+            performanceFeedback.text = "Note incorrecte"
+        }
     }
 
 }
