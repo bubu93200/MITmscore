@@ -50,10 +50,8 @@ MuseScore { // Démarrage d'un plgin Musescore
 			running:  false; //true; pour démarrer
 			repeat:   true;
 			onTriggered: {
-                                  console.info(curScore.scoreName);
-				       console.info(curScore.path);
-
-
+                                    console.info(curScore.scoreName);
+				                    console.info(curScore.path);
                                     //thisScore=curScore;
                                     //isCurScore=true;
                                     // DEBUG META INFO
