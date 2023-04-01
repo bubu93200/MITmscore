@@ -181,11 +181,11 @@ MuseScore { // Démarrage d'un plgin Musescore
 
                 // init object MuseScore
                 // var museScore =  MuseScore.curScore; FONCTIONNE
-                var museScore = MuseScore;
+                var museScore = MuseScore; // Fonctionne
 
                 // initialize Midi Input
                 if (museScore !== null) {
-                    midiInput = museScore.midiSignal.createInput("MIDI input")
+                    midiInput = museScore.midiSignal.createInput("MIDI input") //midiSignal n'a pas l'air d'exister
 
                     if (midiInput !== null) {
                         midiInput.onMessageReceived.connect(handleMidiEvent)
