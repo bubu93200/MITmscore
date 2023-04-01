@@ -578,31 +578,44 @@ Le code que j'ai fourni précédemment permet de créer un plugin MusScore qui i
 Le code est basé sur l'utilisation de l'API MuseScore 3.0 en QML. Il est donc possible d'ajouter des fonctionnalités supplémentaires en utilisant cette API, comme la sélection de différentes partitions ou parties, la modification du tempo ou l'affichage d'informations supplémentaires sur la partition en cours de lecture.
 
 Il convient de noter que le code fourni n'inclut pas le corps des fonctions, qui devra être écrit en fonction des besoins spécifiques du programme. Les fonctions utilisées dans le code sont des exemples qui devront être adaptés en fonction des fonctionnalités que vous souhaitez ajouter à votre plugin MusScore.
-ChatGPT Mar 14 Version. Free Research Preview. Our goal is to make AI systems more natural and safe to interact with. Your feedback will help us improve.
-New chat
-Intégration MIDI partition musescore
-Trading Algorithm for TradingView
-New chat
-Intégrer MIDI avec QML.
-Plugin QML MuseScore
-Programming Assistance for MuseScore
-Date de données AI.
-Créer une partition musescore
-API Musescore disponible.
-Export MuseScore MIDI Plugin
-New chat
-Créer un panneau Musescore
-Algorithm for Piano MIDI.
-Calculatrice Scientifique en C++
-Jouer aux échecs.
-Théorie de la musique
-Loi normale positive.
-Xcode precompiled headers
-CMake project building.
-Création de partition.
-Clear conversations
-Upgrade to PlusNEW
-Light mode
-Updates & FAQ
-Log out
 
+
+Comme je l'ai mentionné précédemment, il n'est pas possible d'utiliser l'API MuseScore 3.0 directement en QML. Cependant, si vous avez une instance de MuseScore dans votre application QML, vous pouvez utiliser l'objet MidiSignal pour se connecter à des périphériques MIDI entrants en scannant les entrées. Voici un exemple de code QML qui illustre comment initialiser et utiliser des périphériques MIDI entrants en se basant sur l'objet museScore.midiSignal.connect() :
+
+```qml
+import QtQuick 2.15
+import QtMultimedia 5.15
+
+Item {
+    id: midiInputItem
+
+    property MuseScore museScore: null
+    property MidiInput midiInput: null
+
+    function initializeMidiInput() {
+        if (museScore !== null) {
+            midiInput = museScore.midiSignal.createInput("MIDI input")
+
+            if (midiInput !== null) {
+                midiInput.onMessageReceived.connect(handleMidiEvent)
+                console.log("MIDI input opened: " + midiInput.name)
+            }
+        }
+    }
+
+    function handleMidiEvent(event) {
+        if (event.isNoteOn()) {
+            // Traiter un événement "note on"
+            console.log("Note on: " + event.note + " velocity: " + event.velocity)
+        } else if (event.isNoteOff()) {
+            // Traiter un événement "note off"
+            console.log("Note off: " + event.note + " velocity: " + event.velocity)
+        } else if (event.isControlChange()) {
+            // Traiter un événement "control change"
+            console.log("Control change: controller: " + event.controller + " value: " + event.value)
+        }
+    }
+}
+```
+
+ChatGPT Mar 14 Version. Free Research Preview. Our goal is to make AI systems more natural and safe to interact with. Your feedback will help us improve.
