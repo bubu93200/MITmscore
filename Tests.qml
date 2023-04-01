@@ -182,6 +182,8 @@ MuseScore { // Démarrage d'un plgin Musescore
                 // init object MuseScore
                 // var museScore =  MuseScore.curScore; FONCTIONNE
                 var museScore = MuseScore; // Fonctionne
+                var midiInput = museScore.midiSignal //Fonctionne  
+                console.log("MIDI: " + midiInput) //Fonctionne
 
                 // initialize Midi Input
                 if (museScore !== null) {
