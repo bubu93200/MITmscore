@@ -706,6 +706,11 @@
     <None Include="rtmidi\README.md" />
     <None Include="rtmidi\rtmidi.pc.in" />
     <None Include="rtmidi\rtmidi-config.in" />
+    <None Include="rtmidi\cmake\rtmidi-config.cmake.in" />
+    <None Include="rtmidi\cmake\RtMidiConfigUninstall.cmake.in" />
+    <None Include="rtmidi\contrib\go\rtmidi\go.mod" />
+    <None Include="rtmidi\contrib\go\rtmidi\rtmidi.go" />
+    <None Include="rtmidi\contrib\go\rtmidi\rtmidi_test.go" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\lame\lame.h">

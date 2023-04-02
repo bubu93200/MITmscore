@@ -280,7 +280,12 @@
     <None Include="QML_import_plugin_install\exemple_import_libmscore.qml" />
     <None Include="readme.md" />
     <None Include="rtmidi\autogen.sh" />
+    <None Include="rtmidi\cmake\rtmidi-config.cmake.in" />
+    <None Include="rtmidi\cmake\RtMidiConfigUninstall.cmake.in" />
     <None Include="rtmidi\configure.ac" />
+    <None Include="rtmidi\contrib\go\rtmidi\go.mod" />
+    <None Include="rtmidi\contrib\go\rtmidi\rtmidi.go" />
+    <None Include="rtmidi\contrib\go\rtmidi\rtmidi_test.go" />
     <None Include="rtmidi\doc\doxygen\footer.html" />
     <None Include="rtmidi\doc\doxygen\header.html" />
     <None Include="rtmidi\LICENSE" />
