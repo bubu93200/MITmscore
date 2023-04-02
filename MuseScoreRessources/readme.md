@@ -1,3 +1,6 @@
+# Be Careful
+I modified style.h in libmscore repertory because of building errors. So, here, you have to find style.h.ref and rename as style.h to build Musescore  
+
 # MuseScore to develop a plugin
 I checked all the procedure.
 This documentation is based on the web page : https://musescore.org/fr/handbook/developers-handbook/compilation/compile-instructions-windows-visual-studio  
