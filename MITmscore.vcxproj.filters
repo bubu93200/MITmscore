@@ -554,6 +554,42 @@
     <ClCompile Include="Tests\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="rtmidi\contrib\go\rtmidi\rtmidi_stub.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtmidi\doc\doxygen\samples\getting_started.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtmidi\tests\apinames.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtmidi\tests\cmidiin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtmidi\tests\midiclock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtmidi\tests\midiout.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtmidi\tests\midiprobe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtmidi\tests\qmidiin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtmidi\tests\sysextest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtmidi\tests\testcapi.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtmidi\RtMidi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtmidi\rtmidi_c.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
@@ -661,6 +697,15 @@
       <Filter>Source Files</Filter>
     </None>
     <None Include="Tests\Chatgpt23.md" />
+    <None Include="rtmidi\doc\doxygen\footer.html" />
+    <None Include="rtmidi\doc\doxygen\header.html" />
+    <None Include="rtmidi\autogen.sh" />
+    <None Include="rtmidi\configure.ac" />
+    <None Include="rtmidi\LICENSE" />
+    <None Include="rtmidi\Makefile.am" />
+    <None Include="rtmidi\README.md" />
+    <None Include="rtmidi\rtmidi.pc.in" />
+    <None Include="rtmidi\rtmidi-config.in" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\lame\lame.h">
@@ -1173,6 +1218,15 @@
     <ClInclude Include="libmscore\xml.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="rtmidi\contrib\go\rtmidi\rtmidi_stub.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rtmidi\RtMidi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rtmidi\rtmidi_c.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="MuseScoreRessources\ExplorerSolution.png">
@@ -1217,6 +1271,7 @@
     <Text Include="Tests\Chatgpt20.md" />
     <Text Include="Tests\Chatgpt21.md" />
     <Text Include="Tests\ChatGPT22_lepluscomplet.md" />
+    <Text Include="rtmidi\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <QtTranslation Include="batch_export-master\batch_convert\translations\locale_de.ts">
