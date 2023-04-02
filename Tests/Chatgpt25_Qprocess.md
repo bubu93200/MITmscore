@@ -557,6 +557,485 @@ Component.onCompleted: {
 In this example, a Rectangle object is defined with an id of dynamicRectangle. When the Component.onCompleted signal is emitted, the Qt.createQmlObject method is called to create a new Rectangle object with a width of 50, a height of 50, and a color of blue. The new object is then set as a child of the dynamicRectangle object, and its position is set to (50, 50).
 
 Note that Qt.createQmlObject should be used judiciously, as creating too many QML objects at runtime can impact performance. However, in situations where dynamic object creation is necessary, Qt.createQmlObject provides a powerful tool for creating custom user interfaces and managing dynamic data in QML.
+bruno.donati@hotmail.fr
+is it possible to launch an run an executable in background with Qprocess
+
+Yes, it's possible to launch and run an executable in the background with QProcess.
+
+To run an executable in the background, you can use the startDetached method of QProcess. This method starts the process and immediately returns control to the calling application, allowing the process to continue running in the background.
+
+Here's an example of using QProcess::startDetached to run an executable in the background:
+
+arduino
+
+#include <QCoreApplication>
+#include <QProcess>
+
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
+
+    QString program = "/path/to/your/executable";
+    QStringList arguments;
+    arguments << "arg1" << "arg2" << "arg3";
+
+    QProcess::startDetached(program, arguments);
+
+    return a.exec();
+}
+
+In this example, QProcess::startDetached is called with the path to the executable and a list of arguments. The executable is started in the background and control is immediately returned to the calling application.
+
+Note that startDetached does not provide any way to communicate with the process once it has been started. If you need to communicate with the process, you should use the start method instead, and set up communication using QProcess signals and slots.
+
+Also, keep in mind that launching an executable in the background can have security implications, as the user may not be aware that the process is running. Make sure that you have a legitimate reason for running the process in the background, and that you take appropriate security precautions.
+bruno.donati@hotmail.fr
+ok but use startdetached in QML
+
+QProcess::startDetached can also be used in QML, but it requires some additional steps to make it work.
+
+To use QProcess::startDetached in QML, you need to create an instance of QProcess in C++ code and expose it to QML using qmlRegisterType. Then, you can call the startDetached method from QML using the exposed instance of QProcess.
+
+Here's an example of how to use QProcess::startDetached in QML:
+
+    Create a C++ class that subclasses QObject and contains an instance of QProcess:
+
+arduino
+
+// myprocess.h
+#include <QObject>
+#include <QProcess>
+
+class MyProcess : public QObject
+{
+    Q_OBJECT
+
+public:
+    explicit MyProcess(QObject *parent = nullptr);
+
+public slots:
+    void startDetached(const QString &program, const QStringList &arguments);
+
+private:
+    QProcess *m_process;
+};
+
+javascript
+
+// myprocess.cpp
+#include "myprocess.h"
+
+MyProcess::MyProcess(QObject *parent) :
+    QObject(parent),
+    m_process(new QProcess(this))
+{
+}
+
+void MyProcess::startDetached(const QString &program, const QStringList &arguments)
+{
+    m_process->startDetached(program, arguments);
+}
+
+    Register the MyProcess class with QML using qmlRegisterType:
+
+arduino
+
+// main.cpp
+#include <QGuiApplication>
+#include <QQmlApplicationEngine>
+#include "myprocess.h"
+
+int main(int argc, char *argv[])
+{
+    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+
+    QGuiApplication app(argc, argv);
+
+    qmlRegisterType<MyProcess>("com.example", 1, 0, "MyProcess");
+
+    QQmlApplicationEngine engine;
+    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+    if (engine.rootObjects().isEmpty())
+        return -1;
+
+    return app.exec();
+}
+
+    In QML, create an instance of MyProcess and call its startDetached method:
+
+css
+
+import QtQuick 2.0
+import com.example 1.0
+
+MyProcess {
+    id: myProcess
+}
+
+Button {
+    text: "Start Process"
+    onClicked: {
+        myProcess.startDetached("/path/to/your/executable", ["arg1", "arg2", "arg3"])
+    }
+}
+
+In this example, a MyProcess instance is created in QML, and its startDetached method is called when a button is clicked. The path to the executable and its arguments are passed as parameters to startDetached.
+
+Note that in order for QProcess::startDetached to work properly, the executable must be located in a directory that is in the system's search path. If the executable is not in the search path, you will need to specify the full path to the executable.
+bruno.donati@hotmail.fr
+no. use startdetached in QML to launch an run an external program in background.
+
+Yes, you can use QProcess::startDetached in QML to launch an external program in the background. Here's an example:
+
+arduino
+
+import QtQuick 2.0
+import QtQuick.Controls 2.12
+
+Button {
+    text: "Start Program"
+    onClicked: {
+        Qt.startDetached("/path/to/your/executable", ["arg1", "arg2", "arg3"])
+    }
+}
+
+In this example, a button is created in QML, and its onClicked signal is connected to a JavaScript function that calls Qt.startDetached with the path to the executable and its arguments. This will launch the executable in the background.
+
+Note that QProcess::startDetached is a static function of the Qt object, so you can call it directly from QML without needing to create an instance of QProcess. Also note that startDetached returns immediately, so it does not block the QML thread.
+bruno.donati@hotmail.fr
+ok. but complete program. How to stop process for example? how to pass arguments from external program to QML
+
+Sure! Here's a complete QML program that demonstrates how to use startDetached to launch an external program in the background, how to stop the process, and how to pass data from the external program back to the QML program:
+
+arduino
+
+import QtQuick 2.0
+import QtQuick.Controls 2.12
+
+Button {
+    id: startButton
+    text: "Start Program"
+    onClicked: {
+        // Start the external program with arguments
+        var process = Qt.startDetached("/path/to/your/executable", ["arg1", "arg2", "arg3"])
+        
+        // Store the process ID for later use
+        startButton.processId = process
+        
+        // Disable the start button and enable the stop button
+        startButton.enabled = false
+        stopButton.enabled = true
+    }
+}
+
+Button {
+    id: stopButton
+    text: "Stop Program"
+    enabled: false
+    onClicked: {
+        // Stop the external program
+        var processId = startButton.processId
+        if (processId) {
+            Qt.Process.kill(processId)
+            startButton.processId = null
+        }
+        
+        // Enable the start button and disable the stop button
+        startButton.enabled = true
+        stopButton.enabled = false
+    }
+}
+
+Text {
+    id: resultText
+    text: "Result: " + result
+}
+
+Connections {
+    target: process // connect to the process object
+    
+    // Called when the process writes to its standard output
+    onReadyReadStandardOutput: {
+        // Read the output data
+        var data = process.readAllStandardOutput().toString().trim()
+        
+        // Update the result text with the output data
+        result = data
+    }
+}
+
+property string result: "" // store the result data
+
+This program consists of two buttons (startButton and stopButton) and a text label (resultText). When the user clicks the startButton, the external program is launched in the background using Qt.startDetached. The processId of the running process is stored in the startButton so it can be stopped later. The startButton is disabled and the stopButton is enabled to prevent the user from starting multiple instances of the external program.
+
+When the user clicks the stopButton, the external program is stopped using Qt.Process.kill. The processId is cleared and the startButton is re-enabled.
+
+The Connections object connects to the process object (which is automatically created by startDetached) and listens for the readyReadStandardOutput signal. When this signal is emitted, the onReadyReadStandardOutput handler is called. This handler reads the data from the standard output of the external program, updates the result property with the output data, and displays it in the resultText label.
+
+Note that you can also read data from the standard error output of the external program using the readyReadStandardError signal and the readAllStandardError method.
+
+I hope this helps! Let me know if you have any further questions.
+bruno.donati@hotmail.fr
+ok. Show to complete example with QML program and external program written in C++.
+
+Sure, here's a complete example that demonstrates how to use startDetached to launch an external C++ program in the background and how to pass data from the external program back to the QML program:
+
+C++ Program (example.cpp):
+
+c
+
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[]) {
+    // Get the command line arguments
+    if (argc < 3) {
+        cerr << "Usage: " << argv[0] << " <number1> <number2>" << endl;
+        return 1;
+    }
+    int num1 = atoi(argv[1]);
+    int num2 = atoi(argv[2]);
+    
+    // Add the numbers and print the result
+    int result = num1 + num2;
+    cout << result << endl;
+    
+    return 0;
+}
+
+QML Program (main.qml):
+
+arduino
+
+import QtQuick 2.0
+import QtQuick.Controls 2.12
+
+Button {
+    id: startButton
+    text: "Start Program"
+    onClicked: {
+        // Start the external program with arguments
+        var process = Qt.startDetached("./example", [num1Field.text, num2Field.text])
+        
+        // Store the process ID for later use
+        startButton.processId = process
+        
+        // Disable the start button and enable the stop button
+        startButton.enabled = false
+        stopButton.enabled = true
+    }
+}
+
+Button {
+    id: stopButton
+    text: "Stop Program"
+    enabled: false
+    onClicked: {
+        // Stop the external program
+        var processId = startButton.processId
+        if (processId) {
+            Qt.Process.kill(processId)
+            startButton.processId = null
+        }
+        
+        // Enable the start button and disable the stop button
+        startButton.enabled = true
+        stopButton.enabled = false
+    }
+}
+
+TextField {
+    id: num1Field
+    placeholderText: "Number 1"
+    validator: IntValidator { bottom: 0; top: 999 }
+}
+
+TextField {
+    id: num2Field
+    placeholderText: "Number 2"
+    validator: IntValidator { bottom: 0; top: 999 }
+}
+
+Text {
+    id: resultText
+    text: "Result: " + result
+}
+
+Connections {
+    target: process // connect to the process object
+    
+    // Called when the process writes to its standard output
+    onReadyReadStandardOutput: {
+        // Read the output data
+        var data = process.readAllStandardOutput().toString().trim()
+        
+        // Update the result text with the output data
+        result = data
+    }
+}
+
+property string result: "" // store the result data
+
+In this example, the QML program has two text fields (num1Field and num2Field) for entering the two numbers to be added, a startButton to launch the external C++ program, a stopButton to stop the program, and a resultText label to display the result.
+
+When the user clicks the startButton, the external C++ program (example) is launched in the background using Qt.startDetached. The command line arguments passed to the program are the values entered in the num1Field and num2Field text fields. The processId of the running process is stored in the startButton so it can be stopped later. The startButton is disabled and the stopButton is enabled to prevent the user from starting multiple instances of the external program.
+
+When the user clicks the stopButton, the external program is stopped using `
+bruno.donati@hotmail.fr
+thanks but use another example with extern program running for a long time. For example, a program hearing key hitten and stocking all and QML program displaying chars  stocked between before display to now
+
+Here is an example of a program that runs an external program written in C++ which listens for keyboard events and sends the captured input to the QML program:
+
+External program (written in C++):
+
+cpp
+
+#include <iostream>
+#include <conio.h>
+
+int main()
+{
+    std::string input;
+
+    while (true) {
+        char ch = _getch();
+        if (ch == '\r') {
+            std::cout << "You typed: " << input << std::endl;
+            input.clear();
+        } else {
+            input += ch;
+        }
+    }
+
+    return 0;
+}
+
+QML program:
+
+qml
+
+import QtQuick 2.15
+import QtQuick.Window 2.15
+
+Window {
+    visible: true
+    width: 640
+    height: 480
+    title: "Key Logger"
+
+    Text {
+        id: logText
+        text: ""
+        font.pixelSize: 20
+        anchors.centerIn: parent
+    }
+
+    Component.onCompleted: {
+        // Start the external program in the background
+        var process = Qt.createQmlObject("import QtQuick 2.15; import QtQuick.Controls 2.15; Process { program: 'keylogger.exe'; startDetached: true }", parent);
+
+        // Listen for output from the external program
+        process.readyReadStandardOutput.connect(function() {
+            var input = process.readAllStandardOutput().toString();
+            input = input.replace(/(\r\n|\n|\r)/gm, "");
+            logText.text += input;
+        });
+
+        // Stop the external program when the QML program is closed
+        ClosingEvent.connect(function() {
+            process.kill();
+        });
+    }
+}
+
+When the QML program is run, it starts the external program in the background using the startDetached option of Qt.createQmlObject(). It then listens for output from the external program and appends it to the Text element in the QML program.
+
+When the QML program is closed, it stops the external program by calling process.kill().
+bruno.donati@hotmail.fr
+no. dont forget discussion. all characters are stocked by c++ program in background and with a timer QML program display all characters
+
+My apologies for misunderstanding your initial request. Here's an updated example that should fulfill your requirements:
+
+External program (written in C++):
+
+cpp
+
+#include <iostream>
+#include <conio.h>
+
+int main()
+{
+    std::string input;
+
+    while (true) {
+        char ch = _getch();
+        if (ch == '\r') {
+            std::cout << input << std::endl;
+            input.clear();
+        } else {
+            input += ch;
+        }
+    }
+
+    return 0;
+}
+
+QML program:
+
+qml
+
+import QtQuick 2.15
+import QtQuick.Window 2.15
+
+Window {
+    visible: true
+    width: 640
+    height: 480
+    title: "Key Logger"
+
+    Text {
+        id: logText
+        text: ""
+        font.pixelSize: 20
+        anchors.centerIn: parent
+    }
+
+    Timer {
+        id: timer
+        interval: 1000
+        running: true
+        onTriggered: {
+            // Read all available characters from the external program
+            var input = process.readAllStandardOutput().toString();
+            input = input.replace(/(\r\n|\n|\r)/gm, "");
+
+            // Append the characters to the text element
+            logText.text += input;
+        }
+    }
+
+    Component.onCompleted: {
+        // Start the external program in the background
+        var process = Qt.createQmlObject("import QtQuick 2.15; import QtQuick.Controls 2.15; Process { program: 'keylogger.exe'; startDetached: true }", parent);
+
+        // Save the process object so we can access it later
+        timer.process = process;
+
+        // Stop the external program when the QML program is closed
+        ClosingEvent.connect(function() {
+            process.kill();
+        });
+    }
+}
+
+This program works in a similar way to the previous example, except that instead of immediately displaying characters as they're received, it buffers them and displays them in one-second intervals using a Timer element.
+
+The C++ program is the same as before, but we're now only printing the characters that are received (without the "You typed:" prefix).
+
+In the QML program, we've added a Timer element that triggers every second and reads all available characters from the external program's output. The characters are then appended to the Text element.
+
+Note that we're now saving the process object as a property of the Timer element so we can access it later. This is necessary because we need to read from the process's output continuously, and we can't do that within the Component.onCompleted block (since that only runs once).
 ChatGPT Mar 14 Version. Free Research Preview. Our goal is to make AI systems more natural and safe to interact with. Your feedback will help us improve.
 New chat
 QProcess in QML
