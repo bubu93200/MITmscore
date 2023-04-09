@@ -546,17 +546,9 @@ ApplicationWindow {
     title: "MIDI Input"
 
     Text {
-        id: midiInput
+        id: midiInputText
         anchors.centerIn: parent
-        font
-
-bruno.donati@hotmail.fr
-continue
-
-Poursuivons avec le programme QML :
-
-qml
-
+        font.pixelSize: 16
         text: ""
 
         Component.onCompleted: {
@@ -579,7 +571,7 @@ qml
                 if (midiInput !== previousInput) {
                     midiInput = midiInput.trim();
                     console.log("Entrée MIDI :", midiInput);
-                    midiInput.text = midiInput;
+                    midiInputText.text = midiInput;
                     previousInput = midiInput;
                 }
             }, 100);
