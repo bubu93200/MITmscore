@@ -1035,7 +1035,9 @@ Dans cet exemple de code, j'ai utilisé l'API Windows pour ouvrir la zone de mé
 
 Le code C++ est différent de la version QML car les API utilisées sont spécifiques à chaque plate-forme et les fonctions nécessaires pour ouvrir, mapper et lire la zone de mémoire partagée sont différentes sous Windows.
 bruno.donati@hotmail.fr
-reecrit le programme suivant pour que la memoire partagée fonctionne sous windows : #include <iostream>
+reecrit le programme suivant pour que la memoire partagée fonctionne sous windows : 
+```cpp
+#include <iostream>
 #include <cstring>
 #include <cstdlib>
 #include <unistd.h>
@@ -1116,6 +1118,7 @@ int main() {
 
     return 0;
 }
+```
 
 ```cpp
 #include <iostream>
@@ -1128,8 +1131,6 @@ int main() {
 // Define the shared memory segment name and size
 const char *memname = "mididata";
 const int SIZE = 1024;
-
-c
 
 // Open the shared memory segment
 HANDLE shm_handle = CreateFileMappingA(INVALID_HANDLE_VALUE, NULL, PAGE_READWRITE, 0, SIZE, memname);
