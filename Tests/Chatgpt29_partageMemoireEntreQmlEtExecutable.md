@@ -70,7 +70,8 @@ int main() {
     return EXIT_SUCCESS;
 }
 ```
-Ce programme ouvre le premier port MIDI d'entrée disponible, configure une fonction de rappel pour imprimer les données de message MIDI entrantes, ignore les messages MIDI en mode sysex ou timecode, et attend l'entrée MIDI pendant 10 secondes avant de fermer le port MIDI d'entrée. Vous pouvez modifier ce code pour répondre à vos besoins spécifiques en matière de traitement des messages MIDI entrants.
+Ce programme ouvre le premier port MIDI d'entrée disponible, configure une fonction de rappel pour imprimer les données de message MIDI entrantes, ignore les messages MIDI en mode sysex ou timecode, et attend l'entrée MIDI pendant 10 secondes avant de fermer le port MIDI d'entrée. Vous pouvez modifier ce code pour répondre à vos besoins spécifiques en matière de traitement des messages MIDI entrants.  
+***
 bruno.donati@hotmail.fr
 très bien. Je dois lancer ce programme c++ (executable) par un programme écrit en qml. Ce programme doit être exécuté en arriere plan. Le partage de l'entrée avec le programme QML doit se faire en mémoire vive. Le programme qml doit afficher l'entrée midi écoutrée par le programme c++ (executable)
 
@@ -198,7 +199,8 @@ Item {
     }
 }
 ```
-Ce code crée un socket UNIX client, se connecte au socket créé par le programme C++ et lit les données de message MIDI entrantes depuis le socket. Chaque message MIDI est ajouté à un tableau de messages MIDI et affiché dans la console de débogage. Vous pouvez ensuite utiliser ce tableau de messages MIDI pour afficher les données de message MIDI dans votre interface utilisateur.
+Ce code crée un socket UNIX client, se connecte au socket créé par le programme C++ et lit les données de message MIDI entrantes depuis le socket. Chaque message MIDI est ajouté à un tableau de messages MIDI et affiché dans la console de débogage. Vous pouvez ensuite utiliser ce tableau de messages MIDI pour afficher les données de message MIDI dans votre interface utilisateur.  
+***
 bruno.donati@hotmail.fr
 non. je ne veux pas utiliser des sockets. Je veux juste partager des emplacmeents mémoire
 
@@ -282,7 +284,8 @@ Item {
     }
 }
 ```
-Ce code crée une région de mémoire partagée dans le programme
+Ce code crée une région de mémoire partagée dans le programme  
+***
 bruno.donati@hotmail.fr
 peux tu le faire sans utiliser de librairie particulière
 
@@ -366,7 +369,8 @@ int main()
     return 0;
 }
 ```
-Le programme ci-dessus ouvre la même zone de mémoire partagée créée par le premier programme en utilisant shm_open() et la lit en utilisant mmap(). Le programme lit ensuite la chaîne stockée dans la zone de mémoire partagée, l'affiche et attend avant de lire la prochaine entrée MIDI.
+Le programme ci-dessus ouvre la même zone de mémoire partagée créée par le premier programme en utilisant shm_open() et la lit en utilisant mmap(). Le programme lit ensuite la chaîne stockée dans la zone de mémoire partagée, l'affiche et attend avant de lire la prochaine entrée MIDI.   
+***
 bruno.donati@hotmail.fr
 non. le programme qui lit la mémoire partagée est écrit en qml
 
@@ -458,7 +462,8 @@ ApplicationWindow {
     }
 }
 ```
-Le programme QML crée un objet de mémoire partagée en utilisant la classe SharedMemory de Qt et un objet Timer qui est utilisé pour lire périodiquement la zone de mémoire partagée. Le code QML lit la chaîne stockée dans la zone de mémoire partagée et la met à jour dans l'objet Text pour l'afficher.
+Le programme QML crée un objet de mémoire partagée en utilisant la classe SharedMemory de Qt et un objet Timer qui est utilisé pour lire périodiquement la zone de mémoire partagée. Le code QML lit la chaîne stockée dans la zone de mémoire partagée et la met à jour dans l'objet Text pour l'afficher.   
+***
 bruno.donati@hotmail.fr
 non. le programme c++ va etre un executable. il n'utilise pas les objets QT
 
@@ -582,7 +587,8 @@ ApplicationWindow {
 ```
 Le programme QML ci-dessus ouvre la zone de mémoire partagée nommée midi_shm, la mappe en mémoire, et lit en continu la chaîne de caractères de la zone de mémoire partagée en utilisant la méthode readString() de la classe QSharedMemory. Si la chaîne lue est différente de la chaîne précédemment lue, elle est affichée dans un objet Text. Le délai de rafraîchissement est fixé à 100 millisecondes, mais vous pouvez le modifier en fonction de vos besoins.
 
-Notez que dans ce code QML, nous avons utilisé les classes Qt.winrtSharedMemory et Qt.posixSharedMemory pour accéder aux fonctions de la bibliothèque système appropriée pour le partage de mémoire partagée sur la plateforme respective.
+Notez que dans ce code QML, nous avons utilisé les classes Qt.winrtSharedMemory et Qt.posixSharedMemory pour accéder aux fonctions de la bibliothèque système appropriée pour le partage de mémoire partagée sur la plateforme respective.  
+***
 bruno.donati@hotmail.fr
 en fait je vais lancer le programme executable c++ avec Qprocess. peut on partager la zone mémoire avec qprocess
 
@@ -643,7 +649,8 @@ int main(int argc, char *argv[])
 ```
 Dans cet exemple, nous avons créé une zone de mémoire partagée nommée midi_shm de taille 1024 octets. Nous avons ensuite converti cette zone en un QBuffer que nous avons associé à la sortie standard du processus externe lancé avec QProcess. Lorsque le processus externe écrit dans sa sortie standard, les données sont automatiquement écrites dans la zone de mémoire partagée.
 
-Notez que dans ce code, nous avons également utilisé la méthode setProcessEnvironment() pour définir l'environnement du processus externe à l'environnement système. Cela permet au processus externe d'accéder aux bibliothèques partagées et aux autres ressources système nécessaires à son exécution.
+Notez que dans ce code, nous avons également utilisé la méthode setProcessEnvironment() pour définir l'environnement du processus externe à l'environnement système. Cela permet au processus externe d'accéder aux bibliothèques partagées et aux autres ressources système nécessaires à son exécution.   
+***
 bruno.donati@hotmail.fr
 comment faire pour lancer l'executable a partir de QML mais qu'il fonctionne en arriere plan ?
 
@@ -774,7 +781,8 @@ Window {
 ```
 Dans cet exemple, nous ouvrons la zone mémoire partagée nommée /ma_zone_memoire_partagee, puis nous créons un tampon ArrayBuffer pour stocker les données lues à partir de la zone mémoire partagée. Nous lisons ensuite les données à partir de la zone mémoire partagée dans le tampon ArrayBuffer, puis nous affichons la valeur lue dans la console QML.
 
-Notez que la taille de la zone mémoire partagée et le type de données stockées peuvent être adaptés à vos besoins. Vous pouvez également utiliser des mécanismes de synchronisation tels que des sémaphores ou des verrous pour éviter les conflits d'accès à la zone mémoire partagée entre l'exécutable C++ et l'application QML.
+Notez que la taille de la zone mémoire partagée et le type de données stockées peuvent être adaptés à vos besoins. Vous pouvez également utiliser des mécanismes de synchronisation tels que des sémaphores ou des verrous pour éviter les conflits d'accès à la zone mémoire partagée entre l'exécutable C++ et l'application QML.   
+***
 bruno.donati@hotmail.fr
 d'accord. peux tu ecrire les programmes completement. Le programme c++ utilise la librairie RtMidi et écoute un instrument midi et stocke les données midi dans la mémoire partagée. Ce programme fonctionne en arriere plan. Le programme qml vient régulièrement récupérer la mémoire partagée et affiche les informations midi sur la console
 
@@ -874,8 +882,8 @@ import QtQuick 2.0
 import QtQuick.Controls 2.0
 
 ApplicationWindow {
-    width:
-
+    width:   
+***
 bruno.donati@hotmail.fr
 continue
 
@@ -923,15 +931,16 @@ Window {
 }
 ```
 Ce programme crée un objet SharedMemory en QML qui correspond à la zone mémoire partagée utilisée par le programme C++. La méthode createQmlObject permet de créer dynamiquement un objet de cette classe dans le contexte QML. Une fois la zone mémoire partagée récupérée, le programme lance un timer qui va lire régulièrement les données dans la zone mémoire partagée. Si la lecture réussit (c'est-à-dire si la zone mémoire partagée est verrouillée avec succès), les données sont affichées dans un TextEdit.
-
-
+   
+***
 ok. la méthode de partage mémoire est-elle specifique a un OS
 
 La méthode de partage de mémoire que vous avez utilisée dans votre exemple est spécifique aux systèmes d'exploitation qui prennent en charge la mémoire partagée en utilisant des noms de fichiers. Cette méthode est couramment utilisée sur les systèmes d'exploitation Unix (tels que Linux, macOS, etc.) pour permettre aux processus de communiquer entre eux en partageant de la mémoire.
 
 Cependant, cette méthode n'est pas disponible sur tous les systèmes d'exploitation. Par exemple, Windows n'a pas de système de fichiers virtuel pour les objets de mémoire partagée et utilise une approche différente pour la mise en œuvre de la mémoire partagée.
 
-Donc, la méthode de partage de mémoire utilisée dans votre exemple ne fonctionnera pas sur Windows. À la place, vous devez utiliser l'API Windows dédiée pour la mémoire partagée.
+Donc, la méthode de partage de mémoire utilisée dans votre exemple ne fonctionnera pas sur Windows. À la place, vous devez utiliser l'API Windows dédiée pour la mémoire partagée.   
+***
 bruno.donati@hotmail.fr
 ok. réécrit le programme pour windows
 
@@ -982,7 +991,8 @@ ApplicationWindow {
 ```
 Dans cette version corrigée, j'ai remplacé Qt.posixSharedMemory par Qt.winrtSharedMemory pour utiliser l'API Windows dédiée pour la mémoire partagée. J'ai également remplacé createHandle() par openHandle() pour ouvrir la zone de mémoire partagée existante.
 
-Le reste du code est identique à la version précédente, car le format de la zone de mémoire partagée reste le même sur toutes les plates-formes.
+Le reste du code est identique à la version précédente, car le format de la zone de mémoire partagée reste le même sur toutes les plates-formes.   
+***
 bruno.donati@hotmail.fr
 le code c++ est il identique ?
 
@@ -1034,7 +1044,8 @@ int main()
 ```
 Dans cet exemple de code, j'ai utilisé l'API Windows pour ouvrir la zone de mémoire partagée existante et mapper cette zone de mémoire dans l'espace d'adressage du processus. Ensuite, j'ai utilisé une boucle while pour lire en continu la zone de mémoire partagée et afficher les nouvelles données.
 
-Le code C++ est différent de la version QML car les API utilisées sont spécifiques à chaque plate-forme et les fonctions nécessaires pour ouvrir, mapper et lire la zone de mémoire partagée sont différentes sous Windows.
+Le code C++ est différent de la version QML car les API utilisées sont spécifiques à chaque plate-forme et les fonctions nécessaires pour ouvrir, mapper et lire la zone de mémoire partagée sont différentes sous Windows.    
+***
 bruno.donati@hotmail.fr
 reecrit le programme suivant pour que la memoire partagée fonctionne sous windows : 
 ```cpp
