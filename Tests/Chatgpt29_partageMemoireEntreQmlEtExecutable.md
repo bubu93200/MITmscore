@@ -24,6 +24,7 @@ Upgrade to PlusNEW
 Light mode
 Get help
 Log out
+***  
 bruno.donati@hotmail.fr
 ecrit le code en c++ qui utilise la librairie RtMidi pour écouter une entrée midi
 
