@@ -47,7 +47,7 @@ Voici un exemple de code pour les deux programmes en utilisant la librairie RtMi
 
 Le programme "ecouteMidi":
 
-cpp
+```cpp
 
 #include <iostream>
 #include <cstdlib>
@@ -119,10 +119,10 @@ int main() {
 
     return 0;
 }
-
+```
 Le programme "affichage midi":
 
-cpp
+```cpp
 
 #include <iostream>
 #include <cstdlib>
@@ -157,7 +157,6 @@ cerr << "Erreur lors de la création de la zone de mémoire partagée" << endl;
 return 1;
 }
 
-scss
 
 // Attachement de la zone de mémoire partagée
 void* shared_memory_ptr = shmat(shared_memory_id, NULL, 0);
@@ -205,7 +204,7 @@ shmctl(shared_memory_id, IPC_RMID, NULL);
 return 0;
 
 }
-
+```
 vbnet
 
 
@@ -218,7 +217,7 @@ Je suis désolé, j'ai mal compris votre demande précédente. Voici les codes d
 
 Programme EcouteMidi:
 
-cpp
+```cpp
 
 #include <iostream>
 #include <vector>
@@ -269,10 +268,10 @@ int main() {
 
     return 0;
 }
-
+```
 Programme AffichageMidi:
 
-cpp
+```cpp
 
 #include <iostream>
 #include <vector>
@@ -310,10 +309,7 @@ int main() {
     while (true) {
         // Parcours de la zone de mémoire partagée
 
-bruno.donati@hotmail.fr
-continue
 
-cpp
 
         // Récupération de l'adresse de début de la zone de mémoire partagée
         void* start_address = shared_memory_ptr;
@@ -344,14 +340,14 @@ cpp
 
     return 0;
 }
-
+```
 Notez que ces codes sont des exemples et peuvent nécessiter des ajustements pour correspondre à votre utilisation spécifique.
 bruno.donati@hotmail.fr
 je veux que le programme ecoutemidi formate les message qu'il va stocker dans le partage mémoire en temps (double), 1er octet midi (int), 2ème cotet midi (int), 3ème octet midi (int). temps correspond à stamp
 
 Voici le code pour le programme ecouteMidi mis à jour pour stocker les messages MIDI sous forme de double pour le temps et de trois int pour les octets MIDI dans la zone de mémoire partagée :
 
-cpp
+```cpp
 
 #include <iostream>
 #include <chrono>
@@ -422,14 +418,14 @@ int main()
 
     return 0;
 }
-
+```
 Notez que le temps est récupéré à l'aide de la fonction getMessage() de RtMidiIn et stocké dans un pointeur double* dans la zone de mé
 bruno.donati@hotmail.fr
 continue
 
 Voici le code pour le programme affichageMidi mis à jour pour récupérer les messages MIDI sous forme de double pour le temps et de trois int pour les octets MIDI depuis la zone de mémoire partagée et les afficher sur la console toutes les 100ms :
 
-cpp
+```cpp
 
 #include <iostream>
 #include <Windows.h>
@@ -483,7 +479,7 @@ int main()
 
     return 0;
 }
-
+```
 Notez que la boucle d'affichage utilise la fonction sleep_for() de std::this_thread pour attendre 100ms entre chaque récupération des messages MIDI stockés dans la zone de mémoire partagée. Les messages sont ensuite affichés sur la console.
 bruno.donati@hotmail.fr
 dans la zone partagée, il peut y avoir plusieurs messages midi en attente puisqu'on peut taper beaucoup de notes en même temps. est-ce que ce programme fonctionne ?
@@ -492,7 +488,7 @@ Dans l'implémentation actuelle, le programme affichageMidi récupère les derni
 
 Pour prendre en charge plusieurs messages MIDI en attente dans la zone de mémoire partagée, vous pouvez modifier le programme affichageMidi pour boucler sur tous les messages stockés dans la zone de mémoire partagée. Voici comment vous pouvez le faire :
 
-cpp
+```cpp
 
 // Boucle d'affichage des messages MIDI stockés dans la zone de mémoire partagée
 while (true) {
@@ -521,7 +517,7 @@ while (true) {
     // Attente avant de récupérer les prochains messages MIDI
     this_thread::sleep_for(chrono::milliseconds(100));
 }
-
+```
 Dans cette version mise à jour du programme affichageMidi, la boucle d'affichage récupère le nombre de messages MIDI stockés dans la zone de mémoire partagée et parcourt tous les messages en boucle. Le temps et les données MIDI de chaque message sont extraits de la zone de mémoire partagée et affichés sur la console.
 
 Il est important de noter que le programme ecouteMidi doit également être modifié pour stocker plusieurs messages MIDI dans la zone de mémoire partagée au lieu de remplacer le message précédent à chaque fois qu'un nouveau message arrive.
@@ -532,7 +528,7 @@ Vous avez raison, num_messages_ptr n'est pas défini dans le programme ecouteMid
 
 Voici comment vous pouvez mettre à jour le programme ecouteMidi pour stocker plusieurs messages MIDI dans la zone de mémoire partagée :
 
-cpp
+```cpp
 
 #include <chrono>
 #include <iostream>
@@ -601,7 +597,7 @@ int main()
 
     return 0;
 }
-
+```
 Dans cette version mise à jour du programme ecouteMidi, nous avons ajouté une variable num_messages_ptr pour compter le nombre de messages MIDI stockés dans la zone de mémoire partagée. La variable est initialisée à 0 et stockée dans la zone de mémoire partagée au début du
 bruno.donati@hotmail.fr
 tu es sur qu'aucun message ne sera perdu ?
@@ -618,7 +614,7 @@ Dans ce cas, pour éviter toute perte de messages, il faut mettre en place un sy
 
 Voici un exemple de code pour la fonction handleMidiInput du programme ecouteMidi, qui utilise une file d'attente pour stocker les messages MIDI en surplus :
 
-cpp
+```cpp
 
 void handleMidiInput(double stamp, std::vector<unsigned char>* message, void* userData)
 {
@@ -643,12 +639,12 @@ void handleMidiInput(double stamp, std::vector<unsigned char>* message, void* us
         overflow_queue.push(messageData);
     }
 }
-
+```
 Dans cette version, on utilise un mutex pour éviter les conflits entre les threads qui accèdent au buffer partagé. Si le buffer est plein, on ajoute les messages en surplus à une file d'attente overflow_queue.
 
 Dans le programme affichageMidi, on peut alors ajouter une boucle qui traite les messages dans la file d'attente en plus des messages stockés dans le buffer partagé :
 
-cpp
+```cpp
 
 // Read messages from the shared buffer and the overflow queue
 std::lock_guard<std::mutex> lock(*mutex_ptr);
@@ -662,7 +658,7 @@ while (!overflow_queue.empty()) {
     // ...
     overflow_queue.pop();
 }
-
+```
 Cela permet de traiter les messages MIDI en temps réel et d'éviter toute perte de données.
 bruno.donati@hotmail.fr
 réécrit les 2 programmes completement
@@ -671,7 +667,7 @@ D'accord, voici les deux programmes réécrits en prenant en compte les modifica
 
 Programme ecouteMidi :
 
-cpp
+```cpp
 
 #include <iostream>
 #include <vector>
@@ -770,13 +766,13 @@ int main()
         while (!overflow_queue.empty()) {
             // Copy the message from the queue to the shared buffer
             if (num_messages
-
+```
 bruno.donati@hotmail.fr
 continue
 
 Voici la suite des programmes pour l'affichage des messages MIDI récupérés depuis la mémoire partagée:
 
-cpp
+```cpp
 
 #include <iostream>
 #include <chrono>
@@ -842,7 +838,7 @@ int main() {
 
     return 0;
 }
-
+```
 Ces programmes utilisent la bibliothèque Windows.h pour la gestion de la mémoire partagée. Il est important de noter que le programme d'affichage MIDI doit être exécuté après le programme d'écoute MIDI, sinon il ne pourra pas accéder à la zone de mémoire partagée.
 bruno.donati@hotmail.fr
 si on sait que la taille totale des messages accumulés dans la mémoire partagée est toujours inférieur à BUFFER_SIZE, faut-il écrire tout ce code ? On ne veut toujours perdre aucun message
@@ -855,7 +851,7 @@ d'accord. Réécrit ecoutemidi complètement
 
 D'accord, voici une version complète du programme ecoutemidi en utilisant la librairie RtMidi et la mémoire partagée pour stocker les messages MIDI :
 
-cpp
+```cpp
 
 #include <iostream>
 #include <vector>
@@ -943,7 +939,7 @@ int main() {
 
     return 0;
 }
-
+```
 Ce programme utilise la librairie RtMidi pour lire les messages MIDI à partir d'un port MIDI sélectionné par l'utilisateur. Les messages MIDI sont ensuite stockés dans la mémoire partagée en tant que structures MidiMessage, qui contiennent le timestamp et les données MIDI.
 
 Si le nombre de messages stockés dans la mémoire partagée atteint la limite BUFFER_SIZE, le programme attend que de la place soit libérée dans le buffer avant de continuer à stocker des messages.
@@ -954,7 +950,7 @@ tu as oublié le formatage des messages à partager en mémoire ne : stamp, et 3
 
 Je m'excuse pour l'oubli. Voici la version mise à jour du programme ecoutemidi, avec la mise en forme des messages à stocker en mémoire partagée et la compatibilité Windows :
 
-c++
+```cpp
 
 #include <iostream>
 #include <chrono>
@@ -1053,14 +1049,14 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
-
+```
 Le programme écoute maintenant les messages MIDI en utilisant la bibliothèque RtMidi et formate les messages à stocker en mémoire partagée en incluant le temps (stamp) et les 3 oct
 bruno.donati@hotmail.fr
 réécrit affichagemidi. Il faut être sur qu'on ne perd aucun message
 
 Voici une version modifiée de affichagemidi qui lit les messages MIDI stockés dans la zone partagée et les affiche sur la console. Cette version utilise un sémaphore pour s'assurer qu'elle ne lira jamais des données incomplètes ou obsolètes. Elle lit également les données du tampon en blocs plutôt que d'une unité à la fois, ce qui peut être plus efficace.
 
-cpp
+```cpp
 
 #include <windows.h>
 #include <iostream>
@@ -1146,12 +1142,6 @@ int main()
 
         ReleaseSemaphore(semaphore_handle
 
-bruno.donati@hotmail.fr
-continue
-
-Voici la suite du programme affichagemidi :
-
-cpp
 
 // ...
 
@@ -1198,7 +1188,7 @@ while (true) {
 }
 
 // ...
-
+```
 Le programme commence par ouvrir la mémoire partagée en mode lecture seule, puis il mappe la zone mémoire dans l'espace d'adressage du processus. Ensuite, il lit le nombre de messages actuellement stockés dans la mémoire partagée, ainsi que les pointeurs vers les timestamps et les octets MIDI stockés.
 
 Dans la boucle principale, le programme vérifie si le nombre de messages stockés a changé depuis la dernière itération. Si c'est le cas, il parcourt les nouveaux messages et les affiche à l'écran. Le programme met ensuite à jour le nombre de messages lus pour la prochaine itération. Enfin, le programme attend un petit moment avant de vérifier à nouveau.
@@ -1233,7 +1223,7 @@ d'accord réécrit ecoutemidi
 
 Voici une nouvelle version de ecoutemidi qui utilise un sémaphore pour éviter les conflits lors de l'accès à la mémoire partagée:
 
-c
+```cpp
 
 #include <iostream>
 #include <Windows.h>
@@ -1312,7 +1302,7 @@ int main() {
 
     return 0;
 }
-
+```
 Cette version utilise la fonction WaitForSingleObject pour attendre le sémaphore avant d'ajouter un message à la zone de mémoire partagée, et la fonction ReleaseSemaphore pour libérer le sémaphore une fois l'ajout terminé.
 
 Notez que le sémaphore est initialisé avec une valeur de 1, ce qui signifie qu'un seul processus à la fois peut accéder à la zone de mémoire partagée. Si vous souhaitez permettre l
@@ -1323,7 +1313,7 @@ Effectivement, si la création du sémaphore échoue, cela signifie probablement
 
 Voici une nouvelle version de ecoutemidi qui prend en compte ces éléments :
 
-cpp
+```cpp
 
 #include <iostream>
 #include <cstdlib>
@@ -1395,13 +1385,13 @@ int main()
             memcpy((void*)(num_messages_ptr + 4 + index), (void*)&message[2], sizeof(int));
             
             // M
-
+```
 bruno.donati@hotmail.fr
 continue
 
 Voici une version mise à jour de ecoutemidi prenant en compte les remarques précédentes :
 
-c++
+```cpp
 
 #include <iostream>
 #include <Windows.h>
@@ -1493,13 +1483,13 @@ int main()
             midi_message.byte2 = message[1];
         }
         if (message.size() >= 3
-
+```
 bruno.donati@hotmail.fr
 continue
 
 Voici la suite du code pour ecoutemidi :
 
-c++
+```cpp
 
 #include <iostream>
 #include <cstdlib>
@@ -1560,7 +1550,7 @@ int main()
     CloseHandle(hMapFile);
     return 0;
 }
-
+```
 Nous avons ajouté la création d'un sémaphore pour synchroniser l'accès à la mémoire partagée, ainsi que la création d'un nom de sémaphore pour l'utiliser également dans le programme affichagemidi.
 
 Nous avons également ajouté le formatage des messages MIDI stockés dans la mémoire partagée, avec un timestamp au format double et 3 octets MIDI.
@@ -1571,7 +1561,7 @@ non ce programme est incomplet
 
 Je m'excuse pour cette erreur. Voici la version complète et corrigée de ecoutemidi qui tient compte de la gestion d'erreur en cas d'échec de la création du sémaphore :
 
-c
+```cpp
 
 #include <iostream>
 #include <Windows.h>
@@ -1658,6 +1648,6 @@ int main() {
     CloseHandle(semaphoreHandle);
     return 0;
 }
-
+```
 ChatGPT Mar 23 Version. Free Research Preview. ChatGPT may produce inaccurate information about people, places, or facts
 
