@@ -157,5 +157,8 @@ In the Solution Explorer window, select the INSTALL project, then go to Build > 
 Watch the Output window and wait for the completion message to appear:
 ========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
 
-Note: Although building the INSTALL project is required, it need be done only once. Unless you change external resources (e.g. templates, workspaces, soundfonts, or translations) or change the build configuration, there is no need to build the INSTALL project again.
+Note: Although building the INSTALL project is required, it need be done only once. Unless you change external resources (e.g. templates, workspaces, soundfonts, or translations) or change the build configuration, there is no need to build the INSTALL project again.  
+
+
+Pour lancer MuseScore en mode debug. Mettre mscore comme seul projet de lancement et compiler puis lancer.  
 
