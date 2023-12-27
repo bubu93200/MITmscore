@@ -163,9 +163,13 @@ Watch the Output window and wait for the completion message to appear:
 Note: Although building the INSTALL project is required, it need be done only once. Unless you change external resources (e.g. templates, workspaces, soundfonts, or translations) or change the build configuration, there is no need to build the INSTALL project again.  
 
 # Démarrage  
-1 - Pour recompiler l'ensemlbe. Mettre INSTALL comme seul projet et faire "générer". Cela permet de mettre à jour les mofiications faites. Si pas de modification, passer cette étape.  
+1 - Pour recompiler l'ensemble. Mettre INSTALL comme seul projet et faire "générer". Cela permet de mettre à jour les mofiications faites. Si pas de modification, passer cette étape.  
 2 - Pour lancer MuseScore en mode debug. Mettre "mscore" comme seul projet de lancement et compiler puis lancer.   
 
 # Démarrage suite à modifications  
 
-Par exemple, si on veut créer un nouveau plugin, on met le fichier .QML dans le répertoire C:\MUSESCORE\MuseScore362GITHUB2\share\plugins puis on compile "install " pour le prendre en compte puis on démarre MSCORE.  
+Par exemple, si on veut créer un nouveau plugin, on met le fichier .QML dans le répertoire C:\MUSESCORE\MuseScore362GITHUB2\share\plugins puis on compile "install " pour le prendre en compte puis on démarre MSCORE. 
+
+# Déboggage du plugin QML  
+On peut utilise la fenêtre de debug inclue dans musescore mais ce n'est pas très satisfaisant.   
+Comment faire autrement ?  
