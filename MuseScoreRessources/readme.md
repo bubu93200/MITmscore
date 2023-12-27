@@ -171,5 +171,5 @@ Note: Although building the INSTALL project is required, it need be done only on
 Par exemple, si on veut créer un nouveau plugin, on met le fichier .QML dans le répertoire C:\MUSESCORE\MuseScore362GITHUB2\share\plugins puis on compile "install " pour le prendre en compte puis on démarre MSCORE. 
 
 # Déboggage du plugin QML  
-On peut utilise la fenêtre de debug inclue dans musescore mais ce n'est pas très satisfaisant.   
-Comment faire autrement ?  
+On peut utiliser, dans MuseScore, la fenêtre "Créateur de Plugin" incluant une fenêtre de débug basique mais ce n'est pas très satisfaisant.   
+Comment faire mieux autrement ?  
