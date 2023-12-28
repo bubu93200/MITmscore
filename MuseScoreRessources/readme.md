@@ -166,9 +166,10 @@ Note: Although building the INSTALL project is required, it need be done only on
 1 - Pour recompiler l'ensemble. Mettre INSTALL comme seul projet et faire "générer". Cela permet de mettre à jour les mofiications faites. Si pas de modification, passer cette étape.  
 2 - Pour lancer MuseScore en mode debug. Mettre "mscore" comme seul projet de lancement et compiler puis lancer.   
 
-# Démarrage suite à modifications  
+# Démarrage et ajout d'un plugin  
 
-Par exemple, si on veut créer un nouveau plugin, on met le fichier .QML dans le répertoire C:\MUSESCORE\MuseScore362GITHUB2\share\plugins puis on compile "install " pour le prendre en compte puis on démarre MSCORE. 
+Par exemple, si on veut créer un nouveau plugin, on met le fichier .QML dans le répertoire C:\MUSESCORE\MuseScore362GITHUB2\share\plugins puis on compile "install " pour le prendre en compte puis on démarre MSCORE.
+Le répertoire "C:\MUSESCORE\MuseScore362GITHUB2\mscore\plugin\api" doit contenir les fonctions accessibles par les plugins.   
 
 # Déboggage du plugin QML  
 On peut utiliser, dans MuseScore, la fenêtre "Créateur de Plugin" incluant une fenêtre de débug basique mais ce n'est pas très satisfaisant.   
