@@ -181,7 +181,7 @@ Comment faire mieux autrement ?
 ## Préparation du dépot MuseScore   
 Faire la même chose que pour visual Studio.  
 En plus, Il faut ajouter le répertoire dtl (provenant de thirdparty) au répertoire libmscore pour ne pas avoir une erreur de compilation. 
-## Etape de compilation  
+## Etapes de compilation  
 1 - Lancer QT Creator 9.0.1 (Community)     
 2 - Ouvrir un projet existant
 3 - Selectionner le dépot MuseScore et Ouvrir le fichier CMakeLists.txt présent à la racine. QT génère la solution de façon automatique.  
