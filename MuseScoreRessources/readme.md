@@ -174,3 +174,10 @@ Le répertoire "C:\MUSESCORE\MuseScore362GITHUB2\mscore\plugin\api" doit conteni
 # Déboggage du plugin QML  
 On peut utiliser, dans MuseScore, la fenêtre "Créateur de Plugin" incluant une fenêtre de débug basique mais ce n'est pas très satisfaisant.   
 Comment faire mieux autrement ?  
+
+
+
+# Installation avec QT  
+Installer QT
+Ouvrir un projet existant et sélectionner le fichier CMakeLists.txt dans la racine. Cmake construit la solution automatiquement.
+Si cela plante, il faut supprimer ninja dans la configuration et faire lancer avec les paramètres initiaux.   
