@@ -178,6 +178,14 @@ Comment faire mieux autrement ?
 
 
 # Installation avec QT  
-Installer QT
-Ouvrir un projet existant et sélectionner le fichier CMakeLists.txt dans la racine. Cmake construit la solution automatiquement.
-Si cela plante, il faut supprimer ninja dans la configuration et faire lancer avec les paramètres initiaux.   
+## Préparation du dépot MuseScore   
+Faire la même chose que pour visual Studio.  
+En plus, Il faut ajouter le répertoire dtl (provenant de thirdparty) au répertoire libmscore pour ne pas avoir une erreur de compilation. 
+## Etape de compilation  
+1 - Lancer QT Creator 9.0.1 (Community)     
+2 - Ouvrir un projet existant
+3 - Selectionner le dépot MuseScore et Ouvrir le fichier CMakeLists.txt présent à la racine. QT génère la solution de façon automatique.  
+et sélectionner le fichier CMakeLists.txt dans la racine. Cmake construit la solution automatiquement.
+Si cela plante, il faut supprimer ninja dans la configuration et faire lancer avec les paramètres initiaux. 
+4 - Executer...   
+5 - Aller dans Projet et faire Exécuter CMake  
