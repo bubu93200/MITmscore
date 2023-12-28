@@ -189,3 +189,4 @@ et sélectionner le fichier CMakeLists.txt dans la racine. Cmake construit la so
 Si cela plante, il faut supprimer ninja dans la configuration et faire lancer avec les paramètres initiaux. 
 4 - Executer...   
 5 - Aller dans Projet et faire Exécuter CMake  
+6 - Complier le projet mscore   
