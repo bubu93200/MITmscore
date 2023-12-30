@@ -178,6 +178,9 @@ Comment faire mieux autrement ?
 
 
 # Installation avec QT  
+## installation de ninja  
+Il faut installer ninja pour que cmake fonctionne.  
+Le fichier d'installation se trouve sur le site https://github.com/ninja-build/ninja/releases  
 ## Préparation du dépot MuseScore   
 Faire la même chose que pour visual Studio.  
 En plus, Il faut ajouter le répertoire dtl (provenant de thirdparty) au répertoire libmscore pour ne pas avoir une erreur de compilation. 
