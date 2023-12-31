@@ -109,6 +109,10 @@ Install JACK in the default location.
 # 7-Zip
 You will need a utility that handles .7z compressed files. 7-Zip is open-source, free, and quite powerful, but there are alternatives that will work as well.
 
+# dtl  
+Sometimes, library dtl in repertory ../thirdparty/dtl/dtl have to be in ../libmscore/dtl    
+So replace it, if necessary.   
+
 # Building
 
 Before you can build MuseScore, you need to download and install all of the prerequisites (above).
@@ -166,7 +170,7 @@ Note: Although building the INSTALL project is required, it need be done only on
 1 - Pour recompiler l'ensemble. Mettre INSTALL comme seul projet et faire "générer". Cela permet de mettre à jour les mofiications faites. Si pas de modification, passer cette étape.  
 2 - Pour lancer MuseScore en mode debug. Mettre "mscore" comme seul projet de lancement et compiler puis lancer.   
 
-# Démarrage et ajout d'un plugin  
+# Démarrage - ajout d'un plugin - utilisation de l'API plugin  
 
 Par exemple, si on veut créer un nouveau plugin, on met le fichier .QML dans le répertoire C:\MUSESCORE\MuseScore362GITHUB2\share\plugins puis on compile "install " pour le prendre en compte puis on démarre MSCORE.
 Le répertoire "C:\MUSESCORE\MuseScore362GITHUB2\mscore\plugin\api" doit contenir les fonctions accessibles par les plugins.   
