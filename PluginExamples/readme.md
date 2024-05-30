@@ -7,3 +7,6 @@ Exemple du plugin **pulsation.qml** => voir sur le lien youtube https://www.yout
 # Copyright Dominique Verrière pour toute cette partie  
 - Chaine youtube : http://www.youtube.com/@DominiqueVerriere  
 - Source des fichiers : 1drv.ms/u/s!AtGmkI-1Ip8uh_Ir_2muS-9o-J58xQ?e=BpNbOE   
+
+# Compile MuseScore with QTcreator   
+https://www.youtube.com/watch?v=QAinITDdpW8    
