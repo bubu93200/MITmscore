@@ -10,3 +10,6 @@ Exemple du plugin **pulsation.qml** => voir sur le lien youtube https://www.yout
 
 # Compile MuseScore with QTcreator   
 https://www.youtube.com/watch?v=QAinITDdpW8    
+
+# Plugin for MuseScore 4 : analyzer of element
+https://github.com/lgvr123/musescore-elementanalyser   
