@@ -13,3 +13,9 @@ https://www.youtube.com/watch?v=QAinITDdpW8
 
 # Plugin for MuseScore 4 : analyzer of element
 https://github.com/lgvr123/musescore-elementanalyser   
+
+# Handbook on plugins
+https://musescore.org/en/handbook/developers-handbook/plugins-3x#nonAPI   
+
+# plugin to have autocompletion, very unstable
+https://musescore.org/en/project/makeshift-repl-plugin-function-tester
