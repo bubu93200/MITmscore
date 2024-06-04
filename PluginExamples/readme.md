@@ -17,5 +17,5 @@ https://github.com/lgvr123/musescore-elementanalyser
 # Handbook on plugins
 https://musescore.org/en/handbook/developers-handbook/plugins-3x#nonAPI   
 
-# plugin to have autocompletion, very unstable
+# plugin to have autocompletion, very unstable **Makeshift REPL plugin function tester**  
 https://musescore.org/en/project/makeshift-repl-plugin-function-tester
