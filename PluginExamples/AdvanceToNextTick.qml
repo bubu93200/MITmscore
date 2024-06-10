@@ -73,7 +73,7 @@ MuseScore {
             onClicked: {
                     console.info("Click start Button"); // Message d'information
                     console.info(curScore.scoreName); // Message d'information
-                    console.info("MuseScore Version: ",mscoreMajorVersion); // Message d'information
+                    console.info("MuseScore Version: " + mscoreMajorVersion + "." + mscoreMinorVersion); // Message d'information
                     runlecture();
                 }
             
