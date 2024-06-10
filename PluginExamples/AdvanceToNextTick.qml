@@ -34,6 +34,8 @@ MuseScore {
     width:  300
     height: 800
 
+    id: mainWindow
+
     // ====================== DEBUT MENU ========================================
     Column {
         //mise en colonne des éléments
