@@ -30,6 +30,7 @@ Doc API 3.0 : https://musescore.org/en/handbook/developers-handbook/plugins-3x
 API 3.5 Documentation Doxygen : https://musescore.github.io/MuseScore_PluginAPI_Docs/plugins/html/index.html   
 Doc API 4.0 : https://musescore.org/en/node/337468   
 Structure des partitions: https://musescore.org/en/handbook/developers-handbook/plugins-3x#API_inheritance_versus_Score_Structure   
+Structure des partitions: https://musescore.org/en/developers-handbook/references/musescore-internal-score-representation
 
 
 # Progress 
