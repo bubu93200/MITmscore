@@ -58,7 +58,7 @@ MuseScore {
                     implicitWidth: 100
                     implicitHeight: 40
                     //color: isBlue ? "#d6d6d6" : "#f6f6f6"
-                    color: isBlue ? "blue" : "red"
+                    color: isBlue ? "blue" : "red" // TODO: change color. choose in properties chapter
                     border.color: "#26282a"
                     border.width: 1
                     radius: 4
