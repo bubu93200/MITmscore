@@ -36,6 +36,7 @@ MuseScore {
 
     id: mainWindow
 
+
     // ====================== DEBUT MENU ========================================
     Column {
         //mise en colonne des éléments
@@ -103,7 +104,7 @@ MuseScore {
       function nomNote(note)
       {
           var nomNote;
-          switch (note.tpc) {
+          switch (note.tpc){//Nom de note sur une octave - note.pitch pour avoir la note exacte
              case -1: nomNote =  "FA/F♭♭" ; break;
              case  0: nomNote =  "DO/C♭♭" ; break;
              case  1: nomNote =  "SOL/G♭♭" ; break;
@@ -197,9 +198,12 @@ MuseScore {
 
     function runlecture()
     {
-        var cursor = curScore.newCursor();
+        var cursor = curScore.newCursor(); // une fois créé, le curseur ne pointe sur rien
         
-        cursor.rewind(0);
+        cursor.rewind(Cursor.SCORE_START); // revient au début de la partition
+            // Define the enum:
+            // enum RewindMode     { SCORE_START = 0, SELECTION_START = 1, SELECTION_END = 2}
+            // enum InputStateMode { INPUT_STATE_INDEPENDENT, INPUT_STATE_SYNC_WITH_SCORE }
 
 
         cursor.track = 0;// on se positionne en début de partition
@@ -223,6 +227,8 @@ MuseScore {
         cursor.next();
         currentTick = cursor.tick;
         console.info("Numero du tick : ",currentTick);
+        // Colorie la première note au tick courant
+        
 
         // variables de travail
           var elt;
