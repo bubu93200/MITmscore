@@ -711,6 +711,9 @@
     <None Include="rtmidi\contrib\go\rtmidi\go.mod" />
     <None Include="rtmidi\contrib\go\rtmidi\rtmidi.go" />
     <None Include="rtmidi\contrib\go\rtmidi\rtmidi_test.go" />
+    <None Include="AdvanceToNextTick.qml">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MuseScoreRessources\DependenciesContent\dependencies\include\lame\lame.h">

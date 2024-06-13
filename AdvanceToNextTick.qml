@@ -1,4 +1,4 @@
-//=============================================================================
+﻿//=============================================================================
 //  Midi Instrument Training plugin for MuseScore
 //  Copyright (C) 2014 Jean-Baptiste Delisle
 //  Based on colornotes plugin :

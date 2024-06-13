@@ -251,6 +251,7 @@
       <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Filename).moc</QtMocFileName>
     </QtMoc>
     <None Include=".gitattributes" />
+    <None Include="AdvanceToNextTick.qml" />
     <None Include="batch_export-master\batch_convert\batch_convert.qml" />
     <None Include="batch_export-master\batch_convert\NiceRadioButton.qml" />
     <None Include="batch_export-master\batch_convert\SmallCheckBox.qml" />
