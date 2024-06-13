@@ -75,7 +75,8 @@ MuseScore {
                     console.info("Click start Button"); // Message d'information
                     console.info(curScore.scoreName); // Message d'information
                     console.info("MuseScore Version: " + mscoreMajorVersion + "." + mscoreMinorVersion); // Message d'information
-                    runlecture();
+                    lecturepartition();
+                    //runlecture();
                 }
             
         }
@@ -193,7 +194,63 @@ MuseScore {
 
           return retour;
       }
+    // Fonction lecture de la partition
+    function lecturepartition()
+    {
+        console.log("Début fonction lecturepartition()");
 
+        var score = curScore; // ouvre la partiton courante
+
+        if (!score) {
+            console.log("No score is open.");
+            return;
+        }
+
+        //Curseur
+        var curscore = score.newCursor(); // une fois créé, le curseur ne pointe sur rien
+        curscore.rewind(Cursor.SCORE_START); // revient au début de la partition
+        // Define the enum:
+        // enum RewindMode     { SCORE_START = 0, SELECTION_START = 1, SELECTION_END = 2}
+        // enum InputStateMode { INPUT_STATE_INDEPENDENT, INPUT_STATE_SYNC_WITH_SCORE }
+
+        // Iterate over staves
+        for (var staffIdx = 0; staffIdx < score.staves; staffIdx++) {
+            var staff = score.staff(staffIdx);
+            console.log("Staff:", staff);
+
+             // Iterate over measures in the staff
+            for (var measureIdx = 0; measureIdx < staff.measures.length; measureIdx++) {
+                var measure = staff.measures[measureIdx];
+                console.log("Mesure:", measure);
+
+                // Iterate over segments in the measure
+                for (var segmentIdx = 0; segmentIdx < measure.segments.length; segmentIdx++) {
+                    var segment = measure.segments[segmentIdx];
+
+                    // Check if segment contains notes (ChordRest type)
+                    if (segment.type === SegmentType.ChordRest) {
+                        var element = segment.element;
+
+                        // Ensure the element is a chord
+                        if (element && element.type === ElementType.CHORD) {
+                            var chord = element;
+
+                            // Iterate over notes in the chord
+                            for (var noteIdx = 0; noteIdx < chord.notes.length; noteIdx++) {
+                                var note = chord.notes[noteIdx];
+                                var pitch = note.pitch;
+
+                                console.log("Note pitch:", pitch);
+
+                                // Change the color of the note to red
+                                note.color = newColor(255, 0, 0);  // RGB values for red
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     // Fonction principale du plugin
 
     function runlecture()
@@ -201,9 +258,9 @@ MuseScore {
         var cursor = curScore.newCursor(); // une fois créé, le curseur ne pointe sur rien
         
         cursor.rewind(Cursor.SCORE_START); // revient au début de la partition
-            // Define the enum:
-            // enum RewindMode     { SCORE_START = 0, SELECTION_START = 1, SELECTION_END = 2}
-            // enum InputStateMode { INPUT_STATE_INDEPENDENT, INPUT_STATE_SYNC_WITH_SCORE }
+        // Define the enum:
+        // enum RewindMode     { SCORE_START = 0, SELECTION_START = 1, SELECTION_END = 2}
+         // enum InputStateMode { INPUT_STATE_INDEPENDENT, INPUT_STATE_SYNC_WITH_SCORE }
 
 
         cursor.track = 0;// on se positionne en début de partition
