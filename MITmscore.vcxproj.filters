@@ -590,6 +590,15 @@
     <ClCompile Include="rtmidi\rtmidi_c.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="libmscore\out\build\x64-Debug\CMakeFiles\3.24.202208181-MSVC_2\CompilerIdC\CMakeCCompilerId.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\out\build\x64-Debug\CMakeFiles\3.24.202208181-MSVC_2\CompilerIdCXX\CMakeCXXCompilerId.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libmscore\out\build\x64-Debug\CMakeFiles\ShowIncludes\main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
@@ -713,6 +722,12 @@
     <None Include="rtmidi\contrib\go\rtmidi\rtmidi_test.go" />
     <None Include="AdvanceToNextTick.qml">
       <Filter>Source Files</Filter>
+    </None>
+    <None Include="libmscore\out\build\x64-Debug\CMakeFiles\3.24.202208181-MSVC_2\CMakeDetermineCompilerABI_C.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="libmscore\out\build\x64-Debug\CMakeFiles\3.24.202208181-MSVC_2\CMakeDetermineCompilerABI_CXX.bin">
+      <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -1233,6 +1248,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="rtmidi\rtmidi_c.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libmscore\out\build\x64-Debug\CMakeFiles\ShowIncludes\foo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

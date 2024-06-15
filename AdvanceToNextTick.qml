@@ -26,7 +26,7 @@ import MuseScore 3.0
     
 
 MuseScore {
-    menuPath: "MIT.AdvanceToNextTick"
+    menuPath: "MIT.AdvanceToNextTick" //On met le plugin dans un sous-menu
     description: "This plugin do tests on Musescore features"
     version:  "1.0"
     pluginType: "dialog" //TODO : Mettre dock pour avoir un menu ancré

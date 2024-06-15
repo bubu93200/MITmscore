@@ -150,6 +150,9 @@
     <ClCompile Include="libmscore\noteline.cpp" />
     <ClCompile Include="libmscore\ossia.cpp" />
     <ClCompile Include="libmscore\ottava.cpp" />
+    <ClCompile Include="libmscore\out\build\x64-Debug\CMakeFiles\3.24.202208181-MSVC_2\CompilerIdCXX\CMakeCXXCompilerId.cpp" />
+    <ClCompile Include="libmscore\out\build\x64-Debug\CMakeFiles\3.24.202208181-MSVC_2\CompilerIdC\CMakeCCompilerId.c" />
+    <ClCompile Include="libmscore\out\build\x64-Debug\CMakeFiles\ShowIncludes\main.c" />
     <ClCompile Include="libmscore\page.cpp" />
     <ClCompile Include="libmscore\palmmute.cpp" />
     <ClCompile Include="libmscore\part.cpp" />
@@ -263,6 +266,8 @@
     <None Include="batch_export-master\batch_convert\translations\lupdate.cmd" />
     <None Include="batch_export-master\batch_convert\translations\translation_utility.sh" />
     <None Include="libmscore\.gitignore" />
+    <None Include="libmscore\out\build\x64-Debug\CMakeFiles\3.24.202208181-MSVC_2\CMakeDetermineCompilerABI_C.bin" />
+    <None Include="libmscore\out\build\x64-Debug\CMakeFiles\3.24.202208181-MSVC_2\CMakeDetermineCompilerABI_CXX.bin" />
     <None Include="midi_batch\batch_convert.qml" />
     <None Include="midi_batch\NiceRadioButton.qml" />
     <None Include="midi_batch\SmallCheckBox.qml" />
@@ -326,6 +331,7 @@
     <ClInclude Include="libmscore\audio.h" />
     <ClInclude Include="libmscore\bagpembell.h" />
     <ClInclude Include="libmscore\barline.h" />
+    <ClInclude Include="libmscore\out\build\x64-Debug\CMakeFiles\ShowIncludes\foo.h" />
     <ClInclude Include="rtmidi\contrib\go\rtmidi\rtmidi_stub.h" />
     <ClInclude Include="rtmidi\RtMidi.h" />
     <ClInclude Include="rtmidi\rtmidi_c.h" />
