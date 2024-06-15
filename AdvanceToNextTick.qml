@@ -26,7 +26,7 @@ import MuseScore 3.0
     
 
 MuseScore {
-    menuPath: "Plugins.AdvanceToNextTick"
+    menuPath: "MIT.AdvanceToNextTick"
     description: "This plugin do tests on Musescore features"
     version:  "1.0"
     pluginType: "dialog" //TODO : Mettre dock pour avoir un menu ancré
@@ -81,6 +81,15 @@ MuseScore {
             
         }
     }
+
+    onRun: {
+       console.log("Lancement de la lecture de partition")
+       if (typeof curScore == 'undefined' || curScore == null) {
+           console.log("Aucune partition active");
+           Qt.quit();
+       }
+    }
+
     // ====================== FIN MENU ==========================================
     
 
@@ -95,7 +104,7 @@ MuseScore {
 
 
     // ====================== FIN CONSTANTES ===============================
-
+    
 
 
     // ====================== DEBUT Fonctions ===================================
@@ -390,16 +399,15 @@ MuseScore {
         */
     }
    
+
+    // Fonction de test du plugin
+
+    function runtest()
+    {
+    }
     // ====================== FIN Fonctions ===================================
 
   
 
-    onRun: {
-       console.log("Lancement de la lecture de partition")
-       if (typeof curScore == 'undefined' || curScore == null) {
-           console.log("Aucune partition active");
-           Qt.quit();
-       }
-    }
     
 }
