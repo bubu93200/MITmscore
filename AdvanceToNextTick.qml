@@ -12,6 +12,7 @@
 //=============================================================================
 // Mise à jour pour MuseScore 3
 // Copyright (C) 2024 Bruno Donati
+// Version 0.00 22/06/2024
 //=============================================================================
 
 // Quelques liens utiles  TODO : mettre à jour les liens
@@ -20,7 +21,8 @@
     
 import QtQuick 2.0
 //import QtQuick.Dialogs 1.1
-import QtQuick.Controls 2.0
+import QtQuick.Controls 2.2 // TextArea
+import QtQuick.Layouts 1.0
 import MuseScore 3.0
 
     
@@ -29,7 +31,7 @@ MuseScore {
     menuPath: "MIT.AdvanceToNextTick" //On met le plugin dans un sous-menu
     description: "This plugin do tests on Musescore features"
     version:  "1.0"
-    pluginType: "dialog" //TODO : Mettre dock pour avoir un menu ancré
+    pluginType: "dialog" //TODO : Mettre dock pour avoir un menu ancré. Ne fonctionne pas pour MuseScore 4.0
     
     width:  300
     height: 800
@@ -37,18 +39,95 @@ MuseScore {
     id: mainWindow
 
 
-    // ====================== DEBUT MENU ========================================
+    //====================== DEBUT MENU ========================================
+
+    //============== DEBUT Redefinition Consolelog vers TextArea =====================
+    property string logText: ""
+
+    // Fonction pour ajouter un message au TextArea
+    function addConsoleMessage(message) {
+        logText += message + "\n";
+        consoleTextArea.text = logText;
+    }
+    // Redéfinition des méthodes console
+    Component.onCompleted: {
+        // Sauvegarde des méthodes d'origine
+        const originalLog = console.log;
+        const originalInfo = console.info;
+        const originalError = console.error;
+
+        // Redéfinition des méthodes console
+        console.log = function() {
+            message = Array.prototype.join.call(arguments, " ");
+            originalLog.apply(console, arguments);
+            consoleHandler.logMessage("[LOG] " + message);
+        };
+
+        console.info = function() {
+            const message = Array.prototype.join.call(arguments, " ")
+            originalInfo.apply(console, arguments);
+            consoleHandler.logMessage("[INFO] " + message);
+        };
+
+        console.error = function() {
+            const message = Array.prototype.join.call(arguments, " ")
+            originalError.apply(console, arguments);
+            consoleHandler.logMessage("[ERROR] " + message);
+        };
+       
+
+        // Message initial pour tester
+        console.log("Application started");
+    }
+
+    // Définition de l'objet consoleHandler pour émettre des signaux
+    QtObject {
+        id: consoleHandler
+        signal logMessage(string message)
+    }
+
+   
+    //============== FIN Redefinition Consolelog vers TextArea =====================
+
     Column {
         //mise en colonne des éléments
-        spacing: 0 //units.gu(2) espacement entre items
+        spacing: 2 //units.gu(2) espacement entre items
         anchors.centerIn: parent
 
-        Text { // Affichage d'un texte
+        Text { // Affichage du copyright
             anchors.horizontalCenter: parent.horizontalCenter
-            text: "Debugging\nCopyright (c) Bruno Donati\n"
+            text: "Debugging\nCopyright (c) Bruno Donati 2024\n"
+        }
+
+        Rectangle {
+            id: scrollConsoleLogWindows
+            width: parent.width
+            height: 200
+            border.color: "black"
+            border.width: 2
+            radius: 5 // Ajoute des coins arrondis, optionnel
+            color: "white" // Couleur de fond, optionnel
+            anchors.horizontalCenter: parent.horizontalCenter
+
+            ScrollView {
+                anchors.fill: parent
+
+                TextArea {
+                    id: consoleTextArea
+                    width: scrollConsoleLogWindows.width
+                    height: scrollConsoleLogWindows.height // - 100
+                    readOnly: true
+                    wrapMode: TextArea.Wrap //TextArea.NoWrap, TextArea.WordWrap, TextArea.WrapAnywhere, et TextArea.Wrap
+                    text: "Fenêtre de log\n" //logText
+                    onTextChanged: {
+                        // Ensure the last line is always visible
+                        scrollView.flickableItem.contentY = scrollView.flickableItem.contentHeight - scrollView.flickableItem.height;
+                    }
+                }
+            }
         }
         
-        Button { // Affichage d'un bouton
+        Button { // Affichage du bouton start
             anchors.horizontalCenter: parent.horizontalCenter
             id: start
             
@@ -73,13 +152,16 @@ MuseScore {
 
             onClicked: {
                     console.info("Click start Button"); // Message d'information
-                    console.info(curScore.scoreName); // Message d'information
+                    console.info("Current Score: " + curScore.scoreName); //(`Current Score: ${curScore.scoreName}`); utilisation d'un template : Ne fonctionne pas
                     console.info("MuseScore Version: " + mscoreMajorVersion + "." + mscoreMinorVersion); // Message d'information
+                    consoleTextArea.text += "clicked\n"
                     lecturepartition();
                     //runlecture();
                 }
-            
         }
+
+        
+
     }
 
     onRun: {
@@ -90,6 +172,7 @@ MuseScore {
        }
     }
 
+ 
     // ====================== FIN MENU ==========================================
     
 
@@ -408,6 +491,12 @@ MuseScore {
     // ====================== FIN Fonctions ===================================
 
   
+    Connections {
+        target: consoleHandler
 
+        onLogMessage: {
+            addConsoleMessage(message);
+        }
+    }
     
 }
