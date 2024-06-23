@@ -121,6 +121,7 @@ MuseScore {
                     text: "Fenêtre de log\n" //logText
                     onTextChanged: {
                         // Ensure the last line is always visible
+                        // TODO : Ne fonctionne pas
                         scrollView.flickableItem.contentY = scrollView.flickableItem.contentHeight - scrollView.flickableItem.height;
                     }
                 }
