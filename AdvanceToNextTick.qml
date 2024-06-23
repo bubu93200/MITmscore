@@ -31,7 +31,7 @@ MuseScore {
     menuPath: "MIT.AdvanceToNextTick" //On met le plugin dans un sous-menu
     description: "This plugin do tests on Musescore features"
     version:  "1.0"
-    pluginType: "dialog" //TODO : Mettre dock pour avoir un menu ancré. Ne fonctionne pas pour MuseScore 4.0
+    pluginType: "dialog" //"dialog Non ancré //TODO : "dock" ancré. Ne fonctionne pas pour MuseScore 4.0
     
     width:  300
     height: 800
@@ -48,12 +48,14 @@ MuseScore {
     function addConsoleMessage(message) {
         logText += message + "\n";
         consoleTextArea.text = logText;
+        console.info("Fonction addConsoleMessage");
     }
     // Redéfinition des méthodes console
+    console.info("TEST1");
     Component.onCompleted: {
         // Sauvegarde des méthodes d'origine
         const originalLog = console.log;
-        const originalInfo = console.info;
+        //const originalInfo = console.info;
         const originalError = console.error;
 
         // Redéfinition des méthodes console
@@ -62,12 +64,13 @@ MuseScore {
             originalLog.apply(console, arguments);
             consoleHandler.logMessage("[LOG] " + message);
         };
-
+        /*
         console.info = function() {
             const message = Array.prototype.join.call(arguments, " ")
             originalInfo.apply(console, arguments);
             consoleHandler.logMessage("[INFO] " + message);
         };
+        */
 
         console.error = function() {
             const message = Array.prototype.join.call(arguments, " ")
@@ -77,7 +80,7 @@ MuseScore {
        
 
         // Message initial pour tester
-        console.log("Application started");
+        console.info("TEST2");
     }
 
     // Définition de l'objet consoleHandler pour émettre des signaux
@@ -110,6 +113,8 @@ MuseScore {
             anchors.horizontalCenter: parent.horizontalCenter
 
             ScrollView {
+                id: scrollView
+                ScrollBar.vertical.interactive: true
                 anchors.fill: parent
 
                 TextArea {
@@ -122,7 +127,16 @@ MuseScore {
                     onTextChanged: {
                         // Ensure the last line is always visible
                         // TODO : Ne fonctionne pas
-                        scrollView.flickableItem.contentY = scrollView.flickableItem.contentHeight - scrollView.flickableItem.height;
+                        // Scroll to the bottom when the text changes
+                        if (scrollView.flickableItem) {
+                            scrollView.flickableItem.contentY = scrollView.flickableItem.contentHeight - scrollView.flickableItem.height
+                        }
+                    }
+                    Component.onCompleted: { //to ensure that the TextArea and its parent ScrollView are fully initialized before attempting to adjust the scroll position.
+                        // Scroll to the bottom when the TextArea is first loaded
+                        if (scrollView.flickableItem) {
+                            scrollView.flickableItem.contentY = scrollView.flickableItem.contentHeight - scrollView.flickableItem.height
+                        }
                     }
                 }
             }
