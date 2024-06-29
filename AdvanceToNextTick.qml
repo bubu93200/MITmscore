@@ -50,38 +50,7 @@ MuseScore {
         consoleTextArea.text = logText;
         console.info("Fonction addConsoleMessage");
     }
-    // Redéfinition des méthodes console
-    console.info("TEST1");
-    Component.onCompleted: {
-        // Sauvegarde des méthodes d'origine
-        const originalLog = console.log;
-        //const originalInfo = console.info;
-        const originalError = console.error;
-
-        // Redéfinition des méthodes console
-        console.log = function() {
-            message = Array.prototype.join.call(arguments, " ");
-            originalLog.apply(console, arguments);
-            consoleHandler.logMessage("[LOG] " + message);
-        };
-        /*
-        console.info = function() {
-            const message = Array.prototype.join.call(arguments, " ")
-            originalInfo.apply(console, arguments);
-            consoleHandler.logMessage("[INFO] " + message);
-        };
-        */
-
-        console.error = function() {
-            const message = Array.prototype.join.call(arguments, " ")
-            originalError.apply(console, arguments);
-            consoleHandler.logMessage("[ERROR] " + message);
-        };
-       
-
-        // Message initial pour tester
-        console.info("TEST2");
-    }
+   
 
     // Définition de l'objet consoleHandler pour émettre des signaux
     QtObject {
@@ -132,12 +101,8 @@ MuseScore {
                             scrollView.flickableItem.contentY = scrollView.flickableItem.contentHeight - scrollView.flickableItem.height
                         }
                     }
-                    Component.onCompleted: { //to ensure that the TextArea and its parent ScrollView are fully initialized before attempting to adjust the scroll position.
-                        // Scroll to the bottom when the TextArea is first loaded
-                        if (scrollView.flickableItem) {
-                            scrollView.flickableItem.contentY = scrollView.flickableItem.contentHeight - scrollView.flickableItem.height
-                        }
-                    }
+
+                    
                 }
             }
         }
@@ -506,12 +471,5 @@ MuseScore {
     // ====================== FIN Fonctions ===================================
 
   
-    Connections {
-        target: consoleHandler
-
-        onLogMessage: {
-            addConsoleMessage(message);
-        }
-    }
-    
+   
 }
