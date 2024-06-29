@@ -1,4 +1,4 @@
-﻿//=============================================================================
+//=============================================================================
 //  Midi Instrument Training plugin for MuseScore
 //  Copyright (C) 2014 Jean-Baptiste Delisle
 //  Based on colornotes plugin :
@@ -44,19 +44,24 @@ MuseScore {
     //============== DEBUT Redefinition Consolelog vers TextArea =====================
     property string logText: ""
 
-    // Fonction pour ajouter un message au TextArea
-    function addConsoleMessage(message) {
-        logText += message + "\n";
+    // Fonction pour ajouter un message log au TextArea
+    function log(message) {
+        logText += "[LOG ] " + message + "\n";
         consoleTextArea.text = logText;
-        console.info("Fonction addConsoleMessage");
+    }
+    // Fonction pour ajouter un message info au TextArea
+    function info(message) {
+        logText += "[INFO] " + message + "\n";
+        consoleTextArea.text = logText;
     }
    
 
     // Définition de l'objet consoleHandler pour émettre des signaux
-    QtObject {
+    /*QtObject {
         id: consoleHandler
         signal logMessage(string message)
     }
+    */
 
    
     //============== FIN Redefinition Consolelog vers TextArea =====================
@@ -135,6 +140,8 @@ MuseScore {
                     console.info("Current Score: " + curScore.scoreName); //(`Current Score: ${curScore.scoreName}`); utilisation d'un template : Ne fonctionne pas
                     console.info("MuseScore Version: " + mscoreMajorVersion + "." + mscoreMinorVersion); // Message d'information
                     consoleTextArea.text += "clicked\n"
+                    log("ESSAI1");
+                    info("bonjour");
                     lecturepartition();
                     //runlecture();
                 }
@@ -146,11 +153,22 @@ MuseScore {
 
     onRun: {
        console.log("Lancement de la lecture de partition")
-       if (typeof curScore == 'undefined' || curScore == null) {
-           console.log("Aucune partition active");
-           Qt.quit();
-       }
-    }
+       if (typeof curScore == 'undefined' || curScore == null) 
+            {
+                  console.log("Aucune partition active");
+                  Qt.quit();
+            }
+          }
+    Component.onCompleted: 
+      {
+            consoleTextArea.text += "Component.onCompleted";
+            console.info("Component.onCompleted");
+            
+            
+            log("ESSAI2")
+            
+      }
+    
 
  
     // ====================== FIN MENU ==========================================
