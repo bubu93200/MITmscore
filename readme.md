@@ -107,6 +107,7 @@ nmake
 nmake install  
 ```   
 Qt 5.15.2 and building is done on C:\Qt\5.15.2\msvc2022_64   
+Don't work. Fatal error due to incompatibility
 
 
 # Releases  
