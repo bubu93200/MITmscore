@@ -95,6 +95,19 @@ It's organized in 3 tabs : training, setting and help.
     - on scoresheet colorize note from green to red to evaluate if note is played good or false  
     - on scoresheet advance cursor to next note  
 
+# To build Qt5.15.2 with Visual Studio 2022
+Qt5.15.2 use at latest release Visual Studio 2019 (msvc2019_64)   
+If you want to use Visual Studio 2022 with Qt 5.15.2, you have to buils Qt for Visual Studio 2022  
+Go to Visual Studio 2022 and open a terminal (Tools -> Command Line -> Command prompt / Outils -> Ligne de commande -> Invite de commande développer)
+On invite de commande go to Qt 5.15.2 sources directory (C:\Qt\5.15.2\Src)  
+Write commands :
+````
+configure -prefix C:\Qt\5.15.2\msvc2022_64 -platform win32-msvc2022 -opensource -confirm-license  
+nmake  
+nmake install  
+```
+Qt 5.15.2 and building is done on C:\Qt\5.15.2\msvc2022_64   
+
 
 # Releases  
 0.00 Nothing at this point. Testing releases  
