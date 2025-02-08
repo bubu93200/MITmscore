@@ -101,11 +101,11 @@ If you want to use Visual Studio 2022 with Qt 5.15.2, you have to buils Qt for V
 Go to Visual Studio 2022 and open a terminal (Tools -> Command Line -> Command prompt / Outils -> Ligne de commande -> Invite de commande développer)
 On invite de commande go to Qt 5.15.2 sources directory (C:\Qt\5.15.2\Src)  
 Write commands :
-````
+```
 configure -prefix C:\Qt\5.15.2\msvc2022_64 -platform win32-msvc2022 -opensource -confirm-license  
 nmake  
 nmake install  
-```
+```   
 Qt 5.15.2 and building is done on C:\Qt\5.15.2\msvc2022_64   
 
 
