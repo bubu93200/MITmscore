@@ -127,4 +127,4 @@ Don't work. Fatal error due to incompatibility
 
 
 # Releases  
-0.00 Nothing at this point. Testing releases  
+0.00 Nothing at this point. Only testing releases  
