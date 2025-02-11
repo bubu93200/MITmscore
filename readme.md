@@ -95,6 +95,9 @@ It's organized in 3 tabs : training, setting and help.
     - on scoresheet colorize note from green to red to evaluate if note is played good or false  
     - on scoresheet advance cursor to next note  
 
+# Build Qt5.15.2 with visual studio 2019  
+See this link : https://gist.github.com/rsouth/f029ce1bd093dc573afa8f48846e471c  
+
 # To build Qt5.15.2 with Visual Studio 2022
 Qt5.15.2 use at latest release Visual Studio 2019 (msvc2019_64)   
 If you want to use Visual Studio 2022 with Qt 5.15.2, you have to buils Qt for Visual Studio 2022  
