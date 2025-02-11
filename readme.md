@@ -107,7 +107,7 @@ configure -debug-and-release -prefix "C:\Qt\qt-5.15.0-static" -opensource -platf
 nmake
 nmake install
 ````
-Be careful, nmake works without end. Go to *nmake install* when you see it loops several time   
+Be careful, **nmake** works without end. Go to **nmake install** when you see it loops several time   
 It seems to be possible to build with Visual studio 2022   
 
 # To build Qt5.15.2 with Visual Studio 2022
