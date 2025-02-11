@@ -109,6 +109,7 @@ nmake install
 ````
 Be careful, **nmake** works without end. Go to **nmake install** when you see it loops several time   
 Be careful to have **python** installed  
+Be careful, this command create static libraries (.lib)   
 It seems to be possible to build with Visual studio 2022   
 
 # To build Qt5.15.2 with Visual Studio 2022
@@ -124,6 +125,11 @@ nmake install
 ```   
 Qt 5.15.2 and building is done on C:\Qt\5.15.2\msvc2022_64   
 Don't work. Fatal error due to incompatibility
+
+# Install Visual Studio 2019  
+To install Visual studio 2019, you have to delete visual studio 2022 and you can reinstall after  
+Visual Studio 2019 doesn't exist anymore on Microsoft site but you can download it on other sites  
+Or you can download it on my github :
 
 
 # Releases  
