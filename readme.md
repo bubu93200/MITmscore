@@ -97,6 +97,18 @@ It's organized in 3 tabs : training, setting and help.
 
 # Build Qt5.15.2 with visual studio 2019  
 See this link : https://gist.github.com/rsouth/f029ce1bd093dc573afa8f48846e471c  
+Use commands :    
+````
+cd C:\Qt\qt-5.15.0-src
+mkdir ..\qt-5.15.0-static
+set QTDIR=C:\Qt\qt-5.15.0-src\qtbase
+set PATH=C:\Qt\qt-5.15.0-src\qtbase\bin;%PATH%
+configure -debug-and-release -prefix "C:\Qt\qt-5.15.0-static" -opensource -platform win32-msvc -opengl desktop -static -static-runtime -nomake examples -nomake tests
+nmake
+nmake install
+````
+Be careful, nmake works without end. Go to *nmake install* when you see it loops several time   
+It seems to be possible to build with Visual studio 2022   
 
 # To build Qt5.15.2 with Visual Studio 2022
 Qt5.15.2 use at latest release Visual Studio 2019 (msvc2019_64)   
