@@ -108,6 +108,7 @@ nmake
 nmake install
 ````
 Be careful, **nmake** works without end. Go to **nmake install** when you see it loops several time   
+Be careful to have **python** installed  
 It seems to be possible to build with Visual studio 2022   
 
 # To build Qt5.15.2 with Visual Studio 2022
