@@ -110,7 +110,9 @@ nmake install
 Be careful, **nmake** works without end. Go to **nmake install** when you see it loops several time   
 Be careful to have **python** installed  
 Be careful, this command create static libraries (.lib)   
-It seems to be possible to build with Visual studio 2022   
+It seems to be possible to build with Visual studio 2022 
+**configure** is a command of Gt in Qt/Src to configure Qt build  
+Configure options are here : https://gist.github.com/h3ssan/d83f5560abc1c9d9200bb3e23b1dc160    
 
 # To build Qt5.15.2 with Visual Studio 2022
 Qt5.15.2 use at latest release Visual Studio 2019 (msvc2019_64)   
