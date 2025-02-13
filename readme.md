@@ -95,7 +95,8 @@ It's organized in 3 tabs : training, setting and help.
     - on scoresheet colorize note from green to red to evaluate if note is played good or false  
     - on scoresheet advance cursor to next note  
 
-# Build Qt5.15.2 with visual studio 2019  
+# Build Qt5.15.2 with visual studio 2019 
+**Go to Visual Studio 2022 and open a terminal (Tools -> Command Line -> Command prompt / Outils -> Ligne de commande -> Invite de commande développer). nmake command is only available in Visual Studio prompt**
 See this link : https://gist.github.com/rsouth/f029ce1bd093dc573afa8f48846e471c  
 Use commands :    
 ````
